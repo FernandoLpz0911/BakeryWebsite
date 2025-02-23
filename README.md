@@ -1,7 +1,6 @@
-# ProductivityMacOSApp
+# BakeryWebsite
 Members: Fernando Lopez, Kayla Sison, Guillermo Ramirez
-Language:
-	- Javascript utilizing React for front-end library capabilities and node.js for back-end library capabilities
+Language: Javascript utilizing React
 Overview: Website for small-scale bakery
 
 Functionalities: 
@@ -12,12 +11,14 @@ Functionalities:
 	- Upper of the page has a in-site menu (potentially overlay depending on quantity of items)
 	- Allow for contact button functionality on upper page for "General inquiries and Feedback"
 
-Google Form for order requests
+Page for order requests
+	- Should behave similarly to a google form
 	- Asks for customer first and last name
 	- Phone number to contact
 	- Email to contact
 	- Order request
-	- What date they'd like it by
+	- What date they'd like it by utilizing calendar api
+ 	- Sends the details to owner's email
 
 - Data analytics that observes
 	- New page visitors
@@ -27,5 +28,6 @@ Google Form for order requests
 
 
 - Another version of the website based on the language
-	- API to google translate everything typed in another language within non-original language
-- Deployment
+	- Typed out version in both English and Spanish as end-customers are primarily English and Spanish speakers
+
+- Basic deployment potentially utilizing AWS or Azure cloud services
