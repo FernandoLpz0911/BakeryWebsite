@@ -1,0 +1,20 @@
+{
+  "name": "bakerywebsite",
+  "version": "1.0.0",
+  "description": "Members: Fernando Lopez, Kayla Sison, Guillermo Ramirez Language: Javascript utilizing React Overview: Website for small-scale bakery",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FernandoLpz0911/BakeryWebsite.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FernandoLpz0911/BakeryWebsite/issues"
+  },
+  "homepage": "https://github.com/FernandoLpz0911/BakeryWebsite#readme"
+}
