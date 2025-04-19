@@ -3,6 +3,9 @@ Members: Fernando Lopez, Kayla Sison, Guillermo Ramirez
 Language: Javascript utilizing React
 Overview: Website for small-scale bakery
 
+Target audience:
+- Special catering events looking for sweet breads, cakes, cupcakes, or gelatin
+
 Functionalities: 
 - Initial Page
 	- Show the baking
