@@ -1,7 +1,18 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import './cssFiles/OrderPage.css';
+
+// This is literally just a struct of all the products
+const products = [
+  { id: 1, name: "Pastry 1", description: "Description", price: "4.50", imageUrl: "https://placehold.co/150x150/FFDDC1/000000?text=Cookie1" },
+  { id: 2, name: "Pastry 2", description: "Description", price: "5.00", imageUrl: "https://placehold.co/150x150/D2B48C/FFFFFF?text=Cookie2" },
+  { id: 3, name: "Pastry 3", description: "Description", price: "3.75", imageUrl: "https://placehold.co/150x150/FFFACD/000000?text=Muffin1" },
+  { id: 4, name: "Pastry 4", description: "Description", price: "7.00", imageUrl: "https://placehold.co/150x150/E8D6B6/000000?text=Bread1" },
+];
+
 
 // Main App component
-const App = () => {
+const OrderPage = () => {
   return (
     <>
 
@@ -9,7 +20,7 @@ const App = () => {
       <div className="min-h-screen" style={{ backgroundColor: '#f7f3ed' }}>
         {/* Top Bar: Displays a promo message */}
         <div className="top-bar">
-          
+          Order Page
         </div>
 
         {/* Nav Bar */}
@@ -18,14 +29,14 @@ const App = () => {
 
             {/* Nav Links */}
             <div className="nav-links">
-              <a href="#" className="nav-link">COOKIES & GIFTS</a>
-              <a href="#" className="nav-link">ORDER</a>
+              <Link to="/CookiesAndGifts" className="nav-link">COOKIES & GIFTS</Link>
+              <Link to="/OrderPage" className="nav-link">ORDER</Link>
               <a href="#" className="nav-link">BAKERIES</a>
-              <a href="#" className="nav-link">ABOUT</a>
+              <Link to="/About" className="nav-link">ABOUT</Link>
             </div>
 
             {/* Bakery Logo */}
-            <div className="bakery-logo">Dulce Tentaciones</div>
+            <Link to="/" className="bakery-logo">Dulce Tentaciones</Link>
 
             {/* NavBar Icons: User and Shopping Bag */}
             <div className="navbar-icons">
@@ -44,36 +55,33 @@ const App = () => {
           </div>
         </nav>
 
-        {/* Food Section: A prominent section with a light blue background, containing an image and text */}
-        <div className="hero-section">
-          {/* Left Section, image and text tag */}
-          <div className="hero-image-container">
+        {/* Products Section: Has all the products, pricing, and their descriptions */}
+        <div className="product-grid">
 
-            {/* text tag */}
-            <div className="summer-tag">
-              <p>Here<br/>All Year<br/>Around!</p>
+        {/* This maps each product out within the products struct */}
+        {products.map(product => (
+
+          <div key={product.id} className="product-card">
+
+            <img src={product.imageUrl} alt={product.name} />
+
+            <h3>{product.name}</h3>
+
+            <p>{product.description}</p>
+
+            <div className="price">${product.price}</div>
+
+            <div className="quantity-control">
+
+              <button>-</button>
+              <span>1</span> {/* I don't exactly know how to make this dynamic for now*/}
+              <button>+</button>
+
             </div>
-
-            {/* Main Cookie Image Placeholder */}
-            <img src="./FoodImage1.jpg" alt="Delicious Cookies" className="main-cookie-image" />
+            <button className="add-to-cart-button">Add to Cart</button>
           </div>
-
-          {/* Right Section, Text and Button */}
-          <div className="hero-text-content">
-
-            <h1 className="headline">
-              New Temp 1 <br/>New Temp 2 <br/><span>New Temp 3</span>
-            </h1>
-
-            <p className="description">
-              Temp Placeholder
-            </p>
-
-            {/* Shop All Sweets Button */}
-            <a href="#" className="shop-button">SHOP ALL SWEETS</a>
-            
-          </div>
-        </div>
+        ))}
+      </div>
 
         {/* Footer can be added here if needed */}
       </div>
@@ -81,4 +89,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default OrderPage;

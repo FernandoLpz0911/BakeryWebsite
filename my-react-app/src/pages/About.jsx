@@ -1,15 +1,17 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
 
-// Main App component
-const Home = () => {
 
+// Main App component
+const App = () => {
   return (
     <>
-      {/* Home Page*/}
+
+      {/* The main container for the entire application, setting min height, font, and background color */}
       <div className="min-h-screen" style={{ backgroundColor: '#f7f3ed' }}>
         {/* Top Bar: Displays a promo message */}
         <div className="top-bar">
-          Home Page
+          About Page
         </div>
 
         {/* Nav Bar */}
@@ -62,7 +64,7 @@ const Home = () => {
           <div className="hero-text-content">
 
             <h1 className="headline">
-              Temp 1 <br/>Temp 2 <br/><span>Temp 3</span>
+              New Temp 1 <br/>New Temp 2 <br/><span>New Temp 3</span>
             </h1>
 
             <p className="description">
@@ -71,7 +73,7 @@ const Home = () => {
 
             {/* Shop All Sweets Button */}
             <a href="#" className="shop-button">SHOP ALL SWEETS</a>
-
+            
           </div>
         </div>
 
@@ -81,4 +83,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default App;

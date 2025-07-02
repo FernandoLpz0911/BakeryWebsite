@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 
 // Main App component
-const Home = () => {
+const App = () => {
 
   return (
     <>
@@ -9,7 +9,7 @@ const Home = () => {
       <div className="min-h-screen" style={{ backgroundColor: '#f7f3ed' }}>
         {/* Top Bar: Displays a promo message */}
         <div className="top-bar">
-          Home Page
+          Cookies and Gifts Page
         </div>
 
         {/* Nav Bar */}
@@ -81,4 +81,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default App;
