@@ -1,17 +1,15 @@
-import React   from 'react';
-import { Routes, Route } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import React from 'react';
 
 // Main App component
 const App = () => {
-
   return (
     <>
-      {/* Home Page*/}
+
+      {/* The main container for the entire application, setting min height, font, and background color */}
       <div className="min-h-screen" style={{ backgroundColor: '#f7f3ed' }}>
         {/* Top Bar: Displays a promo message */}
         <div className="top-bar">
-          Temp Placeholder
+          
         </div>
 
         {/* Nav Bar */}
@@ -20,7 +18,7 @@ const App = () => {
 
             {/* Nav Links */}
             <div className="nav-links">
-              <Link to="/OrderPage" className="nav-link">COOKIES & GIFTS</Link>
+              <a href="#" className="nav-link">COOKIES & GIFTS</a>
               <a href="#" className="nav-link">ORDER</a>
               <a href="#" className="nav-link">BAKERIES</a>
               <a href="#" className="nav-link">ABOUT</a>
@@ -64,7 +62,7 @@ const App = () => {
           <div className="hero-text-content">
 
             <h1 className="headline">
-              Temp 1 <br/>Temp 2 <br/><span>Temp 3</span>
+              New Temp 1 <br/>New Temp 2 <br/><span>New Temp 3</span>
             </h1>
 
             <p className="description">
@@ -73,7 +71,7 @@ const App = () => {
 
             {/* Shop All Sweets Button */}
             <a href="#" className="shop-button">SHOP ALL SWEETS</a>
-
+            
           </div>
         </div>
 
