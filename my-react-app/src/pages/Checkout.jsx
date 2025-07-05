@@ -364,18 +364,8 @@ const App = () => {
 
         {/* RIGHT SECTION: Order Summary / Checkout Details */}
         <div className="order-summary-section">
-          <h2 className="summary-title">Signature Cookie Assortment</h2>
-          <p className="summary-item">4 PK - $32.00</p>
-
-          {/* Discount code section */}
-          <div className="discount-input-group">
-            <input
-              type="text"
-              placeholder="Discount code or gift card"
-              className="discount-input"
-            />
-            <button className="apply-button">Apply</button>
-          </div>
+          <h2 className="summary-title">TEST COOKIE</h2>
+          <p className="summary-item">XX Quantity - $32.00</p>
 
           {/* Subtotal, Shipping, Total */}
           <div className="summary-divider">
@@ -393,8 +383,6 @@ const App = () => {
             </div>
           </div>
 
-          {/* Shop All Sweets Button */}
-          <a href="#" className="shop-button">SHOP ALL SWEETS</a>
         </div> {/* END RIGHT SECTION */}
 
       </div> {/* END hero-section */}
