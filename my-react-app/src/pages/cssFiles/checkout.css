@@ -10,19 +10,21 @@ body, #root, .app-container {
     min-height: 100vh;
 }
 
-/* Top Bar & Navbar Styles */
+/* --- 2. Top Bar & Navbar Styles --- */
 .top-bar {
-    background-color: #FFD1DC; 
+    /* Keeping a light, soft rose pink for the top bar */
+    background-color: #FFD1DC; /* A common light rose pink (e.g., "Pink" in CSS colors) */
     text-align: center;
     padding: 8px 0;
-    font-size: 0.875rem;
-    color: #4B5563; 
+    font-size: 0.875rem; /* 14px */
+    color: #4B5563; /* Dark gray text for good contrast on light pink */
 }
 
 .navbar {
-    background-color: #FFFFFF; 
-    color: #E91E63; 
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    /* Changed to a medium rose pink for the main navbar background */
+    background-color: #F48FB1; /* A medium rose pink (e.g., "Light Pink" shade) */
+    color: #FFFFFF; /* Default text color for elements within navbar - now white for contrast */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Keep subtle shadow for depth */
     padding: 12px 0;
 }
 
@@ -30,64 +32,66 @@ body, #root, .app-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1280px;
-    margin: 0 auto; /* Center content */
-    padding: 0 24px;
+    max-width: 1280px; /* Consistent with previous max-w-7xl */
+    margin: 0 auto; /* Center content horizontally */
+    padding: 0 24px; /* Increased side padding for more breathing room */
 }
 
 .nav-links {
     display: flex;
-    gap: 32px; 
+    gap: 32px; /* Increased gap between links for more separation */
 }
 
+
 .nav-link {
-    color: #E91E63; 
+    color: #FFFFFF; /* White color for navigation links, for good contrast on pink */
     text-decoration: none;
-    font-weight: 500; 
+    font-weight: 500; /* Medium font weight for a clean look */
     padding: 8px 0;
     transition: color 0.2s ease-in-out;
-    font-size: 0.95rem; 
+    font-size: 0.95rem; /* Slightly larger text for better readability */
 }
 
 .nav-link:hover {
-    color: #C2185B;
+    color: #F8F8F8; /* A very subtle lighter white on hover for a gentle effect */
 }
 
 .bakery-logo {
-    color: #C2185B; 
+    color: #FFFFFF; /* White for the logo on pink background */
     text-decoration: none;
-    font-weight: bold; 
-    font-size: 1.35rem;
+    font-weight: bold; /* Keep logo bold for emphasis */
+    font-size: 1.35rem; /* Slightly larger logo for prominence */
 }
 
 .navbar-icons {
     display: flex;
-    gap: 20px;
+    gap: 20px; /* Increased gap between icons for more separation */
 }
 
 .icon-svg {
-    height: 24px; 
-    width: 24px; 
-    color: #E91E63;
+    height: 24px; /* Consistent height */
+    width: 24px; /* Consistent width */
+    color: #FFFFFF; /* White for icons on pink background */
     transition: color 0.2s ease-in-out;
 }
 
 .icon-svg:hover {
-    color: #C2185B;
+    color: #F8F8F8; /* Very subtle lighter white on hover */
 }
 
 /* Main Content Area (Form & Summary) Styles */
 .hero-section {
-    background-color: #E7F6FE; 
-    color: #374151; 
-    padding: 40px;
-    border-radius: 8px; 
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
-    max-width: 1280px; 
+    /* Changed background from light blue (#E7F6FE) to a very light, subtle rose pink */
+    background-color: #FFF0F5; /* A very light, subtle rose pink (often called Lavender Blush) */
+    color: #374151; /* Darker text for the content area (form labels, etc.) */
+    padding: 40px; /* Consistent padding */
+    border-radius: 8px; /* Consistent border-radius */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Consistent shadow */
+    max-width: 1280px;
     margin: 32px auto;
     
-    display: grid; /* Use CSS Grid for the main two columns */
-    grid-template-columns: 1fr; /* Single column on small screens */
+    display: grid;
+    grid-template-columns: 1fr;
     gap: 48px;
 }
 
@@ -241,17 +245,19 @@ body, #root, .app-container {
 
 /* --- 9. Order Summary Section (Right Column) Styles --- */
 .order-summary-section {
-    background-color: #FFFFFF; /* White background for summary */
-    padding: 24px; /* Equivalent to p-6 */
-    border-radius: 6px; /* Equivalent to rounded-md */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Equivalent to shadow-md */
-    color: #1F2937; /* Dark text for summary content */
+    /* Changed background to a very light, soft rose pink to fit the theme */
+    background-color: #FFEBF0; /* A soft, very light rose pink */
+    padding: 24px; /* Consistent padding */
+    border-radius: 6px; /* Consistent border-radius */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    color: #1F2937; /* Dark text for good contrast on light pink background */
 }
 
 .summary-title {
-    font-size: 1.125rem; /* Equivalent to text-lg */
+    font-size: 1.125rem;
     font-weight: bold;
-    margin-bottom: 16px; /* Equivalent to mb-4 */
+    margin-bottom: 16px;
+    color: #C2185B; /* Deeper rose pink for the title for emphasis */
 }
 
 .summary-item {
@@ -262,42 +268,8 @@ body, #root, .app-container {
     margin: 0;
 }
 
-.discount-input-group {
-    display: flex;
-    margin-bottom: 16px;
-}
-
-.discount-input {
-    flex-grow: 1;
-    padding: 8px 12px; /* Equivalent to p-2 */
-    border: 1px solid #D1D5DB; /* Light gray border */
-    border-radius: 6px 0 0 6px; /* Rounded left side */
-    outline: none;
-    transition: border-color 0.2s ease-in-out;
-}
-
-.discount-input:focus {
-    border-color: #3B82F6; /* Blue focus */
-    box-shadow: 0 0 0 1px #3B82F6;
-}
-
-.apply-button {
-    padding: 8px 16px; /* Equivalent to px-4 py-2 */
-    background-color: #E5E7EB; /* Light gray background */
-    color: #4B5563; /* Darker gray text */
-    border: 1px solid #D1D5DB; /* Light border */
-    border-left: none; /* No border on left to blend with input */
-    border-radius: 0 6px 6px 0; /* Rounded right side */
-    cursor: pointer;
-    transition: background-color 0.2s ease-in-out;
-}
-
-.apply-button:hover {
-    background-color: #D1D5DB; /* Slightly darker on hover */
-}
-
 .summary-divider {
-    border-top: 1px solid #E5E7EB; /* Light border */
+    border-top: 1px solid #F8BBD0; /* Pink-themed divider line */
     padding-top: 16px;
     margin-top: 16px;
 }
@@ -306,30 +278,32 @@ body, #root, .app-container {
     display: flex;
     justify-content: space-between;
     margin-bottom: 8px;
+    color: #1F2937; /* Ensure text is dark */
 }
 
 .summary-total {
-    font-size: 1.25rem; /* Equivalent to text-xl */
+    font-size: 1.25rem;
     font-weight: bold;
     margin-top: 16px;
+    color: #C2185B; /* Deeper rose pink for the total */
 }
 
 .shop-button {
-    display: block; /* Make it a block element to take full width */
+    display: block;
     width: 100%;
-    background-color: #2563EB; /* Blue button */
-    color: #FFFFFF;
-    padding: 12px 0; /* Equivalent to p-3 */
-    border-radius: 6px; /* Equivalent to rounded-md */
+    background-color: #E91E63; /* Vibrant rose pink for the main button */
+    color: #FFFFFF; /* White text */
+    padding: 12px 0;
+    border-radius: 6px;
     text-align: center;
     text-decoration: none;
     font-weight: 600;
     transition: background-color 0.2s ease-in-out;
-    margin-top: 24px; /* Equivalent to mt-6 */
+    margin-top: 24px;
 }
 
 .shop-button:hover {
-    background-color: #1E4ED8; /* Darker blue on hover */
+    background-color: #AD1457; /* Darker rose pink on hover */
 }
 
 /* Shipping method placeholder */
