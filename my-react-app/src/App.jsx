@@ -3,6 +3,7 @@ import Home from './pages/Home';
 import OrderPage from './pages/OrderPage';
 import CookiesAndGifts from './pages/CookiesAndGifts.jsx';
 import About from './pages/About.jsx';
+import Checkout from './pages/Checkout.jsx';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Route path="/OrderPage" element={<OrderPage />} />
       <Route path="/CookiesAndGifts" element={<CookiesAndGifts />} />
       <Route path="/About" element={<About />} />
+      <Route path="/Checkout" element={<Checkout />} />
     </Routes>
   );
 }

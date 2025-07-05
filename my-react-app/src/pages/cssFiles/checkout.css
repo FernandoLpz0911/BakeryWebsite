@@ -1,0 +1,400 @@
+/* src/styles/CheckoutFormStyles.css */
+
+/* Global Page Styles */
+body, #root, .app-container {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif; 
+    background-color: #F699CD;
+    color: #000000;
+    min-height: 100vh;
+}
+
+/* Top Bar & Navbar Styles */
+.top-bar {
+    background-color: #FFD1DC; 
+    text-align: center;
+    padding: 8px 0;
+    font-size: 0.875rem;
+    color: #4B5563; 
+}
+
+.navbar {
+    background-color: #FFFFFF; 
+    color: #E91E63; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    padding: 12px 0;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1280px;
+    margin: 0 auto; /* Center content */
+    padding: 0 24px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 32px; 
+}
+
+.nav-link {
+    color: #E91E63; 
+    text-decoration: none;
+    font-weight: 500; 
+    padding: 8px 0;
+    transition: color 0.2s ease-in-out;
+    font-size: 0.95rem; 
+}
+
+.nav-link:hover {
+    color: #C2185B;
+}
+
+.bakery-logo {
+    color: #C2185B; 
+    text-decoration: none;
+    font-weight: bold; 
+    font-size: 1.35rem;
+}
+
+.navbar-icons {
+    display: flex;
+    gap: 20px;
+}
+
+.icon-svg {
+    height: 24px; 
+    width: 24px; 
+    color: #E91E63;
+    transition: color 0.2s ease-in-out;
+}
+
+.icon-svg:hover {
+    color: #C2185B;
+}
+
+/* Main Content Area (Form & Summary) Styles */
+.hero-section {
+    background-color: #E7F6FE; 
+    color: #374151; 
+    padding: 40px;
+    border-radius: 8px; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+    max-width: 1280px; 
+    margin: 32px auto;
+    
+    display: grid; /* Use CSS Grid for the main two columns */
+    grid-template-columns: 1fr; /* Single column on small screens */
+    gap: 48px;
+}
+
+@media (min-width: 768px) { /* Medium screens and up (md:) */
+    .hero-section {
+        grid-template-columns: 1fr 1fr; /* Two columns on larger screens */
+    }
+}
+
+/* Form Section (Left Column) Styles */
+.form-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.form-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 28px; 
+    color: #1F2937;
+}
+
+.form-section-divider {
+    margin-top: 40px; /* **Large gap before new sections like 'Delivery' or 'Payment'** */
+    margin-bottom: 28px; 
+    border-top: 1px solid #E5E7EB; 
+}
+
+.form-group {
+    margin-bottom: 20px; 
+}
+
+.form-group label {
+    display: block; /* Make labels appear above the input */
+    font-size: 0.875rem; 
+    font-weight: 500; 
+    color: #4B5563; 
+    margin-bottom: 4px;
+}
+
+/* 5. Input, Select, Textarea Base Styles */
+.input-field,
+.select-field,
+.textarea-field {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #555555; 
+    border-radius: 6px; 
+    background-color: #363636; 
+    color: #FFFFFF; /* Custom white text */
+    outline: none; /* Remove default focus outline */
+    box-shadow: none; /* Remove default box shadow */
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.input-field::placeholder,
+.textarea-field::placeholder {
+    color: #999999; /* Custom light placeholder text */
+    opacity: 1; /* Ensure placeholder is fully opaque */
+}
+
+.input-field:focus,
+.select-field:focus,
+.textarea-field:focus {
+    border-color: #007bff; /* Custom blue focus border */
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25); /* Subtle focus ring */
+}
+
+/* --- 6. Specific Select Field Arrow (Custom Styling) --- */
+.select-field {
+    -webkit-appearance: none; /* Remove default browser arrow */
+    -moz-appearance: none;
+    appearance: none;
+    /* Custom SVG for the dropdown arrow */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ffffff"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 16px;
+    padding-right: 32px; /* Make space for the custom arrow */
+}
+
+/* --- 7. Multi-Column Form Rows --- */
+.form-row-two-cols {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column on small screens */
+    gap: 20px; /* **Increased horizontal gap in two-column rows** */
+}
+
+@media (min-width: 768px) { /* Medium screens and up (md:) */
+    .form-row-two-cols {
+        grid-template-columns: 1fr 1fr; /* Two columns on larger screens */
+    }
+}
+
+.form-row-three-cols {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column on small screens */
+    gap: 20px; /* **Increased horizontal gap in three-column rows** */
+}
+
+@media (min-width: 768px) { /* Medium screens and up (md:) */
+    .form-row-three-cols {
+        grid-template-columns: 1fr 1fr 1fr; /* Three columns on larger screens */
+    }
+}
+
+/* --- 8. Custom Checkbox Styling --- */
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-top: 16px; /* Add some margin above */
+    margin-bottom: 20px; /* **Added margin-bottom after checkbox lines** */
+}
+
+.custom-checkbox {
+    /* Base styles to remove default appearance */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 16px; /* Equivalent to h-4 w-4 */
+    height: 16px; /* Equivalent to h-4 w-4 */
+    border: 1px solid #555555; /* Custom border */
+    border-radius: 4px; /* Slight rounding */
+    background-color: #363636; /* Custom background */
+    cursor: pointer;
+    margin-right: 8px; /* Space between checkbox and label */
+    position: relative;
+    top: -1px; /* Fine-tune vertical alignment */
+    transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+}
+
+.custom-checkbox:checked {
+    background-color: #007bff; /* Blue when checked */
+    border-color: #007bff;
+}
+
+.custom-checkbox:checked::after {
+    content: '\2713'; /* Checkmark symbol */
+    display: block;
+    color: #FFFFFF;
+    font-size: 12px;
+    text-align: center;
+    line-height: 14px; /* Adjust to center the checkmark */
+}
+
+.custom-checkbox:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25); /* Focus ring */
+}
+
+/* --- 9. Order Summary Section (Right Column) Styles --- */
+.order-summary-section {
+    background-color: #FFFFFF; /* White background for summary */
+    padding: 24px; /* Equivalent to p-6 */
+    border-radius: 6px; /* Equivalent to rounded-md */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Equivalent to shadow-md */
+    color: #1F2937; /* Dark text for summary content */
+}
+
+.summary-title {
+    font-size: 1.125rem; /* Equivalent to text-lg */
+    font-weight: bold;
+    margin-bottom: 16px; /* Equivalent to mb-4 */
+}
+
+.summary-item {
+    margin-bottom: 16px;
+}
+
+.summary-item p {
+    margin: 0;
+}
+
+.discount-input-group {
+    display: flex;
+    margin-bottom: 16px;
+}
+
+.discount-input {
+    flex-grow: 1;
+    padding: 8px 12px; /* Equivalent to p-2 */
+    border: 1px solid #D1D5DB; /* Light gray border */
+    border-radius: 6px 0 0 6px; /* Rounded left side */
+    outline: none;
+    transition: border-color 0.2s ease-in-out;
+}
+
+.discount-input:focus {
+    border-color: #3B82F6; /* Blue focus */
+    box-shadow: 0 0 0 1px #3B82F6;
+}
+
+.apply-button {
+    padding: 8px 16px; /* Equivalent to px-4 py-2 */
+    background-color: #E5E7EB; /* Light gray background */
+    color: #4B5563; /* Darker gray text */
+    border: 1px solid #D1D5DB; /* Light border */
+    border-left: none; /* No border on left to blend with input */
+    border-radius: 0 6px 6px 0; /* Rounded right side */
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.apply-button:hover {
+    background-color: #D1D5DB; /* Slightly darker on hover */
+}
+
+.summary-divider {
+    border-top: 1px solid #E5E7EB; /* Light border */
+    padding-top: 16px;
+    margin-top: 16px;
+}
+
+.summary-line {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.summary-total {
+    font-size: 1.25rem; /* Equivalent to text-xl */
+    font-weight: bold;
+    margin-top: 16px;
+}
+
+.shop-button {
+    display: block; /* Make it a block element to take full width */
+    width: 100%;
+    background-color: #2563EB; /* Blue button */
+    color: #FFFFFF;
+    padding: 12px 0; /* Equivalent to p-3 */
+    border-radius: 6px; /* Equivalent to rounded-md */
+    text-align: center;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.2s ease-in-out;
+    margin-top: 24px; /* Equivalent to mt-6 */
+}
+
+.shop-button:hover {
+    background-color: #1E4ED8; /* Darker blue on hover */
+}
+
+/* Shipping method placeholder */
+.shipping-method-placeholder {
+    margin-top: 20px; /* Add space above this text */
+    margin-bottom: 20px; /* Add space below this text if it's the end of a section */
+    color: #6B7280; /* Gray text color */
+    font-size: 0.875rem; /* Small text */
+}
+
+/* New section title style for 'Payment' and 'Billing address' sections */
+.section-title-with-top-margin {
+    font-size: 1.5rem; /* Same as form-title */
+    font-weight: bold;
+    color: #1F2937;
+    margin-top: 40px; /* **Larger margin at the top of new major sections** */
+    margin-bottom: 28px; /* Consistent with other titles */
+}
+
+/* Styles for the "Use shipping address as billing address" checkbox group */
+.billing-checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px; /* Space after this checkbox */
+    margin-top: 16px; /* Space above this checkbox */
+}
+
+/* Style for the "Pay now" button */
+.pay-now-button {
+    display: block;
+    width: 100%;
+    padding: 16px 0; /* More vertical padding for a prominent button */
+    background-color: #00008B; /* Deep blue from reference */
+    color: #FFFFFF;
+    border-radius: 6px;
+    text-align: center;
+    font-size: 1.125rem; /* Larger font size */
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none; /* If it's an <a> tag */
+    transition: background-color 0.2s ease-in-out;
+    margin-top: 32px; /* Space above the button */
+}
+
+.pay-now-button:hover {
+    background-color: #0000A0; /* Slightly lighter blue on hover */
+}
+
+/* Styles for policies/terms links at the bottom */
+.policy-links-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow links to wrap */
+    justify-content: center; /* Center links horizontally */
+    gap: 16px; /* Space between links */
+    margin-top: 32px; /* Space above the links */
+    font-size: 0.875rem; /* Smaller font size for policy links */
+}
+
+.policy-link {
+    color: #3B82F6; /* Blue color for links */
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}
+
+.policy-link:hover {
+    color: #2563EB; /* Darker blue on hover */
+    text-decoration: underline;
+}
