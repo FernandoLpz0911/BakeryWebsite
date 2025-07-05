@@ -6,7 +6,7 @@ const App = () => {
     <div className="app-container">
       {/* Top Bar: Displays a promo message */}
       <div className="top-bar">
-        Cookies and Gifts Page
+        Checkout Page
       </div>
 
       {/* Nav Bar */}
@@ -31,9 +31,11 @@ const App = () => {
             </svg>
 
             {/* Shopping Bag Icon */}
-            <svg xmlns="http://www.w3.org/2000/svg" className="icon-svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-            </svg>
+              <Link to="/Checkout">
+                <svg xmlns="http://www.w3.org/2000/svg" className="icon-svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+                </svg>
+              </Link>
           </div>
         </div>
       </nav>
