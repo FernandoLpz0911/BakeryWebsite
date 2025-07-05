@@ -1,85 +1,160 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
 
-// Main App component
 const Home = () => {
-
   return (
-    <>
-      {/* Home Page*/}
-      <div className="min-h-screen" style={{ backgroundColor: '#f7f3ed' }}>
-        {/* Top Bar: Displays a promo message */}
-        <div className="top-bar">
-          Home Page
-        </div>
-
-        {/* Nav Bar */}
-        <nav className="navbar">
-          <div className="navbar-container">
-
-            {/* Nav Links */}
-            <div className="nav-links">
-              <Link to="/CookiesAndGifts" className="nav-link">COOKIES & GIFTS</Link>
-              <Link to="/OrderPage" className="nav-link">ORDER</Link>
-              <a href="#" className="nav-link">BAKERIES</a>
-              <Link to="/About" className="nav-link">ABOUT</Link>
-            </div>
-
-            {/* Bakery Logo */}
-            <Link to="/" className="bakery-logo">Dulce Tentaciones</Link>
-
-            {/* NavBar Icons: User and Shopping Bag */}
-            <div className="navbar-icons">
-
-              {/* User Icon */}
-              <svg xmlns="http://www.w3.org/2000/svg" className="icon-svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-              </svg>
-
-              {/* Shopping Bag Icon */}
-              <Link to="/Checkout">
-                <svg xmlns="http://www.w3.org/2000/svg" className="icon-svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
-                </svg>
-              </Link>
-
-            </div>
-          </div>
-        </nav>
-
-        {/* Food Section: A prominent section with a light blue background, containing an image and text */}
-        <div className="hero-section">
-          {/* Left Section, image and text tag */}
-          <div className="hero-image-container">
-
-            {/* text tag */}
-            <div className="summer-tag">
-              <p>Here<br/>All Year<br/>Around!</p>
-            </div>
-
-            {/* Main Cookie Image Placeholder */}
-            <img src={'./FoodImage1.jpg'} alt="Delicious Cookies" className="main-cookie-image" />
-          </div>
-
-          {/* Right Section, Text and Button */}
-          <div className="hero-text-content">
-
-            <h1 className="headline">
-              Temp 1 <br/>Temp 2 <br/><span>Temp 3</span>
-            </h1>
-
-            <p className="description">
-              Temp Placeholder
-            </p>
-
-            {/* Shop All Sweets Button */}
-            <Link to="/OrderPage" className="shop-button">SHOP ALL SWEETS</Link>
-
-          </div>
-        </div>
-
-        {/* Footer can be added here if needed */}
+    // Overall container for Home page, applies the very light pink background from CSS
+    // Removed inline style={{ backgroundColor: '#f7f3ed' }}
+    <div className="home-page-container">
+      {/* Top Bar: Displays a promo message */}
+      <div className="top-bar">
+        {/* Changed content for a more bakery-like promo message */}
+        Baked Fresh Daily &bull; Shipped Nationwide
       </div>
-    </>
+
+      {/* Nav Bar (Remains consistent with your previous structure and rose theme) */}
+      <nav className="navbar">
+        <div className="navbar-container">
+          {/* Nav Links */}
+          <div className="nav-links">
+            <Link to="/CookiesAndGifts" className="nav-link">COOKIES & GIFTS</Link>
+            <Link to="/OrderPage" className="nav-link">ORDER</Link>
+            <Link to="/About" className="nav-link">ABOUT</Link>
+          </div>
+
+          {/* Bakery Logo */}
+          <Link to="/" className="bakery-logo">Dulce Tentaciones</Link>
+
+          {/* NavBar Icons: User and Shopping Bag */}
+          <div className="navbar-icons">
+            {/* User Icon */}
+            <svg xmlns="http://www.w3.org/2000/svg" className="icon-svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+            </svg>
+
+            {/* Shopping Bag Icon */}
+            <Link to="/Checkout">
+              <svg xmlns="http://www.w3.org/2000/svg" className="icon-svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+              </svg>
+            </Link>
+          </div>
+        </div>
+      </nav>
+
+      {/* 1. Hero Section - Replacing your existing hero-section content */}
+      <section className="hero-section">
+        <div className="hero-content">
+          <div className="hero-image-wrapper">
+            {/* Using your cupcake image (image_b0fcc2.jpg) for the hero */}
+            <img src="/images/Cupcakes.jpg" alt="Festive Cupcakes" className="hero-image" />
+            <div className="hero-badge">Here All Year Around!</div> {/* Adapted from your 'summer-tag' */}
+          </div>
+          <div className="hero-text">
+            <h1 className="hero-headline">Handmade Sweets, Baked with Heart</h1>
+            <p className="hero-description">
+              Bringing the warmth of home to every delightful bite. Discover our comforting cakes, cookies, and pastries, perfect for sharing sweet moments.
+            </p>
+            <Link to="/OrderPage" className="hero-cta-button">Shop Our Creations</Link>
+          </div>
+        </div>
+      </section>
+
+      {/* 2. Featured Products / Our Beloved Creations Section - Inspired by Levain's "Shop Fan Favorites" */}
+      <section className="featured-products-section">
+        <h2 className="section-heading">Our Beloved Creations</h2>
+        <div className="product-grid">
+          {/* Product Card 1: Heart Cakes (image_b0fce2.jpg) */}
+          <div className="product-card">
+            <img src="/images/HeartCakes.jpg" alt="Heart-shaped Cakes" className="product-image" />
+            <h3 className="product-title">Heartfelt Cakes</h3>
+            <p className="product-description">Sweet gestures for every celebration, baked with joy.</p>
+            <Link to="/OrderPage" className="product-cta-button">View Cakes</Link>
+          </div>
+          {/* Product Card 2: Conchas (image_b0fa1c.jpg) */}
+          <div className="product-card">
+            <img src="/images/Conchas.jpg" alt="Assorted Conchas" className="product-image" />
+            <h3 className="product-title">Cozy Conchas</h3>
+            <p className="product-description">Traditional comfort, fluffy texture, perfect with coffee.</p>
+            <Link to="/OrderPage" className="product-cta-button">Explore Pastries</Link>
+          </div>
+          {/* Product Card 3: Cupcakes */}
+          <div className="product-card">
+            <img src="/images/IndividualCupcake.jpg" alt="Star Cupcakes" className="product-image" />
+            <h3 className="product-title">Joyful Cupcakes</h3>
+            <p className="product-description">Little bursts of happiness for every sweet craving.</p>
+            <Link to="/OrderPage" className="product-cta-button">Discover Cupcakes</Link>
+          </div>
+        </div>
+      </section>
+
+      {/* 3. Our Story / Brand Philosophy Section" */}
+      <section className="about-us-section">
+        <div className="about-content">
+          <div className="about-text">
+            <h2 className="section-heading">Our Sweet Beginning</h2>
+            {/* REVISED DESCRIPTION BELOW */}
+            <p className="about-description">
+              At Dulce Tentaciones, every treat is a labor of love, baked from the heart, one batch at a time. As a one-person startup, I pour my passion into crafting more than just desserts; I create moments of joy and comfort, freshly made just for you.
+            </p>
+            <p className="about-description">
+              Founded on the simple dream of sharing homemade goodness, Dulce Tentaciones began as my heartfelt solo venture. From my kitchen, I'm dedicated to spreading warmth and delight with every unique, fresh-baked creation.
+            </p>
+            <Link to="/About" className="learn-more-button">Learn More About Us</Link>
+          </div>
+        </div>
+      </section>
+
+      {/* 4. Testimonials / Accolades Section - Inspired by Levain's quotes */}
+      <section className="testimonial-section">
+        <div className="testimonial-quote">
+          “Every treat from Dulce Tentaciones feels like a warm hug from home. Pure comfort in every bite!”
+        </div>
+        <p className="testimonial-source">- A Delightful Customer</p>
+      </section>
+
+      {/* 5. Gifts & Occasions Section - Inspired by Levain's "Cookies for Every Occasion" */}
+      <section className="gifts-occasions-section">
+        <h2 className="section-heading">Sweets for Every Special Moment</h2>
+        <div className="occasion-grid">
+            {/* Occasion Card 1: Thoughtful Gifts (Placeholder image) */}
+            <div className="occasion-card">
+                <img src="/images/corporate-gifts.jpg" alt="Thoughtful Gifts" className="occasion-image" />
+                <h3 className="occasion-title">Thoughtful Gifts</h3>
+                <p className="occasion-description">Show appreciation with beautifully packaged, delicious treats for clients and loved ones.</p>
+                <Link to="/Gifts" className="occasion-cta-button">Shop Gifts</Link>
+            </div>
+            {/* Occasion Card 2: Joyful Events (Placeholder image) */}
+            <div className="occasion-card">
+                <img src="/images/events-catering.jpg" alt="Events & Catering" className="occasion-image" />
+                <h3 className="occasion-title">Joyful Events</h3>
+                <p className="occasion-description">Make your gatherings sweeter with our custom desserts and catering options.</p>
+                <Link to="/Events" className="occasion-cta-button">Plan Your Event</Link>
+            </div>
+            {/* Occasion Card 3: Seasonal Delights (Placeholder image) */}
+            <div className="occasion-card">
+                <img src="/images/seasonal-sweets.jpg" alt="Seasonal Sweets" className="occasion-image" />
+                <h3 className="occasion-title">Seasonal Delights</h3>
+                <p className="occasion-description">Discover our limited-time creations, perfect for holidays and changing seasons.</p>
+                <Link to="/Seasonal" className="occasion-cta-button">See What's New</Link>
+            </div>
+        </div>
+      </section>
+
+      {/* 6. Newsletter CTA Section - Inspired by Levain's footer newsletter */}
+      <section className="newsletter-cta-section">
+        <h2 className="section-heading">Sign up and sweeten your inbox.</h2>
+        <p className="newsletter-description">Be the first to know about new sweet creations, exclusive promotions, and heartwarming surprises, baked just for you.</p>
+        <div className="newsletter-form">
+          <input type="email" placeholder="Email" className="newsletter-email-input" />
+          <button className="newsletter-submit-button">→</button>
+        </div>
+      </section>
+
+      {/* Footer can be added here if needed */}
+      {/* (If you have a global Footer component, it might be outside this Home component in App.jsx) */}
+
+    </div>
   );
 };
 

@@ -31,7 +31,6 @@ const OrderPage = () => {
             <div className="nav-links">
               <Link to="/CookiesAndGifts" className="nav-link">COOKIES & GIFTS</Link>
               <Link to="/OrderPage" className="nav-link">ORDER</Link>
-              <a href="#" className="nav-link">BAKERIES</a>
               <Link to="/About" className="nav-link">ABOUT</Link>
             </div>
 
