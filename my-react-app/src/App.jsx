@@ -8,6 +8,7 @@ import OrderPage from './pages/OrderPage';
 import CookiesAndGifts from './pages/CookiesAndGifts.jsx';
 import About from './pages/About.jsx';
 import Checkout from './pages/Checkout.jsx';
+import Events from './pages/Events.jsx';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/CookiesAndGifts" element={<CookiesAndGifts />} />
         <Route path="/About" element={<About />} />
         <Route path="/Checkout" element={<Checkout />} />
+        <Route path="/Events" element={<Events />} />
       </Routes>
     </CartProvider>
   );

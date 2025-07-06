@@ -373,11 +373,6 @@ body, #root, .app-container {
     text-decoration: underline;
 }
 
-/* src/styles/CheckoutFormStyles.css */
-
-/* ... (Your existing CSS for top bar, navbar, checkout form, etc. goes here) ... */
-
-
 /* --- Home Page Specific Styles --- */
 
 /* Overall container for the Home page */
@@ -786,10 +781,6 @@ body, #root, .app-container {
     background-color: #AD1457; /* Darker pink on hover */
 }
 
-/* src/styles/CheckoutFormStyles.css */
-
-/* ... (Previous CSS remains unchanged) ... */
-
 /* --- About Page Specific Styles (Revised for more cohesion and warmth) --- */
 
 .about-page-container {
@@ -1003,11 +994,6 @@ body, #root, .app-container {
     color: #4B5563;
 }
 
-/* src/styles/CheckoutFormStyles.css */
-
-/* ... (Your existing global styles, navbar, home page, and about page styles go here) ... */
-
-
 /* --- Order Page Specific Styles (This entire block is crucial for the design) --- */
 
 /* Overall page container for the OrderPage.jsx component */
@@ -1192,4 +1178,354 @@ body, #root, .app-container {
     line-height: 18px; /* Vertically center single digit */
     transform: translate(50%, 0%); /* Shift right by half its width for better alignment */
     box-shadow: 0 1px 2px rgba(0,0,0,0.2); /* Subtle shadow for depth */
+}
+
+.events-main-content {
+    max-width: 1200px;
+    margin: 32px auto; /* Centers the main content block on the page */
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Soft shadow for the main block */
+    overflow: hidden; /* Ensures child backgrounds/borders don't spill */
+    background-color: #FFEBF0; /* Light pink background for the whole content block */
+    color: #374151; /* Default text color */
+}
+
+/* Reusing .section-padded for consistent top/bottom padding within sections */
+/* This ensures sections within events-main-content have consistent vertical spacing */
+/* (Defined globally for other pages already) */
+
+
+/* 1. Events/Catering Hero/Banner Section */
+.catering-hero-section {
+    background-image: url('/images/catering-hero-placeholder.jpg'); /* Replace with a good catering-focused image */
+    background-size: cover;
+    background-position: center;
+    min-height: 450px; /* Adjust height as needed */
+    display: flex;
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+    text-align: center;
+    position: relative;
+    padding: 20px; /* Internal padding */
+}
+
+.catering-hero-section::before { /* Semi-transparent overlay for text readability */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(244, 143, 177, 0.5); /* Semi-transparent rose pink overlay */
+    z-index: 1; /* Place above background image but below content */
+}
+
+.catering-hero-content {
+    position: relative;
+    z-index: 2; /* Place content above the overlay */
+    color: #FFFFFF; /* White text on the dark/pink overlay */
+    max-width: 800px; /* Max width for text content */
+    margin: 0 auto;
+}
+
+.catering-hero-headline {
+    font-size: 3.5rem; /* Large, impactful headline */
+    font-weight: bold;
+    margin-bottom: 20px;
+    line-height: 1.1;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4); /* Text shadow for readability */
+}
+
+.catering-hero-description {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    line-height: 1.6;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* Subtle text shadow */
+}
+
+.catering-cta-button {
+    display: inline-block;
+    background-color: #E91E63; /* Vibrant rose pink button */
+    color: #FFFFFF;
+    padding: 15px 35px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Button shadow */
+}
+
+.catering-cta-button:hover {
+    background-color: #AD1457; /* Darker rose pink on hover */
+}
+
+/* 2. Our Catering Services / Packages Section */
+.events-services-section {
+    background-color: #FFEBF0; /* Soft light pink background */
+    /* Inherits padding from section-padded (defined globally) */
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid for service cards */
+    gap: 30px; /* Gap between service cards */
+    margin-top: 40px; /* Space from heading */
+    max-width: 1000px; /* Constrain grid width */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.service-card {
+    background-color: #FFFFFF; /* White card background */
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); /* Soft shadow */
+    padding: 30px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.2s ease-in-out;
+}
+
+.service-card:hover {
+    transform: translateY(-5px); /* Subtle lift on hover */
+}
+
+.service-title {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #E91E63; /* Vibrant rose pink */
+    margin-bottom: 15px;
+}
+
+.service-description {
+    font-size: 0.95rem;
+    color: #4B5563;
+    line-height: 1.6;
+    margin-bottom: 20px; /* Increased margin-bottom */
+    flex-grow: 1; /* Allows description to take available space and push CTA down */
+}
+
+.catering-features-list {
+    list-style: none; /* Remove default bullet points */
+    padding: 0;
+    margin: 0 0 20px 0; /* Space below list */
+    text-align: left; /* Align list items left */
+    width: 100%; /* Take full width of card for alignment */
+}
+
+.catering-features-list li {
+    font-size: 0.9rem;
+    color: #6B7280;
+    margin-bottom: 8px;
+    padding-left: 20px; /* Indent text */
+    position: relative;
+}
+
+.catering-features-list li::before {
+    content: '•'; /* Custom bullet point */
+    color: #F06292; /* Rose pink bullet */
+    font-weight: bold;
+    display: inline-block;
+    width: 1em; /* Space for bullet */
+    margin-left: -1em; /* Pull bullet left */
+}
+
+.catering-menu-cta {
+    display: inline-block;
+    background-color: #F48FB1; /* Medium rose pink button */
+    color: #FFFFFF;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.catering-menu-cta:hover {
+    background-color: #E91E63; /* Darker pink on hover */
+}
+
+/* 3. Customization Details Section */
+.events-customization-section {
+    background-color: #FFF0F5; /* Very light pink background */
+    /* Inherits padding from section-padded */
+}
+
+.customization-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column; /* Stacked on small screens */
+    align-items: center;
+    gap: 40px;
+}
+
+@media (min-width: 768px) {
+    .customization-content {
+        flex-direction: row;
+        text-align: left;
+        gap: 60px;
+    }
+    .customization-text {
+        order: 1;
+    }
+    .customization-image-wrapper {
+        order: 2;
+    }
+}
+
+.customization-text {
+    flex: 1;
+}
+
+.customization-description {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #4B5563;
+    margin-bottom: 20px;
+}
+
+.customization-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    font-size: 1rem;
+    color: #4B5563;
+    margin-top: 15px;
+}
+
+.customization-content ul li {
+    margin-bottom: 10px;
+    padding-left: 1.5em;
+    position: relative;
+    font-weight: bold; /* Make the option bold */
+}
+
+.customization-content ul li::before {
+    content: '✓'; /* Checkmark bullet */
+    color: #E91E63; /* Vibrant rose pink checkmark */
+    position: absolute;
+    left: 0;
+    font-weight: normal; /* Keep checkmark non-bold */
+}
+
+.customization-image-wrapper {
+    flex: 1;
+    max-width: 500px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.customization-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* 4. Inquiry Form Section */
+.catering-inquiry-section {
+    background-color: #F8BBD0; /* A soft medium rose pink background for the form section */
+    /* Inherits padding from section-padded */
+    text-align: center; /* Center form content */
+}
+
+.inquiry-description {
+    font-size: 1.05rem;
+    color: #4B5563;
+    margin-bottom: 40px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+.catering-form {
+    max-width: 600px; /* Max width for the form itself */
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between form groups */
+    padding: 30px;
+    background-color: #FFFFFF; /* White background for the form card */
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Reuse form-group, input-field, select-field, form-row-two-cols, form-row-three-cols, textarea-field from CheckoutPage styles */
+/* These common form styles are defined globally and will apply */
+
+.submit-inquiry-button {
+    display: inline-block;
+    background-color: #E91E63; /* Vibrant rose pink button */
+    color: #FFFFFF;
+    padding: 15px 35px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: none; /* Ensure no default button border */
+    cursor: pointer;
+    width: 100%; /* Full width within form */
+    max-width: 300px; /* Cap width for larger screens */
+    margin: 20px auto 0; /* Center button and provide top margin */
+}
+
+.submit-inquiry-button:hover {
+    background-color: #AD1457; /* Darker rose pink on hover */
+}
+
+/* 5. Catering Gallery/Portfolio (Optional) */
+.events-gallery-section {
+    background-color: #FFF0F5; /* Very light pink background */
+    /* Inherits padding from section-padded */
+}
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.gallery-item {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 6. Catering FAQ (Optional) */
+.events-faq-section {
+    background-color: #FFF5EE; /* A warm, very light cream/pink background */
+    /* Inherits padding from section-padded */
+}
+.faq-item {
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    margin-bottom: 15px;
+    transition: box-shadow 0.2s ease;
+}
+.faq-item:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+.faq-question {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #E91E63;
+    margin-bottom: 10px;
+    cursor: pointer; /* Implies it could be expandable */
+}
+.faq-answer {
+    font-size: 0.95rem;
+    color: #4B5563;
+    line-height: 1.5;
 }
