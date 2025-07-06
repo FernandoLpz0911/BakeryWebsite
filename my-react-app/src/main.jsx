@@ -5,7 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 import './pages/cssFiles/styles.css';
 import './pages/cssFiles/checkout.css';
-
+import './i18n'; // multi-language support
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

@@ -9,7 +9,7 @@ const Home = () => {
       {/* Top Bar: Displays a promo message */}
       <div className="top-bar">
         {/* Changed content for a more bakery-like promo message */}
-        Baked Fresh Daily &bull; Shipped Nationwide
+        Baked Fresh Daily &bull; Delivered To Your Door
       </div>
 
       {/* Nav Bar (Remains consistent with your previous structure and rose theme) */}
@@ -119,24 +119,17 @@ const Home = () => {
         <div className="occasion-grid">
             {/* Occasion Card 1: Thoughtful Gifts (Placeholder image) */}
             <div className="occasion-card">
-                <img src="/images/corporate-gifts.jpg" alt="Thoughtful Gifts" className="occasion-image" />
+                <img src="/images/GiftedDonuts.jpg" alt="Thoughtful Gifts" className="occasion-image" />
                 <h3 className="occasion-title">Thoughtful Gifts</h3>
                 <p className="occasion-description">Show appreciation with beautifully packaged, delicious treats for clients and loved ones.</p>
                 <Link to="/Gifts" className="occasion-cta-button">Shop Gifts</Link>
             </div>
             {/* Occasion Card 2: Joyful Events (Placeholder image) */}
             <div className="occasion-card">
-                <img src="/images/events-catering.jpg" alt="Events & Catering" className="occasion-image" />
+                <img src="/images/BirthdayCake.jpg" alt="Events & Catering" className="occasion-image" />
                 <h3 className="occasion-title">Joyful Events</h3>
                 <p className="occasion-description">Make your gatherings sweeter with our custom desserts and catering options.</p>
                 <Link to="/Events" className="occasion-cta-button">Plan Your Event</Link>
-            </div>
-            {/* Occasion Card 3: Seasonal Delights (Placeholder image) */}
-            <div className="occasion-card">
-                <img src="/images/seasonal-sweets.jpg" alt="Seasonal Sweets" className="occasion-image" />
-                <h3 className="occasion-title">Seasonal Delights</h3>
-                <p className="occasion-description">Discover our limited-time creations, perfect for holidays and changing seasons.</p>
-                <Link to="/Seasonal" className="occasion-cta-button">See What's New</Link>
             </div>
         </div>
       </section>

@@ -3,10 +3,11 @@
 body, #root, .app-container {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif; 
-    background-color: #F699CD;
-    color: #000000;
-    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    /* CHANGE THIS LINE: Make the global background match your main content block's background */
+    background-color: #FFEBF0; /* Now matching .about-main-content's background for seamless cohesion */
+    color: #FFFFFF; /* Default text color for the page */
+    min-height: 100vh; /* Ensure it takes full viewport height */
 }
 
 /* --- 2. Top Bar & Navbar Styles --- */
@@ -486,6 +487,11 @@ body, #root, .app-container {
     background-color: #AD1457; /* Darker rose pink on hover */
 }
 
+.hero-headline {
+    /* ... existing styles ... */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); /* Subtle shadow for readability */
+}
+
 /* --- Section Headings (Common style for all main section titles) --- */
 .section-heading {
     font-size: 2.2rem;
@@ -687,8 +693,9 @@ body, #root, .app-container {
 
 .occasion-image {
     width: 100%;
-    height: 200px; /* Slightly shorter image for occasion cards */
-    object-fit: cover;
+    /* Increased height to make images fit better in the larger cards */
+    height: 280px; /* Increased from 200px */
+    object-fit: cover; /* Ensures images cover the area without distortion */
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
     margin-bottom: 15px;
@@ -778,3 +785,222 @@ body, #root, .app-container {
 .newsletter-submit-button:hover {
     background-color: #AD1457; /* Darker pink on hover */
 }
+
+/* src/styles/CheckoutFormStyles.css */
+
+/* ... (Previous CSS remains unchanged) ... */
+
+/* --- About Page Specific Styles (Revised for more cohesion and warmth) --- */
+
+.about-page-container {
+    /* CHANGE THIS LINE (if present): Ensure this also matches the new global background */
+    background-color: #FFEBF0; /* Matching the body/root background for perfect cohesion */
+    color: #374151; /* Default text color for the page content */
+}
+
+/* New: Main content area container for the About page */
+.about-main-content {
+    max-width: 1200px; /* Consistent max-width for content */
+    margin: 32px auto; /* Center content and provide vertical margin */
+    border-radius: 12px; /* Consistent rounding */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Overall soft shadow */
+    overflow: hidden; /* Ensures child backgrounds/borders don't spill */
+    background-color: #FFEBF0; /* Soft, very light rose pink background for the entire main content block */
+}
+
+/* New: Generic content wrapper for max-width and centering within sections */
+.content-wrapper {
+    max-width: 1000px; /* Slightly narrower content within sections for readability */
+    margin: 0 auto;
+    padding: 0 20px; /* Horizontal padding for smaller screens */
+    box-sizing: border-box; /* Include padding in element's total width */
+}
+
+/* New: Consistent padding for sections */
+.section-padded {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+/* Adjust specific section backgrounds here for visual separation */
+
+/* 1. Our Story Introduction Section */
+.about-intro-section {
+    background-color: #F8BBD0; /* A soft medium rose pink for this section */
+    color: #374151; /* Dark text */
+    text-align: center; /* Center content by default */
+}
+
+.about-page-heading {
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: #C2185B;
+    text-align: center;
+    margin-bottom: 50px;
+    line-height: 1.2;
+}
+
+.about-intro-content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+@media (min-width: 768px) {
+    .about-intro-content {
+        flex-direction: row;
+        text-align: left;
+        gap: 60px; /* Reduced gap slightly for tighter cohesion */
+    }
+}
+
+.about-intro-text {
+    flex: 1;
+}
+
+.about-intro-paragraph {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: #4B5563;
+    margin-bottom: 25px;
+}
+.about-intro-paragraph:last-child {
+    margin-bottom: 0;
+}
+
+.about-intro-image-wrapper {
+    flex: 1;
+    max-width: 500px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.about-intro-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.about-shop-cta-button {
+    display: inline-block;
+    background-color: #E91E63;
+    color: #FFFFFF;
+    padding: 15px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+    margin-top: 40px;
+}
+
+.about-shop-cta-button:hover {
+    background-color: #AD1457;
+}
+
+/* 2. Meet the Baker Section */
+.meet-baker-section {
+    background-color: #FFFFFF; /* White background for this section */
+    padding: 60px 20px; /* Inherits section-padded for top/bottom */
+    text-align: center;
+    /* Removed explicit margins, letting section-padded and content-wrapper control spacing */
+}
+
+.baker-photo {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #F48FB1;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.baker-name {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #C2185B;
+    margin-bottom: 15px;
+}
+
+.baker-bio {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #4B5563;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* 3. Our Philosophy Section */
+.about-philosophy-section {
+    background-color: #FFF5EE; /* A warm, very light cream/pink background for this section */
+    padding: 60px 20px; /* Inherits section-padded for top/bottom */
+    /* Removed explicit margins */
+}
+
+.philosophy-heading {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #C2185B;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.philosophy-points-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1000px; /* Constrain grid to content-wrapper size */
+    margin: 0 auto;
+}
+
+.philosophy-card {
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.2s ease-in-out;
+}
+
+.philosophy-card:hover {
+    transform: translateY(-5px);
+}
+
+.philosophy-card h3 {
+    font-size: 1.3rem;
+    color: #E91E63;
+    margin-bottom: 15px;
+}
+
+.philosophy-card p {
+    font-size: 0.95rem;
+    color: #4B5563;
+    line-height: 1.6;
+}
+
+/* 4. Testimonial Section */
+.testimonial-section {
+    background-color: #FFF0F5; /* Very light pink */
+    padding: 80px 20px; /* Inherits section-padded for top/bottom */
+    text-align: center;
+    /* Removed explicit margins */
+}
+
+.testimonial-quote {
+    font-size: 1.8rem;
+    font-style: italic;
+    color: #C2185B;
+    max-width: 800px;
+    margin: 0 auto 15px;
+    line-height: 1.5;
+}
+
+.testimonial-source {
+    font-size: 1rem;
+    color: #4B5563;
+}
+
+/* ... (Remaining sections like newsletter, etc. and general styles below) ... */
