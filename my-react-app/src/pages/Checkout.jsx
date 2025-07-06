@@ -1,6 +1,21 @@
+import React, { useContext } from 'react'; // <--- ADD useContext
 import { Link } from 'react-router-dom';
+import { CartContext } from '../contexts/CartContext'; // <--- IMPORT CartContext (adjust path if needed)
 
-const App = () => {
+const CheckoutPage = () => { // <--- Component name remains CheckoutPage
+  // Access cart state and functions from context
+  const { cartItems, updateQuantity, removeFromCart, getTotalItems } = useContext(CartContext); // <--- USE CART CONTEXT
+
+  // Calculate cart subtotal
+  const calculateSubtotal = () => {
+    return cartItems.reduce((total, item) => total + parseFloat(item.price) * item.quantity, 0).toFixed(2);
+  };
+
+  // Assuming shipping is calculated later or is a fixed value/free for local delivery
+  const shippingCost = 0.00; // Placeholder for now
+
+  const totalCost = (parseFloat(calculateSubtotal()) + shippingCost).toFixed(2);
+
   return (
     // Top-level container now uses a custom class for overall page background
     <div className="app-container">
@@ -29,21 +44,23 @@ const App = () => {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
             </svg>
 
-            {/* Shopping Bag Icon */}
-              <Link to="/Checkout">
+            {/* Shopping Bag Icon - MODIFIED TO SHOW ITEM COUNT */}
+              <Link to="/Checkout" style={{ position: 'relative' }}> {/* Added style for item count positioning */}
                 <svg xmlns="http://www.w3.org/2000/svg" className="icon-svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
                 </svg>
+                {/* Display total items in cart using the context */}
+                <span className="cart-item-count">{getTotalItems()}</span> {/* <--- Display total items */}
               </Link>
           </div>
         </div>
       </nav>
 
       {/* Main Content Area: Form and Order Summary */}
-      <div className="hero-section">
+      <div className="hero-section"> {/* This class remains as per your design */}
 
         {/* LEFT SECTION: Contact & Delivery Forms + Payment & Billing */}
-        <div className="form-section">
+        <div className="form-section"> {/* This class remains as per your design */}
           {/* Contact Section */}
           <h1 className="form-title">Contact</h1>
 
@@ -363,28 +380,49 @@ const App = () => {
 
         </div> {/* END LEFT SECTION */}
 
-        {/* RIGHT SECTION: Order Summary / Checkout Details */}
+        {/* RIGHT SECTION: Order Summary / Checkout Details - MODIFIED FOR CART FUNCTIONALITY */}
         <div className="order-summary-section">
-          <h2 className="summary-title">TEST COOKIE</h2>
-          <p className="summary-item">XX Quantity - $32.00</p>
+          <h2 className="summary-title">Your Order</h2> {/* Changed title from static "TEST COOKIE" */}
+          <div className="cart-items-list">
+            {/* Conditional rendering based on cartItems */}
+            {cartItems.length === 0 ? (
+              <p className="empty-cart-message">Your cart is empty. <Link to="/OrderPage">Shop now!</Link></p>
+            ) : (
+              // Map over cart items to display them
+              cartItems.map(item => (
+                <div key={item.id} className="cart-item">
+                  <img src={item.imageUrl} alt={item.name} className="cart-item-image" />
+                  <div className="cart-item-details">
+                    <span className="cart-item-name">{item.name}</span>
+                    <span className="cart-item-price">${(parseFloat(item.price) * item.quantity).toFixed(2)}</span>
+                    <div className="cart-item-quantity-control">
+                      <button onClick={() => updateQuantity(item.id, item.quantity - 1)}>-</button>
+                      <span>{item.quantity}</span>
+                      <button onClick={() => updateQuantity(item.id, item.quantity + 1)}>+</button>
+                    </div>
+                  </div>
+                  <button className="cart-item-remove" onClick={() => removeFromCart(item.id)}>Remove</button>
+                </div>
+              ))
+            )}
+          </div> {/* END cart-items-list */}
+
+          <div className="summary-divider"></div>
 
           {/* Subtotal, Shipping, Total */}
-          <div className="summary-divider">
-            <div className="summary-line">
-              <span>Subtotal</span>
-              <span>$32.00</span>
-            </div>
-            <div className="summary-line">
-              <span>Shipping</span>
-              <span style={{ color: '#6B7280' }}>Enter shipping address</span>
-            </div>
-            <div className="summary-total summary-line">
-              <span>Total</span>
-              <span>USD $32.00</span>
-            </div>
+          <div className="summary-line">
+            <span>Subtotal</span>
+            <span>${calculateSubtotal()}</span>
           </div>
-
-        </div> {/* END RIGHT SECTION */}
+          <div className="summary-line">
+            <span>Shipping</span>
+            <span>{shippingCost === 0 ? "Free" : `$${shippingCost.toFixed(2)}`}</span>
+          </div>
+          <div className="summary-total summary-line">
+            <span>Total</span>
+            <span>USD ${totalCost}</span>
+          </div>
+        </div> {/* END order-summary-section */}
 
       </div> {/* END hero-section */}
 
@@ -393,4 +431,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default CheckoutPage;

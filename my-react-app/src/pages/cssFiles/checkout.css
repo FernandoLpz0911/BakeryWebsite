@@ -1003,4 +1003,193 @@ body, #root, .app-container {
     color: #4B5563;
 }
 
-/* ... (Remaining sections like newsletter, etc. and general styles below) ... */
+/* src/styles/CheckoutFormStyles.css */
+
+/* ... (Your existing global styles, navbar, home page, and about page styles go here) ... */
+
+
+/* --- Order Page Specific Styles (This entire block is crucial for the design) --- */
+
+/* Overall page container for the OrderPage.jsx component */
+.order-page-container {
+    background-color: #FFEBF0; /* Soft, very light rose pink for seamless cohesion */
+    color: #374151; /* Default text color */
+    min-height: 100vh; /* Ensure it takes full viewport height */
+}
+
+/* Main content area that holds the header and the product grid */
+.order-main-content {
+    max-width: 1200px; /* Max width for content */
+    margin: 32px auto; /* Center and provide vertical margin */
+    padding: 50px 30px; /* Padding inside the main content area */
+    background-color: #FFEBF0; /* This is the background for the main content block */
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Soft shadow for the main block */
+}
+
+/* Page header for the Order Page (e.g., "Our Delicious Treats") */
+.order-page-header {
+    font-size: 2.8rem; /* Make heading prominent, consistent with other page headings */
+    font-weight: bold;
+    color: #C2185B; /* Deep rose pink heading */
+    text-align: center;
+    margin-bottom: 60px; /* More space below the heading */
+}
+
+/* Grid container for displaying all product cards */
+.product-grid-order-page {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid: min card width 280px */
+    gap: 40px; /* Increased gap between cards for more breathing room */
+    justify-content: center; /* Center cards if they don't fill the row */
+}
+
+/* Individual product card styling */
+.product-card-order-page {
+    background-color: #FFFFFF; /* White card background */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); /* Soft shadow */
+    overflow: hidden; /* Ensures content respects border-radius */
+    text-align: center;
+    padding: 20px; /* Padding inside the card */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+    transition: transform 0.2s ease-in-out; /* Smooth hover effect */
+}
+
+.product-card-order-page:hover {
+    transform: translateY(-5px); /* Subtle lift on hover */
+}
+
+/* Product image within the card */
+.product-image-order-page {
+    width: 100%; /* Image takes full width of its container */
+    max-width: 200px; /* Max width for product image */
+    height: 180px; /* Fixed height for consistency among images */
+    object-fit: cover; /* Ensures images cover the area without distortion */
+    border-radius: 8px; /* Rounded corners for image */
+    margin-bottom: 15px; /* Space below image */
+}
+
+/* Product name (h3) */
+.product-name-order-page {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #E91E63; /* Vibrant rose pink for product name */
+    margin-bottom: 8px;
+}
+
+/* Product description (p) */
+.product-description-order-page {
+    font-size: 0.95rem;
+    color: #4B5563; /* Dark gray for description */
+    margin-bottom: 15px;
+    flex-grow: 1; /* Allows description to take available space and push content down */
+}
+
+/* Product price */
+.product-price-order-page {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #C2185B; /* Deep rose pink for price */
+    margin-bottom: 15px;
+}
+
+/* Quantity control (buttons and span) */
+.quantity-control-order-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    gap: 10px; /* Space between quantity controls */
+}
+
+.quantity-control-order-page button {
+    background-color: #F8BBD0; /* Soft pink for quantity buttons */
+    color: #4B5563; /* Dark text for contrast */
+    border: none;
+    border-radius: 50%; /* Circular buttons */
+    width: 35px;
+    height: 35px;
+    font-size: 1.3rem; /* Larger font for +/- symbols */
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    display: flex; /* Use flex to center the text perfectly */
+    justify-content: center;
+    align-items: center;
+}
+
+.quantity-control-order-page button:hover {
+    background-color: #F06292; /* Darker pink on hover */
+    color: #FFFFFF; /* White text on hover */
+}
+
+.quantity-control-order-page span {
+    font-size: 1.2rem; /* Larger font for quantity number */
+    font-weight: bold;
+    color: #374151; /* Dark text for quantity number */
+    min-width: 25px; /* Ensure space for number */
+    text-align: center;
+}
+
+/* Add to Cart button */
+.add-to-cart-button-order-page {
+    background-color: #E91E63; /* Vibrant rose pink button */
+    color: #FFFFFF;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    width: 80%; /* Button takes significant width */
+}
+
+.add-to-cart-button-order-page:hover {
+    background-color: #AD1457; /* Darker rose pink on hover */
+}
+
+/* Back Button (e.g., "Continue Shopping") */
+.back-button {
+    display: inline-block; /* Allows text to wrap if needed */
+    background-color: #F48FB1; /* Medium rose pink for the button */
+    color: #FFFFFF;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1rem;
+    text-decoration: none; /* Remove underline for Link component */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 40px; /* Space from products grid */
+}
+
+.back-button:hover {
+    background-color: #E91E63; /* Darker pink on hover */
+}
+
+/* Cart item count in Navbar (Common style across pages) */
+.navbar-icons a {
+    position: relative;
+    display: inline-block; /* Essential for positioning the count badge */
+}
+
+.cart-item-count {
+    background-color: #C2185B; /* Deep rose pink circle */
+    color: #FFFFFF;
+    border-radius: 50%;
+    padding: 2px 7px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    position: absolute;
+    top: -8px; /* Adjust positioning relative to the icon */
+    right: -8px;
+    min-width: 18px; /* Ensure it's a circle even with 1 digit */
+    text-align: center;
+    line-height: 18px; /* Vertically center single digit */
+    transform: translate(50%, 0%); /* Shift right by half its width for better alignment */
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2); /* Subtle shadow for depth */
+}
