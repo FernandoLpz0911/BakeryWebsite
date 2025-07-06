@@ -12,12 +12,8 @@ import Events from './pages/Events.jsx';
 
 function App() {
   return (
-    <CartProvider> {/* <--- WRAP YOUR APP CONTENT HERE */}
-        {/*
-          Your Navbar (if it's a separate component) would typically go here,
-          so it can also access the cart context for the item count.
-          For now, your navbar is embedded directly in OrderPage.jsx, Home.jsx, About.jsx etc.
-        */}
+    <CartProvider>
+        {/* Nav Bar goes here */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/OrderPage" element={<OrderPage />} />
