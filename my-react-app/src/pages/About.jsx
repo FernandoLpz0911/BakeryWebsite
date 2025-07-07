@@ -30,7 +30,7 @@ const App = () => {
                   </div>
               </div>
               
-              <Link to="/OrderPage" className="about-shop-cta-button">Explore Our Sweets</Link>
+              <Link to="/FoodDisplay" className="about-shop-cta-button">Explore Our Sweets</Link>
             </div>
           </section>
 
