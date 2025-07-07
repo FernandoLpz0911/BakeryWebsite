@@ -1,19 +1,16 @@
 // src/main.jsx
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import App from './App.jsx';
 import { BrowserRouter } from 'react-router-dom';
 
-import App from './App';
-
-import './pages/cssFiles/styles.css';
 import './pages/cssFiles/checkout.css';
-
-import './i18n'; // multi-language support
+// import './i18n'; // Optional: Not yet integrated
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter>
-      <App/>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
+      <App />
     </BrowserRouter>
-  </React.StrictMode>
+  </React.StrictMode>,
 );

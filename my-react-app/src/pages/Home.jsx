@@ -10,7 +10,7 @@ const Home = () => {
         <div className="hero-content">
           <div className="hero-image-wrapper">
             {/* Using your cupcake image (image_b0fcc2.jpg) for the hero */}
-            <img src="/images/Cupcakes.jpg" alt="Festive Cupcakes" className="hero-image" />
+            <img src="/BakeryWebsite/images/Cupcakes.jpg" alt="Festive Cupcakes" className="hero-image" />
             <div className="hero-badge">Here All Year Around!</div> {/* Adapted from your 'summer-tag' */}
           </div>
           <div className="hero-text">
@@ -29,21 +29,21 @@ const Home = () => {
         <div className="product-grid">
           {/* Product Card 1: Heart Cakes (image_b0fce2.jpg) */}
           <div className="product-card">
-            <img src="/images/HeartCakes.jpg" alt="Heart-shaped Cakes" className="product-image" />
+            <img src="/BakeryWebsite/images/HeartCakes.jpg" alt="Heart-shaped Cakes" className="product-image" />
             <h3 className="product-title">Heartfelt Cakes</h3>
             <p className="product-description">Sweet gestures for every celebration, baked with joy.</p>
             <Link to="/FoodDisplay" className="product-cta-button">View Cakes</Link>
           </div>
           {/* Product Card 2: Conchas (image_b0fa1c.jpg) */}
           <div className="product-card">
-            <img src="/images/Conchas.jpg" alt="Assorted Conchas" className="product-image" />
+            <img src="/BakeryWebsite/images/Conchas.jpg" alt="Assorted Conchas" className="product-image" />
             <h3 className="product-title">Cozy Conchas</h3>
             <p className="product-description">Traditional comfort, fluffy texture, perfect with coffee.</p>
             <Link to="/FoodDisplay" className="product-cta-button">Explore Pastries</Link>
           </div>
           {/* Product Card 3: Cupcakes */}
           <div className="product-card">
-            <img src="/images/IndividualCupcake.jpg" alt="Star Cupcakes" className="product-image" />
+            <img src="/BakeryWebsite/images/IndividualCupcake.jpg" alt="Star Cupcakes" className="product-image" />
             <h3 className="product-title">Joyful Cupcakes</h3>
             <p className="product-description">Little bursts of happiness for every sweet craving.</p>
             <Link to="/FoodDisplay" className="product-cta-button">Discover Cupcakes</Link>
@@ -73,7 +73,7 @@ const Home = () => {
         <div className="testimonial-quote">
           “Every treat from Dulce Tentaciones feels like a warm hug from home. Pure comfort in every bite!”
         </div>
-        <p className="testimonial-source">- A Delightful Customer</p>
+        <p className="testimonial-source">- Estevan Garcia</p>
       </section>
 
       {/* 5. Gifts & Occasions Section - Inspired by Levain's "Cookies for Every Occasion" */}
@@ -82,14 +82,14 @@ const Home = () => {
         <div className="occasion-grid">
             {/* Occasion Card 1: Thoughtful Gifts (Placeholder image) */}
             <div className="occasion-card">
-                <img src="/images/GiftedDonuts.jpg" alt="Thoughtful Gifts" className="occasion-image" />
+                <img src="/BakeryWebsite/images/GiftedDonuts.jpg" alt="Thoughtful Gifts" className="occasion-image" />
                 <h3 className="occasion-title">Thoughtful Gifts</h3>
                 <p className="occasion-description">Show appreciation with beautifully packaged, delicious treats for clients and loved ones.</p>
                 <Link to="/FoodDisplay" className="occasion-cta-button">Shop Gifts</Link>
             </div>
             {/* Occasion Card 2: Joyful Events (Placeholder image) */}
             <div className="occasion-card">
-                <img src="/images/BirthdayCake.jpg" alt="Events & Catering" className="occasion-image" />
+                <img src="/BakeryWebsite/images/BirthdayCake.jpg" alt="Events & Catering" className="occasion-image" />
                 <h3 className="occasion-title">Joyful Events</h3>
                 <p className="occasion-description">Make your gatherings sweeter with our custom desserts and catering options.</p>
                 <Link to="/FoodDisplay" className="occasion-cta-button">Plan Your Event</Link>

@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 
 // This is your product data. Ensure these image paths lead to your actual images in public/images/
 const products = [
-  { id: 1, name: "Heartfelt Cakes", description: "Sweet gestures for every celebration, baked with joy.", price: "4.50", imageUrl: "/images/HeartCakes.jpg" },
-  { id: 2, name: "Cozy Conchas", description: "Traditional comfort, fluffy texture, perfect with coffee.", price: "5.00", imageUrl: "/images/Conchas.jpg" },
-  { id: 3, name: "Joyful Cupcakes", description: "Little bursts of happiness for every sweet craving.", price: "3.75", imageUrl: "/images/Cupcakes.jpg" },
-  { id: 4, name: "Assorted Cookies", description: "A classic collection for everyday indulgence.", price: "7.00", imageUrl: "/images/placeholder-cookies.jpg" }, // Use your own image for this
+  { id: 1, name: "Heartfelt Cakes", description: "Sweet gestures for every celebration, baked with joy.", price: "4.50", imageUrl: "/BakeryWebsite/images/HeartCakes.jpg" },
+  { id: 2, name: "Cozy Conchas", description: "Traditional comfort, fluffy texture, perfect with coffee.", price: "5.00", imageUrl: "/BakeryWebsite/images/Conchas.jpg" },
+  { id: 3, name: "Joyful Cupcakes", description: "Little bursts of happiness for every sweet craving.", price: "3.75", imageUrl: "/BakeryWebsite/images/Cupcakes.jpg" },
+  { id: 4, name: "Assorted Cookies", description: "A classic collection for everyday indulgence.", price: "7.00", imageUrl: "/BakeryWebsite/images/GiftedDonuts.jpg" },
 ];
 
 

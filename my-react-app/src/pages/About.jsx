@@ -24,10 +24,6 @@ const App = () => {
                           Thank you for being a part of my sweet journey. I can't wait to bake something special for you!
                       </p>
                   </div>
-                  <div className="about-intro-image-wrapper">
-                      {/* Using the personal photo here directly */}
-                      <img src="/images/your-photo-placeholder.jpg" alt="Maria Rodriguez - Baker & Founder" className="about-intro-image personal-photo" />
-                  </div>
               </div>
               
               <Link to="/FoodDisplay" className="about-shop-cta-button">Explore Our Sweets</Link>
@@ -64,7 +60,7 @@ const App = () => {
               <div className="testimonial-quote">
                 “Dulce Tentaciones consistently delivers pure joy. My go-to for happiness in a box!”
               </div>
-              <p className="testimonial-source">- A Very Happy Customer</p>
+              <p className="testimonial-source">- Stephany Delgado</p>
             </div>
           </section>
 
