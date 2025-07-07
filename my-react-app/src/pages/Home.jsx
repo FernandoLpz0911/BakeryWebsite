@@ -4,44 +4,8 @@ import { Link } from 'react-router-dom';
 const Home = () => {
   return (
     // Overall container for Home page, applies the very light pink background from CSS
-    // Removed inline style={{ backgroundColor: '#f7f3ed' }}
     <div className="home-page-container">
-      {/* Top Bar: Displays a promo message */}
-      <div className="top-bar">
-        {/* Changed content for a more bakery-like promo message */}
-        Baked Fresh Daily &bull; Delivered To Your Door
-      </div>
-
-      {/* Nav Bar (Remains consistent with your previous structure and rose theme) */}
-      <nav className="navbar">
-        <div className="navbar-container">
-          {/* Nav Links */}
-          <div className="nav-links">
-            <Link to="/CookiesAndGifts" className="nav-link">COOKIES & GIFTS</Link>
-            <Link to="/OrderPage" className="nav-link">ORDER</Link>
-            <Link to="/About" className="nav-link">ABOUT</Link>
-          </div>
-
-          {/* Bakery Logo */}
-          <Link to="/" className="bakery-logo">Dulce Tentaciones</Link>
-
-          {/* NavBar Icons: User and Shopping Bag */}
-          <div className="navbar-icons">
-            {/* User Icon */}
-            <svg xmlns="http://www.w3.org/2000/svg" className="icon-svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-            </svg>
-
-            {/* Shopping Bag Icon */}
-            <Link to="/Checkout">
-              <svg xmlns="http://www.w3.org/2000/svg" className="icon-svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
-              </svg>
-            </Link>
-          </div>
-        </div>
-      </nav>
-
+      
       {/* 1. Hero Section - Replacing your existing hero-section content */}
       <section className="hero-section">
         <div className="hero-content">

@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');   /*Lobster Font */
 
 /* Global Page Styles */
 body, #root, .app-container {
@@ -21,57 +22,69 @@ body, #root, .app-container {
 }
 
 .navbar {
-    /* Changed to a medium rose pink for the main navbar background */
-    background-color: #F48FB1; /* A medium rose pink (e.g., "Light Pink" shade) */
-    color: #FFFFFF; /* Default text color for elements within navbar - now white for contrast */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Keep subtle shadow for depth */
-    padding: 12px 0;
+    background-color: #F48FB1;
+    color: #FFFFFF;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 65px; /* Set a compact, fixed height for the navbar */
+    display: flex; /* IMPORTANT: It's a flex container */
+    align-items: center; /* Vertically centers content within this height */
+    padding: 0;
+    position: relative;
+    z-index: 100;
 }
 
 .navbar-container {
     display: flex;
-    justify-content: space-between;
+    /* CHANGE THIS: Align all items to the start, then use auto margin on the right group */
+    justify-content: flex-start; /* <--- ALIGN ALL ITEMS TO THE LEFT (including the logo) */
     align-items: center;
-    max-width: 1280px; /* Consistent with previous max-w-7xl */
-    margin: 0 auto; /* Center content horizontally */
-    padding: 0 24px; /* Increased side padding for more breathing room */
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px; /* Maintain horizontal padding */
+    height: 100%;
+    width: 100%; /* Ensure container takes full width to allow auto margin to work */
 }
 
 .nav-links {
     display: flex;
-    gap: 32px; /* Increased gap between links for more separation */
+    gap: 32px; /* Gap between individual nav links */
+    margin-left: 0; /* Ensure no previous margin is interfering */
 }
 
+.nav-link:hover {
+    color: #A0AEC0; /* Softer hover color */
+}
+
+.navbar-right-group {
+    display: flex;
+    align-items: center;
+    gap: 40px; /* Space between Nav Links and Icons */
+    margin-left: auto; /* <--- THIS IS THE KEY: PUSHES THIS GROUP TO THE FAR RIGHT */
+}
 
 .nav-link {
-    color: #FFFFFF; /* White color for navigation links, for good contrast on pink */
+    color: #FFFFFF; /* Ensure links are white */
     text-decoration: none;
-    font-weight: 500; /* Medium font weight for a clean look */
+    font-weight: 500; /* Medium weight for cleaner feel */
     padding: 8px 0;
     transition: color 0.2s ease-in-out;
-    font-size: 0.95rem; /* Slightly larger text for better readability */
+    font-size: 0.95rem; /* Slightly larger text */
 }
+
 
 .nav-link:hover {
     color: #F8F8F8; /* A very subtle lighter white on hover for a gentle effect */
 }
 
-.bakery-logo {
-    color: #FFFFFF; /* White for the logo on pink background */
-    text-decoration: none;
-    font-weight: bold; /* Keep logo bold for emphasis */
-    font-size: 1.35rem; /* Slightly larger logo for prominence */
-}
-
 .navbar-icons {
     display: flex;
-    gap: 20px; /* Increased gap between icons for more separation */
+    gap: 20px; /* Space between individual icons */
 }
 
 .icon-svg {
-    height: 24px; /* Consistent height */
-    width: 24px; /* Consistent width */
-    color: #FFFFFF; /* White for icons on pink background */
+    height: 24px;
+    width: 24px;
+    color: #FFFFFF;
     transition: color 0.2s ease-in-out;
 }
 
@@ -1174,7 +1187,7 @@ body, #root, .app-container {
 /* Cart item count in Navbar (Common style across pages) */
 .navbar-icons a {
     position: relative;
-    display: inline-block; /* Essential for positioning the count badge */
+    display: inline-block;
 }
 
 .cart-item-count {
@@ -1193,3 +1206,32 @@ body, #root, .app-container {
     transform: translate(50%, 0%); /* Shift right by half its width for better alignment */
     box-shadow: 0 1px 2px rgba(0,0,0,0.2); /* Subtle shadow for depth */
 }
+
+/* Bakery Logo Link Styles (Now text-based again) */
+.bakery-logo {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-family: 'Lobster', cursive;
+    font-size: 1.8rem;
+    font-weight: normal;
+    position: static; /* Ensure it's in normal flow */
+    height: auto;
+    width: auto;
+    flex-shrink: 0;
+    margin-right: 30px; /* <--- ADDED SPACE TO THE RIGHT OF THE LOGO (between logo and links group) */
+    transition: color 0.2s ease;
+}
+
+.logo-image {
+    height: 100%; /* <--- LOGO FILLS 100% OF ITS PARENT'S HEIGHT (which is now 100px) */
+    max-height: 100px; /* <--- Explicitly cap it at 100px if navbar gets taller for some reason */
+    width: auto; /* Maintain aspect ratio */
+    display: block;
+    object-fit: contain; /* Ensures the whole image is visible within the bounds, scaling down if needed */
+    transition: transform 0.2s ease;
+}
+
+.bakery-logo:hover {
+    color: #F8F8F8; /* Slightly lighter white on hover */
+}
+
