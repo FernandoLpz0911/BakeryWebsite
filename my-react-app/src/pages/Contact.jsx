@@ -1,19 +1,7 @@
-// src/pages/Contact.jsx
-import React from 'react';
-import { Link } from 'react-router-dom';
-import Navbar from '../components/Navbar'; // Assuming Navbar is now modularized
-
 const Contact = () => {
   return (
-    // Overall page container, inheriting background from CheckoutFormStyles.css
-    // Removed inline style: style={{ backgroundColor: '#f7f3ed' }}
-    <div className="contact-page-container"> {/* New class for Contact page overall container */}
-      
 
-      {/* Navbar (modularized component) */}
-      {/* Assuming Navbar is rendered globally by App.jsx, not directly here. */}
-      {/* If your Navbar is NOT rendered globally by App.jsx, you would put <Navbar /> here. */}
-      {/* For consistency with previous instructions, Navbar should be in App.jsx */}
+    <div className="contact-page-container">
 
       {/* Main Content Area for Contact Page */}
       <main className="contact-main-content">
@@ -89,15 +77,14 @@ const Contact = () => {
                 {/* Social Media Links */}
                 <h3 className="social-heading">Connect With Us</h3>
                 <div className="social-links">
-                    {/* IMPORTANT: You need to place actual social media icon images (e.g., public/images/social-facebook.png) */}
                     <a href="#" className="social-icon-link">
-                        <img src="/images/social-facebook.png" alt="Facebook" /> 
+                        <img src="/BakeryWebsite/images/social-facebook.png" alt="Facebook" /> 
                     </a>
                     <a href="#" className="social-icon-link">
-                        <img src="/images/social-instagram.png" alt="Instagram" />
+                        <img src="/BakeryWebsite/images/social-instagram.png" alt="Instagram" />
                     </a>
                     <a href="#" className="social-icon-link">
-                        <img src="/images/social-twitter.png" alt="Twitter" />
+                        <img src="/BakeryWebsite/images/social-twitter.png" alt="Twitter" />
                     </a>
                 </div>
             </div> {/* END contact-details-wrapper */}
