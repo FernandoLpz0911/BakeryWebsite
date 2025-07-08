@@ -11,6 +11,15 @@ body, #root, .app-container {
     min-height: 100vh; /* Ensure it takes full viewport height */
 }
 
+/* Wrapper for form and info sections (Revised for guaranteed equal columns on large screens) */
+.contact-info-and-form {
+    display: grid;
+    grid-template-columns: 1fr; /* <--- This ensures it ALWAYS remains a single column */
+    gap: 30px; /* This will be the vertical space between the form card and the details card */
+    margin-top: 30px; /* Space below the main heading */
+    box-sizing: border-sizing;
+}
+
 /* --- 2. Top Bar & Navbar Styles --- */
 .top-bar {
     /* Keeping a light, soft rose pink for the top bar */
@@ -135,7 +144,7 @@ body, #root, .app-container {
 }
 
 .form-group {
-    margin-bottom: 20px; 
+    margin-bottom: 0px; 
 }
 
 .form-group label {
@@ -146,10 +155,39 @@ body, #root, .app-container {
     margin-bottom: 4px;
 }
 
-/* 5. Input, Select, Textarea Base Styles */
-.input-field,
-.select-field,
+
+
+.input-field {
+    width: 100%; 
+    padding: 12px; 
+    margin-bottom: 0px;
+    border: 1px solid #ccc;
+    border-radius: 6px; 
+    box-sizing: border-box;
+    font-size: 1rem;
+    color: #333;
+}
+
+.input-field:focus {
+    outline: none;
+    border-color: #F48FB1;
+    box-shadow: 0 0 5px rgba(244, 143, 177, 0.5);
+}
+
 .textarea-field {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    color: #333;
+    resize: vertical;
+}
+
+/* 5. Input, Select, Textarea Base Styles */
+.select-field {
     width: 100%;
     padding: 12px 16px;
     border: 1px solid #555555; 
@@ -161,15 +199,9 @@ body, #root, .app-container {
     transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
-.input-field::placeholder,
-.textarea-field::placeholder {
-    color: #999999; /* Custom light placeholder text */
-    opacity: 1; /* Ensure placeholder is fully opaque */
-}
 
-.input-field:focus,
-.select-field:focus,
-.textarea-field:focus {
+
+.select-field:focus {
     border-color: #007bff; /* Custom blue focus border */
     box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25); /* Subtle focus ring */
 }
@@ -829,57 +861,49 @@ body, #root, .app-container {
     box-sizing: border-box; /* Include padding in element's total width */
 }
 
-/* Overall container for the Contact page */
 .contact-page-container {
     background-color: #FFF0F5; /* Very light pink background */
-    color: #374151; /* <--- Default dark text color for content that doesn't have a specific color */
+    color: #374151; /* Default text color */
     min-height: 100vh;
 }
 
-/* Main content area for Contact Page */
 .contact-main-content {
     max-width: 1200px;
     margin: 32px auto;
-    border-radius: 12px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-    overflow: hidden;
+    padding: 5px 10px; /* Overall padding for the main content block */
     background-color: #FFEBF0; /* Light pink background for the main content block */
-    color: #374151; /* <--- Ensure text color inside this block is dark by default */
-    padding: 50px 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Soft shadow */
+    color: #374151;
 }
 
-/* Wrapper for form and info side-by-side */
-.contact-info-and-form {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    margin-top: 40px;
-}
+
+
 
 .contact-link {
-    color: #3B82F6; /* Standard blue for links in the original screenshot */
+    color: #F06292; /* Standard blue for links in the original screenshot */
     text-decoration: none;
-    transition: color 0.2s ease-in-out;
+    transition: color 0.2s ease;
 }
 
 .contact-link:hover {
-    color: #2563EB;
+    color: #AD1457;
     text-decoration: underline;
 }
 
 .social-heading {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: bold;
-    color: #E91E63; /* <--- Adjusted for readability: Vibrant rose pink */
+    color: #C2185B; 
     text-align: center;
-    margin-top: 20px;
-    margin-bottom: 15px;
+    margin: 0px;
+    margin-bottom: 10px;
 }
 
 .social-links {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 15px;
 }
 
 .social-icon-link {
@@ -894,74 +918,93 @@ body, #root, .app-container {
 }
 
 .social-icon-link img {
-    width: 100%;
-    height: 100%;
+    width: 36px;
+    height: 36px;
     object-fit: contain;
-    /* Optional: If your social icons are white and disappear on light backgrounds,
-       you might need a CSS filter to make them darker. The best solution is to
-       use darker icon images directly. */
-    /* filter: invert(30%) sepia(100%) saturate(1000%) hue-rotate(300deg) brightness(70%) contrast(100%); */ /* Example: makes pink/red if inverted */
+    transition: transform 0.2s ease;
 }
 
-@media (min-width: 992px) {
-    .contact-info-and-form {
-        flex-direction: row;
-        align-items: flex-start;
-    }
+/* Sub-headings within the page */
+.sub-heading {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #C2185B;
+    margin: 0px; /* Reduced from 25px for more compactness */
+    text-align: center;
+    align-self: center;
 }
 
-/* Contact Form Wrapper (left column) */
+.contact-form-wrapper .sub-heading,
+.contact-details-wrapper .sub-heading {
+    text-align: left; /* Align sub-headings left within their columns */
+}
+
 .contact-form-wrapper {
-    flex: 2;
-    background-color: #FFFFFF; /* White background for the form itself */
-    padding: 30px;
+    padding: 25px;
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    box-sizing: border-box; /* <--- ADD THIS: Crucial for width calculations */
+    /* width: 100%; - Is implicitly handled by grid column, but doesn't hurt to be explicit */
 }
 
 .contact-intro-text {
     font-size: 1.05rem;
     color: #4B5563; /* <--- Adjusted for readability: Darker gray */
-    margin-bottom: 25px;
+    margin-bottom: 0px;
     line-height: 1.6;
-}
-
-/* Contact Form Specific Styles (labels inside the form) */
-.contact-form .form-group label { /* More specific selector for labels within contact form */
-    color: #4B5563; /* <--- Explicitly set label color to dark gray for readability */
-}
-
-/* Contact Details Wrapper (right column) */
-.contact-details-wrapper {
-    flex: 1;
-    background-color: #FFF5EE; /* A warm, very light cream/pink background */
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.contact-details-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
-}
-
-.detail-item {
-    background-color: #FFFFFF; /* White background for each detail card */
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
     text-align: center;
 }
 
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Reduced from 20px for more compactness between form groups */
+}
+
+/* Contact Form Specific Styles (labels inside the form) */
+.form-group label { /* More specific selector for labels within contact form */
+    color: #4B5563; /* <--- Explicitly set label color to dark gray for readability */
+}
+
+/* Right Column: Additional Contact Info Wrapper */
+.contact-details-wrapper {
+    padding: 25px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-sizing: border-box; /* <--- ADD THIS: Crucial for width calculations */
+    /* width: 100%; - Is implicitly handled by grid column, but doesn't hurt to be explicit */
+}
+
+
+.contact-details-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Stack on small screens (always 1 column) */
+    gap: 20px; /* Vertical gap when stacked, horizontal gap when side-by-side */
+    margin-top: 20px; /* Space from intro text */
+    margin-bottom: 30px; /* Space before social media heading */
+}
+
+@media (min-width: 768px) { /* Medium screens and up */
+    .contact-details-grid {
+        grid-template-columns: 1fr 1fr 1fr; /* Three equal columns */
+    }
+}
+
+.detail-item {
+    /* Styles for each individual detail card (Email, Phone, Hours) */
+    display: flex;
+    flex-direction: column; /* Stack icon/label/value vertically within the card */
+    align-items: center; /* Center content within each detail card */
+    text-align: center; /* Center text */
+    padding: 15px; /* Padding inside each detail item card */
+    border-radius: 8px;
+}
+
 .detail-icon {
-    font-size: 2.5rem;
+    font-size: 2rem;
+    margin-top:10px;
     color: #E91E63; /* Rose pink icon */
     margin-bottom: 10px;
     display: block;
@@ -970,14 +1013,15 @@ body, #root, .app-container {
 .detail-label {
     font-size: 1.2rem;
     font-weight: bold;
-    color: #C2185B; /* <--- Deep rose pink for good visibility on white card */
-    margin-bottom: 5px;
+    color: #E91E63; /* <--- Deep rose pink for good visibility on white card */
+    margin: 5px;
 }
 
 .detail-value {
-    font-size: 1rem;
+    font-size: 0.95rem;
+    margin: 5px;
+    margin-bottom: 0;
     color: #4B5563; /* <--- Adjusted for readability: Darker gray */
-    line-height: 1.4;
 }
 
 /* New: Consistent padding for sections */
