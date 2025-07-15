@@ -1,4 +1,30 @@
+import React, { useRef } from 'react';
+import emailjs from '@emailjs/browser';
+
+import { useEffect } from 'react';
+
 const Contact = () => {
+
+  const form = useRef();
+
+  useEffect(() => {
+  emailjs.init('TmLTwK6lyIw1UKnxc');
+  }, []);
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm('default_service', 'template_lf1wid6', form.current)
+      .then(
+        () => {
+          console.log('SUCCESS!');
+        },
+        (error) => {
+          console.error('FAILED:', error);
+        }
+      );
+  };
+
   return (
 
     <div className="contact-page-container">
@@ -15,26 +41,26 @@ const Contact = () => {
               <p className="contact-intro-text">
                 Have a question about an order, custom sweets, or catering? Send us a message!
               </p>
-              <form className="contact-form">
+              <form ref={form} className="contact-form" onSubmit={sendEmail}>
                 <div className="form-group">
                   <label htmlFor="contactName">Your Name</label>
-                  <input type="text" id="contactName" placeholder="Your Name" className="input-field" />
+                  <input type="text" id="contactName" name="user_name" placeholder="Your Name" className="input-field" />
                 </div>
                 <div className="form-group">
                   <label htmlFor="contactEmail">Your Email</label>
-                  <input type="email" id="contactEmail" placeholder="Your Email" className="input-field" />
+                  <input type="email" id="contactEmail" name="user_email" placeholder="Your Email" className="input-field" />
                 </div>
                 <div className="form-group">
                   <label htmlFor="contactPhone">Phone Number (Optional)</label>
-                  <input type="tel" id="contactPhone" placeholder="Your Phone Number" className="input-field" />
+                  <input type="tel" id="contactPhone" name="user_phone" placeholder="Your Phone Number" className="input-field" />
                 </div>
                 <div className="form-group">
                   <label htmlFor="contactSubject">Subject (Optional)</label>
-                  <input type="text" id="contactSubject" placeholder="e.g., Catering Inquiry, Order Question" className="input-field" />
+                  <input type="text" id="contactSubject" name="user_subject" placeholder="e.g., Catering Inquiry, Order Question" className="input-field" />
                 </div>
                 <div className="form-group">
                   <label htmlFor="contactMessage">Your Message</label>
-                  <textarea id="contactMessage" rows="6" placeholder="Tell us more about your sweet needs!" className="input-field"></textarea>
+                  <textarea id="contactMessage" name="user_message" rows="6" placeholder="Tell us more about your sweet needs!" className="input-field"></textarea>
                 </div>
                 <button type="submit" className="submit-inquiry-button">Send Message</button> {/* Reusing submit button style */}
               </form>
