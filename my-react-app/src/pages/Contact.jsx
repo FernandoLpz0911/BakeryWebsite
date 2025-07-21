@@ -79,14 +79,7 @@ const Contact = () => {
                     <div className="detail-item"> 
                         <span class="detail-icon">✉️</span>
                         <h3 className="detail-label">Email Us</h3>
-                        <p className="detail-value"><a href="mailto:FernandoLpz0911@Gmail.com" className="contact-link">FernandoLpz0911@Gmail.com</a></p>
-                    </div>
-
-                    {/* PHONE DETAIL CARD */}
-                    <div className="detail-item"> 
-                        <span class="detail-icon">📞</span>
-                        <h3 className="detail-label">Call Us</h3>
-                        <p className="detail-value"><a href="tel:+18723057616" className="contact-link">(872)-305-7616</a></p>
+                        <p className="detail-value"><a href="mailto:ourdulcetentaciones@gmail.com" className="contact-link">ourdulcetentaciones@gmail.com</a></p>
                     </div>
 
                     {/* BUSINESS HOURS DETAIL CARD */}

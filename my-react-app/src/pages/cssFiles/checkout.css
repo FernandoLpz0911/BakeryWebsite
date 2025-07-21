@@ -438,7 +438,7 @@ body, #root, .app-container {
     display: flex; /* Use flexbox for content alignment */
     justify-content: center;
     align-items: center;
-    min-height: 500px; /* Minimum height for the hero section */
+min-height: 500px; /* Minimum height for the hero section */ 
     color: #374151; /* Dark text for elements here unless overridden */
 }
 
