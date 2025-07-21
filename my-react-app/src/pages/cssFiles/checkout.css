@@ -11,13 +11,12 @@ body, #root, .app-container {
     min-height: 100vh; /* Ensure it takes full viewport height */
 }
 
-/* Wrapper for form and info sections (Revised for guaranteed equal columns on large screens) */
 .contact-info-and-form {
-    display: grid;
-    grid-template-columns: 1fr; /* <--- This ensures it ALWAYS remains a single column */
-    gap: 30px; /* This will be the vertical space between the form card and the details card */
-    margin-top: 30px; /* Space below the main heading */
-    box-sizing: border-sizing;
+    display: flex;
+  flex-wrap: wrap;
+  gap: 40px; 
+  justify-content: center; 
+  align-items: flex-start; 
 }
 
 /* --- 2. Top Bar & Navbar Styles --- */
@@ -144,15 +143,16 @@ body, #root, .app-container {
 }
 
 .form-group {
-    margin-bottom: 0px; 
+    margin-bottom: 5px;
+    text-align: left; 
 }
 
 .form-group label {
-    display: block; /* Make labels appear above the input */
-    font-size: 0.875rem; 
-    font-weight: 500; 
-    color: #4B5563; 
-    margin-bottom: 4px;
+    display: block;
+    font-size: 1em;
+    color: #333;
+    margin-bottom: 8px;
+    font-weight: 500;
 }
 
 
@@ -184,6 +184,27 @@ body, #root, .app-container {
     font-size: 1rem;
     color: #333;
     resize: vertical;
+}
+
+/* Contact Page Submit Button */
+.submit-inquiry-button {
+  background-color: #ff69b4; /* Bright pink */
+  color: white;
+  padding: 14px 25px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 20px;
+  align-self: flex-start; /* Align button to the left */
+  margin:auto;
+}
+
+.submit-inquiry-button:hover {
+  background-color: #e05c9f; /* Slightly darker pink on hover */
+  transform: translateY(-2px);
 }
 
 /* 5. Input, Select, Textarea Base Styles */
@@ -539,14 +560,14 @@ min-height: 500px; /* Minimum height for the hero section */
 
 /* --- Section Headings (Common style for all main section titles) --- */
 .section-heading {
-    font-size: 2.2rem;
-    font-weight: bold;
-    color: #C2185B; /* Deep rose pink */
-    text-align: center;
+    font-size: 2.8em;
+    color: #C2185B;
     margin-bottom: 40px;
-    margin-top: 60px; /* Space above sections */
+    font-weight: bold;
 }
 
+
+/*C2185B*/
 /* --- Featured Products Section (Inspired by Levain's "Shop Fan Favorites") --- */
 .featured-products-section {
     padding: 60px 20px; /* Padding for the section */
@@ -862,19 +883,19 @@ min-height: 500px; /* Minimum height for the hero section */
 }
 
 .contact-page-container {
-    background-color: #FFF0F5; /* Very light pink background */
-    color: #374151; /* Default text color */
-    min-height: 100vh;
+    padding: 40px 20px;
+    background-color: #fce4ec;
+    min-height: calc(100vh - var(--header-height) - var(--footer-height));
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; 
 }
 
 .contact-main-content {
-    max-width: 1200px;
-    margin: 32px auto;
-    padding: 5px 10px; /* Overall padding for the main content block */
-    background-color: #FFEBF0; /* Light pink background for the main content block */
-    border-radius: 12px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Soft shadow */
-    color: #374151;
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
 }
 
 
@@ -908,6 +929,7 @@ min-height: 500px; /* Minimum height for the hero section */
 
 .social-icon-link {
     display: block;
+    margin: 3px;
     width: 40px;
     height: 40px;
     transition: transform 0.2s ease;
@@ -918,10 +940,10 @@ min-height: 500px; /* Minimum height for the hero section */
 }
 
 .social-icon-link img {
-    width: 36px;
-    height: 36px;
-    object-fit: contain;
-    transition: transform 0.2s ease;
+  width: 45px; /* Adjust size of social icons */
+  height: 45px;
+  border-radius: 50%; /* Make them circular if needed for design */
+  transition: transform 0.2s ease;
 }
 
 /* Sub-headings within the page */
@@ -940,25 +962,25 @@ min-height: 500px; /* Minimum height for the hero section */
 }
 
 .contact-form-wrapper {
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-    box-sizing: border-box; /* <--- ADD THIS: Crucial for width calculations */
-    /* width: 100%; - Is implicitly handled by grid column, but doesn't hurt to be explicit */
+    flex: 1; /* Allow form to take available space */
+  min-width: 300px; /* Minimum width before wrapping */
+  background-color: #ffcee2;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
 }
 
 .contact-intro-text {
-    font-size: 1.05rem;
-    color: #4B5563; /* <--- Adjusted for readability: Darker gray */
-    margin-bottom: 0px;
+    font-size: 1.1em;
+    color: #4a4a4a;
+    margin-bottom: 30px;
     line-height: 1.6;
-    text-align: center;
 }
 
 .contact-form {
     display: flex;
     flex-direction: column;
-    gap: 15px; /* Reduced from 20px for more compactness between form groups */
+    gap: 10px; 
 }
 
 /* Contact Form Specific Styles (labels inside the form) */
@@ -979,11 +1001,10 @@ min-height: 500px; /* Minimum height for the hero section */
 
 
 .contact-details-grid {
-    display: grid;
-    grid-template-columns: 1fr; /* Stack on small screens (always 1 column) */
-    gap: 20px; /* Vertical gap when stacked, horizontal gap when side-by-side */
-    margin-top: 20px; /* Space from intro text */
-    margin-bottom: 30px; /* Space before social media heading */
+  display: grid;
+  grid-template-columns: 1fr; /* Single column on small screens */
+  gap: 30px; /* Space between detail cards */
+  width: 100%; /* Take full width of wrapper */
 }
 
 @media (min-width: 768px) { /* Medium screens and up */
@@ -992,9 +1013,19 @@ min-height: 500px; /* Minimum height for the hero section */
     }
 }
 
+/* Individual Detail Item (Email, Social, Hours) */
 .detail-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+
+
+.detail-social-item {
     /* Styles for each individual detail card (Email, Phone, Hours) */
-    display: flex;
+    display: grid;
     flex-direction: column; /* Stack icon/label/value vertically within the card */
     align-items: center; /* Center content within each detail card */
     text-align: center; /* Center text */
@@ -1002,12 +1033,17 @@ min-height: 500px; /* Minimum height for the hero section */
     border-radius: 8px;
 }
 
+/* Social Media Icons */
+.social-wrapper {
+  display: flex;
+  gap: 20px; /* Space between social icons */
+  margin-top: 10px;
+}
+
 .detail-icon {
-    font-size: 2rem;
-    margin-top:10px;
-    color: #E91E63; /* Rose pink icon */
-    margin-bottom: 10px;
-    display: block;
+  font-size: 2.5em; /* Larger icons */
+  color: #ff69b4; /* Consistent icon color */
+  margin-bottom: 10px;
 }
 
 .detail-label {
