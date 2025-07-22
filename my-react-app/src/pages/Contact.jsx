@@ -8,13 +8,13 @@ const Contact = () => {
   const form = useRef();
 
   useEffect(() => {
-  emailjs.init('TmLTwK6lyIw1UKnxc');
+  emailjs.init('5WhVsHFC0WI8ZP7jJ');
   }, []);
 
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm('default_service', 'template_lf1wid6', form.current)
+    emailjs.sendForm('default_service', 'template_c9ycbm5', form.current)
       .then(
         () => {
           console.log('SUCCESS!');
