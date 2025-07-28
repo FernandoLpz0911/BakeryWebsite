@@ -30,15 +30,12 @@ const FoodDisplay = () => {
 
   return (
     <>
-      {/* The main container for the order page, using the theme-consistent class */}
-      {/* The background color is controlled by .order-page-container in CheckoutFormStyles.css */}
       <div className="order-page-container">
 
         {/* Main Content Area for Products */}
         <main className="order-main-content">
-          <div className="content-wrapper"> {/* Reusing content-wrapper for max-width/centering */}
-            {/* Page Header for the Order Page */}
-            {/* Changed heading to better reflect showcase purpose */}
+          <div className="content-wrapper"> 
+
             <h1 className="order-page-header">Explore Our Baked Goods</h1>
             
             {/* Grid to display all product cards */}
@@ -57,19 +54,16 @@ const FoodDisplay = () => {
                 <div className="product-price-order-page">{item.price}</div>
               </div>
             ))}
-          </div> {/* END product-grid-order-page */}
+          </div>
 
-            {/* Back Button / Continue Shopping */}
             <div style={{ textAlign: 'center', marginTop: '40px' }}>
-                {/* Changed text to reflect it's a showcase page */}
                 <Link to="/" className="back-button">Back to Home</Link>
             </div>
 
-          </div> {/* END content-wrapper */}
-        </main> {/* END order-main-content */}
+          </div> 
+        </main> 
 
-        {/* Footer can be added here if needed */}
-      </div> {/* END order-page-container */}
+      </div>
     </>
   );
 };
