@@ -107,6 +107,12 @@ const Home = () => {
         </div>
       </section>
 
+      <Link to="/LoginPage">
+        <text>
+          Admin
+        </text>
+      </Link>
+
       {/* Footer can be added here if needed */}
       {/* (If you have a global Footer component, it might be outside this Home component in App.jsx) */}
 

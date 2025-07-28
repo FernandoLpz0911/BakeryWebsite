@@ -1,4 +1,30 @@
+import React, { useRef } from 'react';
+import emailjs from '@emailjs/browser';
+
+import { useEffect } from 'react';
+
 const Contact = () => {
+
+  const form = useRef();
+
+  useEffect(() => {
+  emailjs.init('5WhVsHFC0WI8ZP7jJ');
+  }, []);
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm('default_service', 'template_c9ycbm5', form.current)
+      .then(
+        () => {
+          console.log('SUCCESS!');
+        },
+        (error) => {
+          console.error('FAILED:', error);
+        }
+      );
+  };
+
   return (
 
     <div className="contact-page-container">
@@ -15,26 +41,26 @@ const Contact = () => {
               <p className="contact-intro-text">
                 Have a question about an order, custom sweets, or catering? Send us a message!
               </p>
-              <form className="contact-form">
+              <form ref={form} className="contact-form" onSubmit={sendEmail}>
                 <div className="form-group">
                   <label htmlFor="contactName">Your Name</label>
-                  <input type="text" id="contactName" placeholder="Your Name" className="input-field" />
+                  <input type="text" id="contactName" name="user_name" placeholder="Your Name" className="input-field" />
                 </div>
                 <div className="form-group">
                   <label htmlFor="contactEmail">Your Email</label>
-                  <input type="email" id="contactEmail" placeholder="Your Email" className="input-field" />
+                  <input type="email" id="contactEmail" name="user_email" placeholder="Your Email" className="input-field" />
                 </div>
                 <div className="form-group">
                   <label htmlFor="contactPhone">Phone Number (Optional)</label>
-                  <input type="tel" id="contactPhone" placeholder="Your Phone Number" className="input-field" />
+                  <input type="tel" id="contactPhone" name="user_phone" placeholder="Your Phone Number" className="input-field" />
                 </div>
                 <div className="form-group">
                   <label htmlFor="contactSubject">Subject (Optional)</label>
-                  <input type="text" id="contactSubject" placeholder="e.g., Catering Inquiry, Order Question" className="input-field" />
+                  <input type="text" id="contactSubject" name="user_subject" placeholder="e.g., Catering Inquiry, Order Question" className="input-field" />
                 </div>
                 <div className="form-group">
                   <label htmlFor="contactMessage">Your Message</label>
-                  <textarea id="contactMessage" rows="6" placeholder="Tell us more about your sweet needs!" className="input-field"></textarea>
+                  <textarea id="contactMessage" name="user_message" rows="6" placeholder="Tell us more about your sweet needs!" className="input-field"></textarea>
                 </div>
                 <button type="submit" className="submit-inquiry-button">Send Message</button> {/* Reusing submit button style */}
               </form>
@@ -43,49 +69,46 @@ const Contact = () => {
             {/* Right Column: Additional Contact Info */}
             <div className="contact-details-wrapper">
                
-                <p className="contact-intro-text">
-                    Prefer to chat? Find our contact details and hours below.
-                </p>
-                <div className="contact-details-grid">
-                    {/* ***** IMPORTANT CHANGE HERE: EACH DETAIL IS NOW ITS OWN DIV.detail-item ***** */}
-                    
-                    {/* EMAIL DETAIL CARD */}
-                    <div className="detail-item"> 
-                        <span class="detail-icon">✉️</span>
-                        <h3 className="detail-label">Email Us</h3>
-                        <p className="detail-value"><a href="mailto:FernandoLpz0911@Gmail.com" className="contact-link">FernandoLpz0911@Gmail.com</a></p>
-                    </div>
+              <p className="contact-intro-text">
+                  Prefer to chat? Find our contact details and hours below.
+              </p>
 
-                    {/* PHONE DETAIL CARD */}
-                    <div className="detail-item"> 
-                        <span class="detail-icon">📞</span>
-                        <h3 className="detail-label">Call Us</h3>
-                        <p className="detail-value"><a href="tel:+18723057616" className="contact-link">(872)-305-7616</a></p>
-                    </div>
+              <div className="contact-details-grid">
 
-                    {/* BUSINESS HOURS DETAIL CARD */}
-                    <div className="detail-item"> 
-                        <span class="detail-icon">⏰</span>
-                        <h3 className="detail-label">Business Hours</h3>
-                        <p className="detail-value">Mon - Fri: 9 AM - 5 PM</p>
-                        <p className="detail-value">Sat: 10 AM - 2 PM</p>
-                        <p className="detail-value">Sun: Closed</p>
+                  {/* EMAIL DETAIL CARD */}
+                  <div className="detail-item"> 
+                      <span class="detail-icon">✉️</span>
+                      <h3 className="detail-label">Email Us</h3>
+                      <p className="detail-value"><a href="mailto:ourdulcetentaciones@gmail.com" className="contact-link">ourdulcetentaciones@gmail.com</a></p>
+                  </div>
+
+                  {/* Social Media Links remain the same */}
+                  <div className="detail-item">
+                    <span class="detail-icon"></span>
+                    <h3 className="detail-label">Connect With Us</h3>
+                    <div className='social-wrapper'>
+                      <a href="#" className="social-icon-link">
+                          <img src="/BakeryWebsite/images/social-facebook.png" alt="Facebook" /> 
+                      </a>
+                      <a href="#" className="social-icon-link">
+                          <img src="/BakeryWebsite/images/social-instagram.png" alt="Instagram" />
+                      </a>
+                      <a href="#" className="social-icon-link">
+                          <img src="/BakeryWebsite/images/social-twitter.png" alt="Twitter" />
+                      </a>
                     </div>
+                  </div>
+
+                  {/* BUSINESS HOURS DETAIL CARD */}
+                  <div className="detail-item"> 
+                      <span class="detail-icon">⏰</span>
+                      <h3 className="detail-label">Business Hours</h3>
+                      <p className="detail-value">Mon - Fri: 9 AM - 5 PM</p>
+                      <p className="detail-value">Sat: 10 AM - 2 PM</p>
+                      <p className="detail-value">Sun: Closed</p>
+                  </div>
                 </div>
                 
-                {/* Social Media Links remain the same */}
-                <h3 className="social-heading">Connect With Us</h3>
-                <div className="social-links">
-                    <a href="#" className="social-icon-link">
-                        <img src="/BakeryWebsite/images/social-facebook.png" alt="Facebook" /> 
-                    </a>
-                    <a href="#" className="social-icon-link">
-                        <img src="/BakeryWebsite/images/social-instagram.png" alt="Instagram" />
-                    </a>
-                    <a href="#" className="social-icon-link">
-                        <img src="/BakeryWebsite/images/social-twitter.png" alt="Twitter" />
-                    </a>
-                </div>
             </div> {/* END contact-details-wrapper */}
 
           </div> {/* END contact-info-and-form */}
