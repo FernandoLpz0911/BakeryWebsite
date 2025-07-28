@@ -15,7 +15,7 @@
   "dependencies": {
     "@sanity/block-content-to-react": "^3.0.0",
     "@sanity/cli": "^4.1.0",
-    "@sanity/client": "^7.8.0",
+    "@sanity/client": "^7.8.1",
     "i18next": "^25.3.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
