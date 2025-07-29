@@ -5,9 +5,9 @@ import { Link } from 'react-router-dom';
 
 
 const FoodDisplay = () => {
-  const [entries, setEntries] = useState([]);
+  const [entries, setEntries] = useState([]); // set key-val pair of entries to empty array for now
 
-  // fetch menu entries using Sanity.io
+  // Perform a fetch operation to retrieve the menu entries from Sanity.io
   useEffect(() => {
     client.fetch(
       `*[_type == "item"] {
@@ -22,8 +22,8 @@ const FoodDisplay = () => {
         }
       }`
     ).then((data) => {
-      console.log("Fetched entries:", data); // 🔍
-      setEntries(data)
+      console.log("Fetched entries:", data); // Debug logged entries 🔍
+      setEntries(data)  // Set data from the fetch
     })
     .catch(console.error)
   }, []);
@@ -32,16 +32,14 @@ const FoodDisplay = () => {
     <>
       <div className="order-page-container">
 
-        {/* Main Content Area for Products */}
         <main className="order-main-content">
           <div className="content-wrapper"> 
 
             <h1 className="order-page-header">Explore Our Baked Goods</h1>
             
-            {/* Grid to display all product cards */}
             <div className="product-grid-order-page">
 
-            {/* Maps over each product to create a card */}
+            {/* retrieve all maps from database and display the item and pricing key-value pair */}
             {entries.map((item, index) => (
               <div key={index} className="product-card-order-page">
                 <img
@@ -49,20 +47,20 @@ const FoodDisplay = () => {
                   alt={item.name}
                   className="product-image-order-page"
                 />
+
                 <h3 className="product-name-order-page">{item.name}</h3>
                 <p className="product-description-order-page">{item.description}</p>
                 <div className="product-price-order-page">{item.price}</div>
+
               </div>
             ))}
-          </div>
 
+          </div>
             <div style={{ textAlign: 'center', marginTop: '40px' }}>
                 <Link to="/" className="back-button">Back to Home</Link>
             </div>
-
           </div> 
         </main> 
-
       </div>
     </>
   );
