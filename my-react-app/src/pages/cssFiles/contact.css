@@ -1,0 +1,15 @@
+.submit-inquiry-button.success {
+    background-color: #28a745; 
+    cursor: not-allowed;
+}
+
+.submit-inquiry-button.fail {
+    background-color: #dc3545;
+    cursor: not-allowed;
+}
+
+
+.submit-inquiry-button[disabled] {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
