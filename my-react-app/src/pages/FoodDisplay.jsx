@@ -22,7 +22,7 @@ const FoodDisplay = () => {
         }
       }`
     ).then((data) => {
-      console.log("Fetched entries:", data); // Debug logged entries 🔍
+      console.log("Fetched entries:", data); // Debug logged entries
       setEntries(data)  // Set data from the fetch
     })
     .catch(console.error)
