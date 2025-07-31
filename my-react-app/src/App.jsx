@@ -9,6 +9,8 @@ import LoginPage from './pages/LoginPage.jsx';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer.jsx';
 
+import './pages/cssFiles/global.css';
+
 
 function App() {
   return (

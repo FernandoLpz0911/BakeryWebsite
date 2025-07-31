@@ -659,27 +659,6 @@ body, #root, .app-container {
     background-color: #AD1457;
 }
 
-.testimonial-section {
-    padding: 80px 20px;
-    background-color: #FFF0F5;
-    text-align: center;
-}
-
-.testimonial-quote {
-    font-size: 1.8rem;
-    font-style: italic;
-    color: #C2185B;
-    max-width: 800px;
-    margin: 0 auto 15px;
-    line-height: 1.5;
-    font-family: 'Lobster', cursive;
-}
-
-.testimonial-source {
-    font-size: 1rem;
-    color: #4B5563;
-}
-
 .gifts-occasions-section {
     padding: 60px 20px;
     background-color: #FFF5EE;
@@ -801,26 +780,7 @@ body, #root, .app-container {
     background-color: #AD1457;
 }
 
-.about-page-container {
-    background-color: #FFEBF0;
-    color: #374151;
-}
 
-.about-main-content {
-    max-width: 1200px;
-    margin: 32px auto;
-    border-radius: 12px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-    overflow: hidden;
-    background-color: #FFEBF0;
-}
-
-.content-wrapper {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 20px;
-    box-sizing: border-box;
-}
 
 .contact-page-container {
     padding: 40px 20px;
@@ -991,52 +951,6 @@ body, #root, .app-container {
     padding-bottom: 60px;
 }
 
-.about-intro-section {
-    background-color: #F8BBD0;
-    color: #374151;
-    text-align: center;
-}
-
-.about-page-heading {
-    font-size: 2.8rem;
-    font-weight: bold;
-    color: #C2185B;
-    text-align: center;
-    margin-bottom: 50px;
-    line-height: 1.2;
-    font-family: 'Lobster', cursive;
-}
-
-.about-intro-content {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    align-items: center;
-    margin-bottom: 60px;
-}
-
-@media (min-width: 768px) {
-    .about-intro-content {
-        flex-direction: row;
-        text-align: left;
-        gap: 60px;
-    }
-}
-
-.about-intro-text {
-    flex: 1;
-}
-
-.about-intro-paragraph {
-    font-size: 1.15rem;
-    line-height: 1.7;
-    color: #4B5563;
-    margin-bottom: 25px;
-}
-.about-intro-paragraph:last-child {
-    margin-bottom: 0;
-}
-
 .about-intro-image-wrapper {
     flex: 1;
     max-width: 500px;
@@ -1049,23 +963,6 @@ body, #root, .app-container {
     width: 100%;
     height: auto;
     display: block;
-}
-
-.about-shop-cta-button {
-    display: inline-block;
-    background-color: #E91E63;
-    color: #FFFFFF;
-    padding: 15px 30px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.1rem;
-    transition: background-color 0.3s ease;
-    margin-top: 40px;
-}
-
-.about-shop-cta-button:hover {
-    background-color: #AD1457;
 }
 
 .meet-baker-section {
@@ -1100,53 +997,6 @@ body, #root, .app-container {
     margin: 0 auto;
 }
 
-.about-philosophy-section {
-    background-color: #FFF5EE;
-    padding: 60px 20px;
-}
-
-.philosophy-heading {
-    font-size: 2.2rem;
-    font-weight: bold;
-    color: #C2185B;
-    text-align: center;
-    margin-bottom: 40px;
-    font-family: 'Lobster', cursive;
-}
-
-.philosophy-points-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.philosophy-card {
-    background-color: #FFFFFF;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-    padding: 30px;
-    text-align: center;
-    transition: transform 0.2s ease-in-out;
-}
-
-.philosophy-card:hover {
-    transform: translateY(-5px);
-}
-
-.philosophy-card h3 {
-    font-size: 1.3rem;
-    color: #E91E63;
-    margin-bottom: 15px;
-    font-family: 'Lobster', cursive;
-}
-
-.philosophy-card p {
-    font-size: 0.95rem;
-    color: #4B5563;
-    line-height: 1.6;
-}
 
 .order-page-container {
     background-color: #FFEBF0;
