@@ -7,42 +7,40 @@ import NewsletterModal from "../components/newsletterModal";
 import './cssFiles/home.css';
 
 const Home = () => {
-  const allImages = useRef([ // Keep a ref to the original order of all images
+  const allImages = useRef([ // base array of image paths
     "/BakeryWebsite/images/Cupcakes.jpg",
     "/BakeryWebsite/images/HeartCakes.jpg",
     "/BakeryWebsite/images/Conchas.jpg",
     "/BakeryWebsite/images/IndividualCupcake.jpg",
-    // Add more images here if you have them, it will work better with more images
   ]);
 
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [leavingImageIndex, setLeavingImageIndex] = useState(null);
-  const [direction, setDirection] = useState(null); // 'next' or 'prev'
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);  // current img index
+  const [leavingImageIndex, setLeavingImageIndex] = useState(null); // idx of image leaving
+  const [direction, setDirection] = useState(null); // slide direction, uses next or prev
 
-  const carouselRef = useRef(null);
+  const carouselRef = useRef(null); // can be adjusted
 
   // Function to move to the next image
   const goToNext = () => {
     if (leavingImageIndex !== null) return; // Prevent new animation if one is in progress
 
     setDirection('next');
-    setLeavingImageIndex(currentImageIndex); // Mark current image as leaving
+    setLeavingImageIndex(currentImageIndex); 
 
-    // After animation, update the currentImageIndex
     setTimeout(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % allImages.current.length);
-      setLeavingImageIndex(null); // Reset leaving image
+      setLeavingImageIndex(null); 
       setDirection(null);
-    }, 600); // This timeout should match your CSS transition duration (e.g., 0.6s)
+    }, 600); 
   };
 
   // Function to move to the previous image
   const goToPrev = () => {
-    if (leavingImageIndex !== null) return; // Prevent new animation if one is in progress
+    if (leavingImageIndex !== null) return; // prevent animation if in progress
 
     setDirection('prev');
 
-    // set the leaving image index to the current one
+    // set the leaving image idx to the current one
     setCurrentImageIndex((prevIndex) => (prevIndex - 1 + allImages.current.length) % allImages.current.length);
     setLeavingImageIndex(currentImageIndex);
 
