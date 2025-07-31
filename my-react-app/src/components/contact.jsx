@@ -47,8 +47,8 @@ export default function BrevoForm() {
 
   return (
     <>
-      <div>
-        <h2 className="section-heading">Sign up and sweeten your inbox.</h2>
+      <div className="newsletter-cta-section">
+        <h2 className="newsletter-heading">Sign up and sweeten your inbox.</h2>
         <p className="newsletter-description">
           Be the first to know about new creations, exclusive promotions, <br />
           and sweet surprises baked just for you.

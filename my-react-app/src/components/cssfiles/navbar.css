@@ -23,17 +23,31 @@
 
 .nav-left-group {
     display: flex;
-    gap: 32px; 
+    gap: 32px;
     margin-right: auto;
 }
 
 .nav-link {
     color: #FFFFFF;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 500; /* Reverted to 500 for better legibility */
     padding: 8px 0;
     transition: color 0.2s ease-in-out;
-    font-size: 0.95rem;
+    font-size: 0.95rem; /* Reverted to 0.95rem or slightly larger like 1rem */
+    /*
+      Choose one of these font-family options:
+      Option 1: A simple, clean sans-serif (e.g., 'Roboto', 'Open Sans', 'Lato')
+      font-family: 'Open Sans', sans-serif;
+      
+      Option 2: A slightly more rounded/friendly sans-serif (e.g., 'Quicksand', 'Nunito')
+      font-family: 'Quicksand', sans-serif;
+
+      Option 3: A classic, elegant serif that can feel "sweet" (e.g., 'Lora', 'Playfair Display' - might be less common for nav)
+      font-family: 'Lora', serif;
+
+      For now, I'll put a common, readable font:
+    */
+    font-family: 'Inter', sans-serif; /* A modern, highly readable sans-serif */
 }
 
 .nav-link:hover {
@@ -43,7 +57,7 @@
 .bakery-logo {
     color: #FFFFFF;
     text-decoration: none;
-    font-family: 'Lobster', cursive;
+    font-family: 'Lobster', cursive; /* Keep 'Lobster' for the logo */
     font-size: 1.8rem;
     font-weight: normal;
     position: static;
@@ -58,9 +72,9 @@
     color: #F8F8F8;
 }
 
-.nav-right-group { 
+.nav-right-group {
     display: flex;
     align-items: center;
-    gap: 32px; 
+    gap: 32px;
     margin-left: auto;
 }

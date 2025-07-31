@@ -36,3 +36,16 @@
   border: none;
   cursor: pointer;
 }
+
+
+
+.newsletter-cta-section {
+    background-color: #f770a0;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.emailAndButton {
+display:flex;
+}
+

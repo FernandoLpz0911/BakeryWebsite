@@ -17,9 +17,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <section className="newsletter-cta-section">
-        <Contact />
-      </section>
       
       <div className="footer-bottom">
         <p className="copyright-text">© {currentYear} Dulce Tentaciones. All rights reserved.</p>

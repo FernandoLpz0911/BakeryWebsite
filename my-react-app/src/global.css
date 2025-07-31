@@ -4,7 +4,7 @@
 body, #root, .app-container {
     margin: 0;
     padding: 0;
-    font-family: 'Open Sans', Arial, sans-serif;
+    font-family: 'Open Sans';
     background-color: #FFEBF0; 
     color: #374151; 
     min-height: 100vh;
@@ -40,7 +40,6 @@ body, #root, .app-container {
 
 .testimonial-quote {
     font-size: 1.8rem;
-    font-style: italic;
     color: #C2185B;
     max-width: 800px;
     margin: 0 auto 15px;
@@ -62,27 +61,13 @@ body, #root, .app-container {
     font-family: 'Lobster', cursive;
 }
 
-.newsletter-cta-section .section-heading {
+.newsletter-cta-section {
     color: #FFFFFF;
-    margin-top: 0;
-    margin-bottom: 20px;
+    padding-top: 10px;
     font-family: 'Lobster', cursive;
 }
 
-.newsletter-description {
-    font-size: 1.05rem;
-    max-width: 700px;
-    margin: 0 auto 30px;
-    line-height: 1.5;
-}
 
-.emailAndButton {
-display:flex;
-}
-
-.emailAndButton {
-display:flex;
-}
 
 .newsletter-submit-button {
     background-color: #C2185B;

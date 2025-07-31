@@ -12,7 +12,7 @@
   align-items: center; 
   max-width: 1200px; 
   margin: 0 auto; 
-  padding: 0 20px 15px;
+  padding: 0 20px 0px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
@@ -23,11 +23,9 @@
 }
 
 .bakery-logo {
-  font-size: 24px;
-  font-weight: bold;
+  font-size: 18px;
   color: white;
   text-decoration: none;
-  margin-bottom: 15px; 
 }
 
 @media (min-width: 768px) {
@@ -51,25 +49,34 @@
   }
 }
 
-
-.nav-link {
-  color: white;
-  text-decoration: none;
-  font-size: 16px;
-  transition: color 0.3s ease; 
-}
-
-.nav-link:hover {
-  color: #f0f0f0; 
-}
-
 .footer-bottom {
-  padding-top: 15px; 
-  margin-top: 10px;
+  margin-top: 5px;
 }
 
 .copyright-text {
   font-size: 14px;
   color: rgba(255, 255, 255, 0.8);
   margin: 0;
+}
+
+.newsletter-email-input {
+    flex-grow: 1;
+    padding: 8px 18px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    color: #333;
+}
+
+.footer-link {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 0;
+    transition: color 0.2s ease-in-out;
+    font-size: 0.8rem;
+}
+
+.footer-link:hover {
+    color: #F8F8F8;
 }
