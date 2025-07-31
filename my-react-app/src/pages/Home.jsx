@@ -7,59 +7,49 @@ import NewsletterModal from "../components/newsletterModal";
 import './cssFiles/home.css';
 
 const Home = () => {
-
-  // put the images here and begin setImages function here
-  const [images, setImages] = useState([
+  const allImages = useRef([ // Keep a ref to the original order of all images
     "/BakeryWebsite/images/Cupcakes.jpg",
     "/BakeryWebsite/images/HeartCakes.jpg",
     "/BakeryWebsite/images/Conchas.jpg",
     "/BakeryWebsite/images/IndividualCupcake.jpg",
+    // Add more images here if you have them, it will work better with more images
   ]);
 
-  // set if animation is currently going and direction
-  const [animating, setAnimating] = useState(false); // State to control animation
-  const [animationDirection, setAnimationDirection] = useState(null); // 'left' or 'right'
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [leavingImageIndex, setLeavingImageIndex] = useState(null);
+  const [direction, setDirection] = useState(null); // 'next' or 'prev'
 
-  const carouselRef = useRef(null); // Reference to the carousel container
+  const carouselRef = useRef(null);
 
-  // function that slides the image left
-  const slideLeft = () => {
-    if (animating) return; // Prevent multiple clicks during animation
-    setAnimating(true);
-    setAnimationDirection('left');
+  // Function to move to the next image
+  const goToNext = () => {
+    if (leavingImageIndex !== null) return; // Prevent new animation if one is in progress
 
-    // slide the top image out to the left then shift the array
-    setImages((prevImages) => {
-      const newImages = [...prevImages];
-      const lastImage = newImages.pop();
-      newImages.unshift(lastImage);
-      return newImages;
-    });
+    setDirection('next');
+    setLeavingImageIndex(currentImageIndex); // Mark current image as leaving
 
+    // After animation, update the currentImageIndex
     setTimeout(() => {
-      setAnimating(false);
-      setAnimationDirection(null);
-    }, 500); // 500ms to transition
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % allImages.current.length);
+      setLeavingImageIndex(null); // Reset leaving image
+      setDirection(null);
+    }, 600); // This timeout should match your CSS transition duration (e.g., 0.6s)
   };
 
-  // slide right
-  const slideRight = () => {
-    if (animating) return;
-    setAnimating(true);
-    setAnimationDirection('right');
+  // Function to move to the previous image
+  const goToPrev = () => {
+    if (leavingImageIndex !== null) return; // Prevent new animation if one is in progress
+
+    setDirection('prev');
+
+    // set the leaving image index to the current one
+    setCurrentImageIndex((prevIndex) => (prevIndex - 1 + allImages.current.length) % allImages.current.length);
+    setLeavingImageIndex(currentImageIndex);
 
     setTimeout(() => {
-
-        // moves the first image to the end of the array and shift left
-        setImages((prevImages) => {
-            const newImages = [...prevImages];
-            const firstImage = newImages.shift();
-            newImages.push(firstImage);
-            return newImages;
-        });
-        setAnimating(false);
-        setAnimationDirection(null);
-    }, 500);
+      setLeavingImageIndex(null);
+      setDirection(null);
+    }, 600); 
   };
 
 
@@ -69,19 +59,34 @@ const Home = () => {
         <div className="hero-content">
 
           <div className="hero-image-carousel" ref={carouselRef}>
+            {allImages.current.map((imageSrc, index) => {
+              let classes = "hero-image";
+              let zIndex = 0; // default image index
 
-            {images.map((imageSrc, index) => (// map through the images and display them
-              <img
-                key={imageSrc}
-                src={imageSrc}
-                alt={`Sweet treat ${index + 1}`}
-                className={`hero-image ${animating && index === 0 ? `slide-${animationDirection}` : ''}`} // compare the index to the first image and use the animation function
-                style={{ zIndex: images.length - index }}
-              />
-            ))}
+              if (index === currentImageIndex) {
+                classes += " active"; // set image fully visible
+                zIndex = allImages.current.length; // set it on top
+              } else if (index === leavingImageIndex) {
+                classes += ` leaving-${direction}`; // make image slide out below new top
+                zIndex = allImages.current.length - 1;
+              } else {
+                zIndex = allImages.current.length - Math.abs(currentImageIndex - index);
+                if (zIndex <= 0) zIndex = 1; // make sure we're never at negative index
+              }
 
-            <button className="carousel-nav-button prev" onClick={slideLeft}>&#10094;</button>
-            <button className="carousel-nav-button next" onClick={slideRight}>&#10095;</button>
+              return (
+                <img
+                  key={imageSrc}
+                  src={imageSrc}
+                  alt={`Sweet treat ${index + 1}`}
+                  className={classes}
+                  style={{ zIndex: zIndex }}
+                />
+              );
+            })}
+
+            <button className="carousel-nav-button prev" onClick={goToPrev}>&#10094;</button>
+            <button className="carousel-nav-button next" onClick={goToNext}>&#10095;</button>
           </div>
 
           <div className="hero-text">
