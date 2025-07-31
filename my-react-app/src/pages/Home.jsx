@@ -226,10 +226,6 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="newsletter-cta-section">
-        <Contact />
-      </section>
-
       <section>
         <NewsletterModal />
       </section>
