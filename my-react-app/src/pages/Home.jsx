@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useState, useRef, useEffect } from "react";
 
 import Contact from "../components/contact";
 import NewsletterModal from "../components/newsletterModal";
@@ -6,13 +7,81 @@ import NewsletterModal from "../components/newsletterModal";
 import './cssFiles/home.css';
 
 const Home = () => {
+
+  // put the images here and begin setImages function here
+  const [images, setImages] = useState([
+    "/BakeryWebsite/images/Cupcakes.jpg",
+    "/BakeryWebsite/images/HeartCakes.jpg",
+    "/BakeryWebsite/images/Conchas.jpg",
+    "/BakeryWebsite/images/IndividualCupcake.jpg",
+  ]);
+
+  // set if animation is currently going and direction
+  const [animating, setAnimating] = useState(false); // State to control animation
+  const [animationDirection, setAnimationDirection] = useState(null); // 'left' or 'right'
+
+  const carouselRef = useRef(null); // Reference to the carousel container
+
+  // function that slides the image left
+  const slideLeft = () => {
+    if (animating) return; // Prevent multiple clicks during animation
+    setAnimating(true);
+    setAnimationDirection('left');
+
+    // slide the top image out to the left then shift the array
+    setImages((prevImages) => {
+      const newImages = [...prevImages];
+      const lastImage = newImages.pop();
+      newImages.unshift(lastImage);
+      return newImages;
+    });
+
+    setTimeout(() => {
+      setAnimating(false);
+      setAnimationDirection(null);
+    }, 500); // 500ms to transition
+  };
+
+  // slide right
+  const slideRight = () => {
+    if (animating) return;
+    setAnimating(true);
+    setAnimationDirection('right');
+
+    setTimeout(() => {
+
+        // moves the first image to the end of the array and shift left
+        setImages((prevImages) => {
+            const newImages = [...prevImages];
+            const firstImage = newImages.shift();
+            newImages.push(firstImage);
+            return newImages;
+        });
+        setAnimating(false);
+        setAnimationDirection(null);
+    }, 500);
+  };
+
+
   return (
     <div className="home-page-container">
       <section className="hero-section">
         <div className="hero-content">
-          <div className="hero-image-wrapper">
-            <img src="/BakeryWebsite/images/Cupcakes.jpg" alt="Festive Cupcakes" className="hero-image" />
-            <div className="hero-badge">Here All Year Around!</div> 
+
+          <div className="hero-image-carousel" ref={carouselRef}>
+
+            {images.map((imageSrc, index) => (// map through the images and display them
+              <img
+                key={imageSrc}
+                src={imageSrc}
+                alt={`Sweet treat ${index + 1}`}
+                className={`hero-image ${animating && index === 0 ? `slide-${animationDirection}` : ''}`} // compare the index to the first image and use the animation function
+                style={{ zIndex: images.length - index }}
+              />
+            ))}
+
+            <button className="carousel-nav-button prev" onClick={slideLeft}>&#10094;</button>
+            <button className="carousel-nav-button next" onClick={slideRight}>&#10095;</button>
           </div>
 
           <div className="hero-text">
@@ -154,11 +223,11 @@ const Home = () => {
       </section>
 
       <section className="newsletter-cta-section">
-        <Contact /> {/* component for contact section */}
+        <Contact />
       </section>
 
       <section>
-        <NewsletterModal /> {/* newsletter pop-up */}
+        <NewsletterModal />
       </section>
     </div>
   );

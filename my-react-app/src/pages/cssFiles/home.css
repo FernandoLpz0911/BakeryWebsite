@@ -1,4 +1,3 @@
-
 .home-page-container {
     background-color: #FFF0F5;
     color: #374151;
@@ -6,16 +5,8 @@
 
 @media (min-width: 768px) {
     .hero-section {
-        flex-direction: column; 
-        text-align: left; 
-        gap: 60px; 
-    }
-}
-
-@media (min-width: 768px) {
-    .hero-section {
-        flex-direction: column; 
-        text-align: left; 
+        flex-direction: column;
+        text-align: left;
         gap: 60px;
     }
 }
@@ -29,45 +20,74 @@
 
 
 .hero-section {
-    padding: 60px 0px; 
+    padding: 60px 0px;
     color: #374151;
     border-radius: 8px;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 40px; 
+    gap: 40px;
 }
 
-.hero-image-wrapper {
-    margin: 0 auto;
-    position: relative;
+.hero-image-carousel {
+    margin:auto;
+    position: relative; 
     width: 100%;
     max-width: 500px;
+    height: 300px; 
     border-radius: 12px;
     padding: 20px;
+    overflow: hidden; 
 }
 
 .hero-image {
     width: 100%;
-    height: auto;
-    display: block;
+    height: 100%;
+    object-fit: cover;
     border-radius: 8px;
+    position: absolute; 
+    top: 0;
+    left: 0;
+    transition: transform 0.5s ease-in-out; 
 }
 
-.hero-badge {
-    position: absolute;
-    top: -10px;
-    left: -10px;
-    background-color: #E91E63;
-    color: #FFFFFF;
-    padding: 8px 16px;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    font-weight: bold;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    white-space: nowrap;
+.hero-image.slide-right {
+    transform: translateX(100%); 
 }
+
+.hero-image.slide-left {
+    transform: translateX(-100%);
+}
+
+
+.carousel-nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    z-index: 100;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-nav-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.carousel-nav-button.prev {
+    left: 10px;
+}
+
+.carousel-nav-button.next {
+    right: 10px;
+}
+
 
 .hero-text {
     flex: 1;
@@ -151,7 +171,7 @@
 
 .product-title {
     font-size: 1.4rem;
-    font-weight: bold; 
+    font-weight: bold;
     color: #E91E63;
     margin-bottom: 10px;
     padding: 0 15px;
