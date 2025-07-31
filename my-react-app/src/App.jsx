@@ -4,7 +4,6 @@ import Home from './pages/Home.jsx';
 import FoodDisplay from './pages/FoodDisplay.jsx';
 import Contact from './pages/Contact.jsx';
 import About from './pages/About.jsx';
-import LoginPage from './pages/LoginPage.jsx';
 
 import Navbar from './components/Navbar';
 import Footer from './components/Footer.jsx';
@@ -21,7 +20,6 @@ function App() {
         <Route path="/FoodDisplay" element={<FoodDisplay />} />
         <Route path="/Contact" element={<Contact />} />
         <Route path="/About" element={<About />} />
-        <Route path="/LoginPage" element={<LoginPage />} />
       </Routes>
       <Footer />
     </>
