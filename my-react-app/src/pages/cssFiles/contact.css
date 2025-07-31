@@ -108,7 +108,7 @@
 
 @media (min-width: 768px) {
     .contact-details-grid {
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
     }
 }
 
@@ -173,7 +173,7 @@
     font-weight: bold;
     color: #E91E63;
     margin: 5px;
-    font-family: 'Lobster', cursive;
+    font-family: 'Open Sans';
 }
 
 .detail-value {
