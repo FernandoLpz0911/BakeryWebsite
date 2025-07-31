@@ -7,6 +7,7 @@ import About from './pages/About.jsx';
 import LoginPage from './pages/LoginPage.jsx';
 
 import Navbar from './components/Navbar';
+import Footer from './components/Footer.jsx';
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Route path="/About" element={<About />} />
         <Route path="/LoginPage" element={<LoginPage />} />
       </Routes>
+      <Footer />
     </>
   );
 }
