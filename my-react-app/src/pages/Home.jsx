@@ -6,12 +6,11 @@ const Home = () => {
   return (
     <div className="home-page-container">
       <section className="hero-section">
-        {/* RE-INTRODUCED: hero-content to wrap and center the image and text */}
         <div className="hero-content">
 
           <div className="hero-image-wrapper">
             <img src="/BakeryWebsite/images/Cupcakes.jpg" alt="Festive Cupcakes" className="hero-image" />
-            <div className="hero-badge">Here All Year Around!</div> {/* Adapted from your 'summer-tag' */}
+            <div className="hero-badge">Here All Year Around!</div> 
           </div>
 
           <div className="hero-text">
@@ -24,7 +23,7 @@ const Home = () => {
             <Link to="/FoodDisplay" className="hero-cta-button">Shop Our Creations</Link>
           </div>
 
-        </div> {/* End of hero-content */}
+        </div>
       </section>
 
       
