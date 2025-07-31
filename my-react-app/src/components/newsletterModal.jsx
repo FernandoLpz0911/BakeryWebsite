@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import "./newsletter.css";
+
 const API_KEY = import.meta.env.VITE_API_KEY;
 
 export default function NewsletterModal() {

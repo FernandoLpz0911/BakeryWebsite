@@ -1,3 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+
+body, #root, .app-container {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', Arial, sans-serif;
+    background-color: #FFEBF0; 
+    color: #374151; 
+    min-height: 100vh;
+    font-size: 1rem; 
+    line-height: 1.5; 
+    background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.4) 1px, transparent 0);
+    background-size: 10px 10px; 
+    background-blend-mode: multiply; 
+}
+
+.newsletter-email-input {
+    flex-grow: 1;
+    padding: 12px 18px;
+    border: none;
+    font-size: 1rem;
+    color: #333; /* Dark text for input */
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
 .content-wrapper {
     max-width: 1000px;
     margin: 0 auto;
@@ -40,4 +67,33 @@
     margin-top: 0;
     margin-bottom: 20px;
     font-family: 'Lobster', cursive;
+}
+
+.newsletter-description {
+    font-size: 1.05rem;
+    max-width: 700px;
+    margin: 0 auto 30px;
+    line-height: 1.5;
+}
+
+.emailAndButton {
+display:flex;
+}
+
+.emailAndButton {
+display:flex;
+}
+
+.newsletter-submit-button {
+    background-color: #C2185B;
+    color: #FFFFFF;
+    padding: 12px 20px;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.newsletter-submit-button:hover {
+    background-color: #AD1457;
 }

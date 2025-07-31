@@ -1,3 +1,26 @@
+
+.submit-inquiry-button {
+  background-color: #ff69b4;
+  color: white;
+  padding: 14px 25px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 20px;
+  align-self: flex-start;
+  margin:auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.submit-inquiry-button:hover {
+  background-color: #e05c9f;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
 .submit-inquiry-button.success {
     background-color: #28a745; 
     cursor: not-allowed;
@@ -13,6 +36,11 @@
     cursor: not-allowed;
 }
 
+.section-padded {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
 .contact-page-container {
     padding: 40px 20px;
     background-color: #fce4ec;
@@ -20,6 +48,17 @@
     display: flex;
     justify-content: center;
     align-items: flex-start;
+}
+
+.contact-link {
+    color: #F06292;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.contact-link:hover {
+    color: #AD1457;
+    text-decoration: underline;
 }
 
 .contact-main-content {

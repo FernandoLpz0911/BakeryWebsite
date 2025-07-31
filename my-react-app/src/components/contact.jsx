@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../pages/cssFiles/checkout.css";
+
 const API_KEY = import.meta.env.VITE_API_KEY;
 
 export default function BrevoForm() {

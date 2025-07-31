@@ -1,7 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react'; // Import useState
 import emailjs from '@emailjs/browser';
 import './cssFiles/contact.css';
-import './cssFiles/checkout.css';
 
 
 // Contact Page

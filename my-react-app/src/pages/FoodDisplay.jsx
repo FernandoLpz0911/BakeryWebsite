@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react"
 import client from "../client"
-import React from 'react';
 import { Link } from 'react-router-dom';
 
 import './cssFiles/foodDisplay.css';

@@ -1,4 +1,3 @@
-/* pop-up styles */
 
 .modal-backdrop {
   position: fixed;
@@ -14,7 +13,7 @@
 }
 
 .modal {
-  background: white;
+  background: #ffd6e4;
   padding: 5rem;
   border-radius: 1rem;
   max-width: 800px;
