@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import "../pages/cssFiles/checkout.css";
 import "./newsletter.css";
 const API_KEY = import.meta.env.VITE_API_KEY;
 

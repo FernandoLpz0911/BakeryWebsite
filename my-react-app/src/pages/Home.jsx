@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+
 import Contact from "../components/contact";
 import NewsletterModal from "../components/newsletterModal";
 
