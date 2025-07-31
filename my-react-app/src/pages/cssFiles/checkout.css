@@ -88,24 +88,9 @@ body, #root, .app-container {
     color: #F8F8F8;
 }
 
-.hero-section {
-    padding: 60px 0px; 
-    color: #374151;
-    border-radius: 8px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 40px; 
-}
 
-@media (min-width: 768px) {
-    .hero-section {
-        flex-direction: column; 
-        text-align: left; 
-        gap: 60px;
-    }
-}
+
+
 
 .form-section {
     display: flex;
@@ -386,190 +371,36 @@ body, #root, .app-container {
 }
 
 
-.home-page-container {
-    background-color: #FFF0F5;
-    color: #374151;
-}
 
 
 
-@media (min-width: 768px) {
-    .hero-section {
-        flex-direction: column; 
-        text-align: left; 
-        gap: 60px; 
-    }
-}
 
-.hero-image-wrapper {
-    margin: 0 auto;
-    position: relative;
-    width: 100%;
-    max-width: 500px;
-    border-radius: 12px;
-    padding: 20px;
-}
 
-.hero-image {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 8px;
-}
 
-.hero-badge {
-    position: absolute;
-    top: -10px;
-    left: -10px;
-    background-color: #E91E63;
-    color: #FFFFFF;
-    padding: 8px 16px;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    font-weight: bold;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    white-space: nowrap;
-}
 
-.hero-text {
-    flex: 1;
-    text-align: center;
-    color: #374151;
-}
 
-@media (min-width: 768px) {
-    .hero-text {
-        text-align: center;
-    }
-}
 
-.hero-headline {
-    font-size: 2.8rem;
-    font-weight: bold;
-    color: #C2185B;
-    margin-bottom: 20px;
-    line-height: 1.2;
-    font-family: 'Lobster', cursive;
-}
 
-.hero-description {
-    font-size: 1.15rem;
-    line-height: 1.6;
-    color: #4B5563;
-    margin-bottom: 30px;
-}
 
-.hero-cta-button {
-    display: inline-block;
-    background-color: #E91E63;
-    color: #FFFFFF;
-    padding: 15px 30px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.1rem;
-    transition: background-color 0.3s ease;
-}
 
-.hero-cta-button:hover {
-    background-color: #AD1457;
-}
 
-.featured-products-section {
-    padding: 60px 20px;
-    background-color: #FFF5EE;
-}
 
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
 
-.product-card {
-    background-color: #FFFFFF;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-    overflow: hidden;
-    text-align: center;
-    padding-bottom: 20px;
-    transition: transform 0.2s ease-in-out;
-}
 
-.product-card:hover {
-    transform: translateY(-5px);
-}
 
-.product-image {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
-    margin-bottom: 15px;
-}
 
-.product-title {
-    font-size: 1.4rem;
-    font-weight: bold; 
-    color: #E91E63;
-    margin-bottom: 10px;
-    padding: 0 15px;
-    font-family: 'Lobster', cursive;
-}
 
-.product-description {
-    font-size: 0.95rem;
-    color: #4B5563;
-    margin-bottom: 15px;
-    padding: 0 15px;
-}
 
-.product-cta-button {
-    display: inline-block;
-    background-color: #F48FB1;
-    color: #FFFFFF;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.9rem;
-    transition: background-color 0.3s ease;
-}
 
-.product-cta-button:hover {
-    background-color: #E91E63;
-}
 
-.about-us-section {
-    padding: 80px 20px;
-    background-color: #FFEBF0;
-}
 
-.about-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    align-items: center;
-}
 
-@media (min-width: 768px) {
-    .about-content {
-        flex-direction: row;
-        text-align: left;
-        gap: 60px;
-    }
-    .about-text {
-        order: 1;
-    }
-    .about-image-wrapper {
-        order: 2;
-    }
-}
+
+
+
+
+
+
 
 .about-image-wrapper {
     flex: 1;
@@ -585,9 +416,7 @@ body, #root, .app-container {
     display: block;
 }
 
-.about-text {
-    flex: 1;
-}
+
 
 .about-description {
     font-size: 1.05rem;
@@ -596,135 +425,29 @@ body, #root, .app-container {
     margin-bottom: 20px;
 }
 
-.learn-more-button {
-    display: inline-block;
-    background-color: #E91E63;
-    color: #FFFFFF;
-    padding: 12px 25px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: 600;
-    margin-top: 20px;
-    transition: background-color 0.3s ease;
-}
 
-.learn-more-button:hover {
-    background-color: #AD1457;
-}
 
-.gifts-occasions-section {
-    padding: 60px 20px;
-    background-color: #FFF5EE;
-}
 
-.occasion-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
 
-.occasion-card {
-    background-color: #FFFFFF;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-    overflow: hidden;
-    text-align: center;
-    padding-bottom: 20px;
-    transition: transform 0.2s ease-in-out;
-}
 
-.occasion-card:hover {
-    transform: translateY(-5px);
-}
 
-.occasion-image {
-    width: 100%;
-    height: 280px;
-    object-fit: cover;
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
-    margin-bottom: 15px;
-}
 
-.occasion-title {
-    font-size: 1.3rem;
-    font-weight: bold;
-    color: #E91E63;
-    margin-bottom: 10px;
-    padding: 0 15px;
-    font-family: 'Lobster', cursive;
-}
 
-.occasion-description {
-    font-size: 0.9rem;
-    color: #4B5563;
-    margin-bottom: 15px;
-    padding: 0 15px;
-}
 
-.occasion-cta-button {
-    display: inline-block;
-    background-color: #F48FB1;
-    color: #FFFFFF;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.9rem;
-    transition: background-color 0.3s ease;
-}
 
-.occasion-cta-button:hover {
-    background-color: #E91E63;
-}
 
-.newsletter-cta-section {
-    background-color: #F06292;
-    padding: 60px 20px;
-    text-align: center;
-    color: #FFFFFF;
-}
 
-.newsletter-description {
-    font-size: 1.05rem;
-    max-width: 700px;
-    margin: 0 auto 30px;
-    line-height: 1.5;
-}
 
-.newsletter-form {
-    display: flex;
-    justify-content: center;
-    max-width: 400px;
-    margin: 0 auto;
-    border-radius: 8px;
-    overflow: hidden;
-}
 
-.newsletter-email-input {
-    flex-grow: 1;
-    padding: 12px 18px;
-    border: none;
-    outline: none;
-    font-size: 1rem;
-    color: #333;
-}
 
-.newsletter-submit-button {
-    background-color: #C2185B;
-    color: #FFFFFF;
-    padding: 12px 20px;
-    border: none;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
 
-.newsletter-submit-button:hover {
-    background-color: #AD1457;
-}
+
+
+
+
+
+
+
 
 
 
