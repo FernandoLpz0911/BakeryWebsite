@@ -3,19 +3,16 @@ import { Link } from "react-router-dom";
 import Contact from "../components/contact";
 import NewsletterModal from "../components/newsletterModal";
 
+import './cssFiles/home.css';
+
 const Home = () => {
   return (
     <div className="home-page-container">
       <section className="hero-section">
         <div className="hero-content">
           <div className="hero-image-wrapper">
-            <img
-              src="/BakeryWebsite/images/Cupcakes.jpg"
-              alt="Festive Cupcakes"
-              className="hero-image"
-            />
-            <div className="hero-badge">Here All Year Around!</div>{" "}
-            {/* Adapted from your 'summer-tag' */}
+            <img src="/BakeryWebsite/images/Cupcakes.jpg" alt="Festive Cupcakes" className="hero-image" />
+            <div className="hero-badge">Here All Year Around!</div> 
           </div>
 
           <div className="hero-text">

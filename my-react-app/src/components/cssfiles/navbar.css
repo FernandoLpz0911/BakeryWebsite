@@ -1,0 +1,66 @@
+.navbar {
+    background-color: #F48FB1;
+    color: #FFFFFF;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    height: 65px;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    position: relative;
+    z-index: 100;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px;
+    height: 100%;
+    width: 100%;
+}
+
+.nav-left-group {
+    display: flex;
+    gap: 32px; 
+    margin-right: auto;
+}
+
+.nav-link {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 0;
+    transition: color 0.2s ease-in-out;
+    font-size: 0.95rem;
+}
+
+.nav-link:hover {
+    color: #F8F8F8;
+}
+
+.bakery-logo {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-family: 'Lobster', cursive;
+    font-size: 1.8rem;
+    font-weight: normal;
+    position: static;
+    height: auto;
+    width: auto;
+    flex-shrink: 0;
+    margin-right: 30px;
+    transition: color 0.2s ease;
+}
+
+.bakery-logo:hover {
+    color: #F8F8F8;
+}
+
+.nav-right-group { 
+    display: flex;
+    align-items: center;
+    gap: 32px; 
+    margin-left: auto;
+}

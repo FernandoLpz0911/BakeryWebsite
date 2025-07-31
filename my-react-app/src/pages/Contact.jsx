@@ -131,26 +131,6 @@ const Contact = () => {
                 </div>
 
                 <div className="detail-item">
-                  <span className="detail-icon"></span>
-                  <h3 className="detail-label">Connect With Us</h3>
-
-                  <div className='social-wrapper'>
-                    <a href="#" className="social-icon-link">
-                      <img src="/BakeryWebsite/images/social-facebook.png" alt="Facebook" />
-                    </a>
-
-                    <a href="#" className="social-icon-link">
-                      <img src="/BakeryWebsite/images/social-instagram.png" alt="Instagram" />
-                    </a>
-
-                    <a href="#" className="social-icon-link">
-                      <img src="/BakeryWebsite/images/social-twitter.png" alt="Twitter" />
-                    </a>
-                  </div>
-
-                </div>
-
-                <div className="detail-item">
                   <span className="detail-icon">⏰</span>
                   <h3 className="detail-label">Business Hours</h3>
                   <p className="detail-value">Mon - Fri: 9 AM - 5 PM</p>

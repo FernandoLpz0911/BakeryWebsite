@@ -1,0 +1,43 @@
+.content-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.testimonial-section {
+    padding: 80px 20px;
+    background-color: #FFF0F5;
+    text-align: center;
+}
+
+.testimonial-quote {
+    font-size: 1.8rem;
+    font-style: italic;
+    color: #C2185B;
+    max-width: 800px;
+    margin: 0 auto 15px;
+    line-height: 1.5;
+    font-family: 'Lobster', cursive;
+}
+
+.testimonial-source {
+    font-size: 1rem;
+    color: #4B5563;
+}
+
+.section-heading {
+    font-size: 2.8em;
+    color: #C2185B;
+    margin-bottom: 40px;
+    font-weight: bold;
+    text-align:center;
+    font-family: 'Lobster', cursive;
+}
+
+.newsletter-cta-section .section-heading {
+    color: #FFFFFF;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-family: 'Lobster', cursive;
+}

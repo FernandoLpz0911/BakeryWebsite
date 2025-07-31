@@ -8,8 +8,138 @@
     cursor: not-allowed;
 }
 
-
 .submit-inquiry-button[disabled] {
     opacity: 0.7;
     cursor: not-allowed;
+}
+
+.contact-page-container {
+    padding: 40px 20px;
+    background-color: #fce4ec;
+    min-height: calc(100vh - var(--header-height) - var(--footer-height));
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.contact-main-content {
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact-info-and-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.contact-form-wrapper .sub-heading,
+.contact-details-wrapper .sub-heading {
+    text-align: left;
+}
+
+.contact-details-wrapper {
+    padding: 25px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-sizing: border-box;
+}
+
+.contact-form-wrapper {
+    flex: 1;
+    min-width: 300px;
+    background-color: #ffcee2;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.contact-details-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .contact-details-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+.contact-intro-text {
+    font-size: 1.1em;
+    color: #4a4a4a;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-group {
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-size: 1em;
+    color: #4B5563;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.input-field {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 0px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    color: #333;
+}
+
+.input-field:focus {
+    outline: none;
+    border-color: #F48FB1;
+    box-shadow: 0 0 5px rgba(244, 143, 177, 0.5);
+}
+
+.detail-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.detail-icon {
+    font-size: 2.5em;
+    color: #ff69b4;
+    margin-bottom: 10px;
+}
+
+.detail-label {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #E91E63;
+    margin: 5px;
+    font-family: 'Lobster', cursive;
+}
+
+.detail-value {
+    font-size: 0.95rem;
+    margin: 5px;
+    margin-bottom: 0;
+    color: #4B5563;
 }
