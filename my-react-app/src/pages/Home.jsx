@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 
 import Contact from "../components/contact";
 import NewsletterModal from "../components/newsletterModal";
@@ -8,10 +8,11 @@ import './cssFiles/home.css';
 
 const Home = () => {
   const allImages = useRef([ // base array of image paths
-    "/BakeryWebsite/images/Cupcakes.jpg",
     "/BakeryWebsite/images/HeartCakes.jpg",
     "/BakeryWebsite/images/Conchas.jpg",
-    "/BakeryWebsite/images/IndividualCupcake.jpg",
+    "/BakeryWebsite/images/Cupcakes.jpg",
+    "/BakeryWebsite/images/Donuts.jpg",
+    "/BakeryWebsite/images/EventCakes.jpg"
   ]);
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);  // current img index
@@ -31,7 +32,7 @@ const Home = () => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % allImages.current.length);
       setLeavingImageIndex(null); 
       setDirection(null);
-    }, 600); 
+    }, 300); 
   };
 
   // Function to move to the previous image
