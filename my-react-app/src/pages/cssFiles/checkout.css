@@ -850,87 +850,6 @@ body, #root, .app-container {
     margin: 0 auto;
 }
 
-
-.order-page-container {
-    background-color: #FFEBF0;
-    color: #374151;
-    min-height: 100vh;
-}
-
-.order-main-content {
-    max-width: 1200px;
-    margin: 32px auto;
-    padding: 50px 30px;
-    background-color: #FFEBF0;
-    border-radius: 12px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-}
-
-.order-page-header {
-    font-size: 2.8rem;
-    font-weight: bold;
-    color: #C2185B;
-    text-align: center;
-    margin-bottom: 60px;
-    font-family: 'Lobster', cursive;
-}
-
-.product-grid-order-page {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 40px;
-    justify-content: center;
-}
-
-.product-card-order-page {
-    background-color: #FFFFFF;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-    overflow: hidden;
-    text-align: center;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transition: transform 0.2s ease-in-out;
-}
-
-.product-card-order-page:hover {
-    transform: translateY(-5px);
-}
-
-.product-image-order-page {
-    width: 100%;
-    max-width: 200px;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 15px;
-}
-
-.product-name-order-page {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #E91E63;
-    margin-bottom: 8px;
-    font-family: 'Lobster', cursive;
-}
-
-.product-description-order-page {
-    font-size: 0.95rem;
-    color: #4B5563;
-    margin-bottom: 15px;
-    flex-grow: 1;
-}
-
-.product-price-order-page {
-    font-size: 1.4rem;
-    font-weight: bold;
-    color: #C2185B;
-    margin-bottom: 15px;
-    font-family: 'Lobster', cursive;
-}
-
 .quantity-control-order-page {
     display: flex;
     align-items: center;
@@ -983,24 +902,6 @@ body, #root, .app-container {
 
 .add-to-cart-button-order-page:hover {
     background-color: #AD1457;
-}
-
-.back-button {
-    display: inline-block;
-    background-color: #F48FB1;
-    color: #FFFFFF;
-    padding: 12px 25px;
-    border-radius: 8px;
-    font-weight: bold;
-    font-size: 1rem;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-top: 40px;
-}
-
-.back-button:hover {
-    background-color: #E91E63;
 }
 
 .navbar-icons a {

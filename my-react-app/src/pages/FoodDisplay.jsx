@@ -3,6 +3,8 @@ import client from "../client"
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import './cssFiles/foodDisplay.css';
+
 
 const FoodDisplay = () => {
   const [entries, setEntries] = useState([]); // set key-val pair of entries to empty array for now
