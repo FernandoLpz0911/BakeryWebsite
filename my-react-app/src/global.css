@@ -33,8 +33,7 @@ body, #root, .app-container {
 }
 
 .testimonial-section {
-    padding: 80px 20px;
-    background-color: #FFF0F5;
+    padding-bottom: 50px;
     text-align: center;
 }
 

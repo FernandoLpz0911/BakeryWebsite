@@ -11,7 +11,9 @@ const Navbar = () => {
           <Link to="/FoodDisplay" className="nav-link">BAKED GOODS</Link>
         </div>
 
-        <Link to="/" className="bakery-logo">Dulce Tentaciones</Link>
+        <Link to="/">
+          <img src="/BakeryWebsite/images/BakeryLogo.jpg" alt="Dulce Tentaciones Bakery Logo" className="bakery-image" />
+        </Link>
 
         <div className="nav-right-group"> 
             <Link to="/About" className="nav-link">ABOUT US</Link>

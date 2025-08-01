@@ -8,7 +8,7 @@ const PrivacyPolicy = () => {
 
       <h2>Introduction</h2>
       <p>
-        Dulce Tentaciones ("we," "our," or "us") operates the website [Your Website URL Here]. This Privacy Policy explains how we collect, use, and disclose information when you visit our website.
+        Dulce Tentaciones ("we," "our," or "us") operates the website DulceTentactiones.com. This Privacy Policy explains how we collect, use, and disclose information when you visit our website.
       </p>
 
       <h2>Information We Collect</h2>

@@ -51,13 +51,13 @@
 }
 
 .contact-link {
-    color: #F06292;
+    color: #4B5563;
     text-decoration: none;
     transition: color 0.2s ease;
 }
 
 .contact-link:hover {
-    color: #AD1457;
+    color: #596677;
     text-decoration: underline;
 }
 
@@ -159,7 +159,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
 }
 
 .detail-icon {

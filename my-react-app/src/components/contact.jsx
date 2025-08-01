@@ -48,10 +48,10 @@ export default function BrevoForm() {
   return (
     <>
       <div className="newsletter-cta-section">
-        <h2 className="newsletter-heading">Sign up and sweeten your inbox.</h2>
+        <h2 className="newsletter-heading">Sign Up And Sweeten Your Inbox.</h2>
         <p className="newsletter-description">
-          Be the first to know about new creations, exclusive promotions, <br />
-          and sweet surprises baked just for you.
+          Be the first to know about New Creations, Exclusive Promotions, <br />
+          and Sweet Surprises baked just for you.
         </p>
       </div>
 

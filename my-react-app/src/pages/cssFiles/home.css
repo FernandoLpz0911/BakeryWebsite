@@ -1,5 +1,4 @@
 .home-page-container {
-    background-color: #FFF0F5;
     color: #374151;
 }
 
@@ -211,7 +210,7 @@
 }
 
 .about-us-section {
-    padding: 80px 20px;
+    padding: 45px;
     background-color: #FFEBF0;
 }
 
@@ -240,10 +239,12 @@
 
 .about-text {
     flex: 1;
+    text-align: center;
 }
 
 .learn-more-button {
     display: inline-block;
+    text-align: center;
     background-color: #E91E63;
     color: #FFFFFF;
     padding: 12px 25px;

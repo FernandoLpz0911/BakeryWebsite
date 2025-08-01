@@ -58,15 +58,22 @@
     color: #FFFFFF;
     text-decoration: none;
     font-family: 'Lobster', cursive; /* Keep 'Lobster' for the logo */
-    font-size: 1.8rem;
+    font-size: 1rem;
     font-weight: normal;
     position: static;
-    height: auto;
+    height:auto;
     width: auto;
     flex-shrink: 0;
     margin-right: 30px;
     transition: color 0.2s ease;
 }
+
+.bakery-image {
+    height: 55px; /* Adjusted for better visibility */
+    width: auto; /* Maintain aspect ratio */
+}
+
+
 
 .bakery-logo:hover {
     color: #F8F8F8;

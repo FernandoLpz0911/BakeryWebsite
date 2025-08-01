@@ -6,6 +6,8 @@
 }
 
 .order-main-content {
+    border: #F48FB1 1px solid;
+    border-width: 4px;
     max-width: 1200px;
     margin: 32px auto;
     padding: 50px 30px;
@@ -49,11 +51,11 @@
 
 .product-image-order-page {
     width: 100%;
-    max-width: 200px;
+    max-width: 300px;
     height: 180px;
     object-fit: cover;
     border-radius: 8px;
-    margin-bottom: 15px;
+    margin-top: 15px;
 }
 
 .product-name-order-page {

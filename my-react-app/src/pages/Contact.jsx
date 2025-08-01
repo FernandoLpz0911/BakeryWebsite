@@ -119,7 +119,7 @@ const Contact = () => {
             <div className="contact-details-wrapper">
 
               <p className="contact-intro-text">
-                Prefer to chat? Find our contact details and hours below.
+                Prefer to chat? Find our contact details and hours below
               </p>
 
               <div className="contact-details-grid">
