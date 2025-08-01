@@ -27,7 +27,6 @@
     font-weight: bold;
     color: #C2185B;
     text-align: center;
-    margin-bottom: 50px;
     line-height: 1.2;
     font-family: 'Lobster', cursive;
 }
@@ -53,10 +52,12 @@
 }
 
 .about-intro-paragraph {
+    text-align: center;
     font-size: 1.15rem;
     line-height: 1.7;
     color: #4B5563;
     margin-bottom: 25px;
+    padding-top: 10px;
 }
 .about-intro-paragraph:last-child {
     margin-bottom: 0;

@@ -16,15 +16,18 @@ const App = () => {
                   <div className="about-intro-text">
 
                       <p className="about-intro-paragraph">
-                          Welcome to Dulce Tentaciones! My name is Maria Rodriguez, and this bakery is my passion project, born from a lifelong love affair with baking. Every cookie, cake, and pastry you find here is a labor of love, baked from the heart, one delicious batch at a time.
+                          Welcome to Dulce Tentaciones! My name is Maria Rodriguez, and this bakery is my passion project,
+                          born from a lifelong love affair with baking. Every cookie, cake, and pastry you find here is a
+                          labor of love, baked from the heart, one delicious batch at a time.
                       </p>
-
+                      
                       <p className="about-intro-paragraph">
-                          What began as a simple dream in my cozy kitchen has blossomed into Dulce Tentaciones – a place dedicated to spreading joy and comfort through homemade sweets. I believe that the best moments are shared over something delicious, and I'm committed to bringing that warmth directly to your home.
+                          What began as a simple dream in my cozy kitchen has blossomed into Dulce Tentaciones – a dream
+                          come true, to be able to bake and share my passion to the world with many supporters and friends.
                       </p>
-
+                      <br></br>
                       <p className="about-intro-paragraph">
-                          Thank you for being a part of my sweet journey. I can't wait to bake something special for you!
+                          Thank you for being a part of my journey!!
                       </p>
 
                   </div>
