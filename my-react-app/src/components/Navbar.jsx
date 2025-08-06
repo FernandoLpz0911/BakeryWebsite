@@ -12,7 +12,7 @@ const Navbar = () => {
         </div>
 
         <Link to="/">
-          <img src="/BakeryWebsite/images/BakeryLogo.jpg" alt="Dulce Tentaciones Bakery Logo" className="bakery-image" />
+          <img src="/images/BakeryLogo.jpg" alt="Dulce Tentaciones Bakery Logo" className="bakery-image" />
         </Link>
 
         <div className="nav-right-group"> 

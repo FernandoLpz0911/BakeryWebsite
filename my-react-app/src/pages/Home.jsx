@@ -8,11 +8,11 @@ import './cssFiles/home.css';
 
 const Home = () => {
   const allImages = useRef([ // base array of image paths
-    "/BakeryWebsite/images/HeartCakes.jpg",
-    "/BakeryWebsite/images/Conchas.jpg",
-    "/BakeryWebsite/images/Cupcakes.jpg",
-    "/BakeryWebsite/images/Donuts.jpg",
-    "/BakeryWebsite/images/EventCakes.jpg"
+    "/images/HeartCakes.jpg",
+    "/images/Conchas.jpg",
+    "/images/Cupcakes.jpg",
+    "/images/Donuts.jpg",
+    "/images/EventCakes.jpg"
   ]);
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);  // current img index
@@ -108,7 +108,7 @@ const Home = () => {
         <div className="product-grid">
           <div className="product-card">
             <img
-              src="/BakeryWebsite/images/HeartCakes.jpg"
+              src="/images/HeartCakes.jpg"
               alt="Heart-shaped Cakes"
               className="product-image"
             />
@@ -123,7 +123,7 @@ const Home = () => {
 
           <div className="product-card">
             <img
-              src="/BakeryWebsite/images/Conchas.jpg"
+              src="/images/Conchas.jpg"
               alt="Assorted Conchas"
               className="product-image"
             />
@@ -138,7 +138,7 @@ const Home = () => {
 
           <div className="product-card">
             <img
-              src="/BakeryWebsite/images/IndividualCupcake.jpg"
+              src="/images/IndividualCupcake.jpg"
               alt="Star Cupcakes"
               className="product-image"
             />
@@ -194,7 +194,7 @@ const Home = () => {
         <div className="occasion-grid">
           <div className="occasion-card">
             <img
-              src="/BakeryWebsite/images/GiftedDonuts.jpg"
+              src="/images/GiftedDonuts.jpg"
               alt="Thoughtful Gifts"
               className="occasion-image"
             />
@@ -210,7 +210,7 @@ const Home = () => {
 
           <div className="occasion-card">
             <img
-              src="/BakeryWebsite/images/BirthdayCake.jpg"
+              src="/images/BirthdayCake.jpg"
               alt="Events & Catering"
               className="occasion-image"
             />

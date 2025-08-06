@@ -132,9 +132,9 @@ const Contact = () => {
                 <div className="detail-item">
                   <span className="detail-icon">⏰</span>
                   <h3 className="detail-label">Business Hours</h3>
-                  <p className="detail-value">Mon - Fri: 9 AM - 5 PM</p>
-                  <p className="detail-value">Sat: 10 AM - 2 PM</p>
-                  <p className="detail-value">Sun: Closed</p>
+                  <p className="detail-value">Mon - Fri: 4 PM - 8 PM</p>
+                  <p className="detail-value">Sat: 11 AM - 6 PM</p>
+                  <p className="detail-value">Sun: 4 PM - 8 PM</p>
                 </div>
                 
               </div>

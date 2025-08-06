@@ -24,10 +24,7 @@ const App = () => {
                       <p className="about-intro-paragraph">
                           What began as a simple dream in my cozy kitchen has blossomed into Dulce Tentaciones – a dream
                           come true, to be able to bake and share my passion to the world with many supporters and friends.
-                      </p>
-                      <br></br>
-                      <p className="about-intro-paragraph">
-                          Thank you for being a part of my journey!!
+                          Thank you for being part of this sweet journey!
                       </p>
 
                   </div>
