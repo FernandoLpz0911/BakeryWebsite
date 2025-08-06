@@ -9,20 +9,17 @@ Target audience:
 Functionalities: 
 - Initial Page
 	- Show the baking
-	- Create order requests button which redirects to google form associated with the language specific to site (only doing Spanish and English)
-	- Upper of the page has an about which can go to mission, and history
-	- Upper of the page has a in-site menu (potentially overlay depending on quantity of items)
-	- Allow for contact button functionality on upper page for "General inquiries and Feedback"
+	- Create order requests button which redirects to a form associated with the language specific to site (only doing Spanish and English)
+	- Upper of the page has an about which can go to about, baked goods, home, and the contact page
+	- Allow for contact button functionality on contact page for inquries
 
 Page for order requests
 	- Should behave similarly to a google form
 	- Asks for customer first and last name
 	- Phone number to contact
 	- Email to contact
-	- Order request
-	- What date they'd like it by utilizing calendar api
- 	- Sends the details to owner's email
-
+	- General request/info
+ 
 - Data analytics that observes
 	- New page visitors
 	- Returning page visitors
@@ -33,4 +30,8 @@ Page for order requests
 - Another version of the website based on the language
 	- Typed out version in both English and Spanish as end-customers are primarily English and Spanish speakers
 
-- Basic deployment potentially utilizing AWS or Azure cloud services
+- Basic deployment potentially utilizing Github Pages and a custom domain
+
+- Utilizes Santiy API for ease of menu adjustments
+- Utilizes EmailJS for inquiry requests
+- Utilizes Brevo for Newsletter
