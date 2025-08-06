@@ -328,36 +328,8 @@
 }
 
 .newsletter-description {
-    font-size: 0.9rem; /* Reduced from 1rem */
-    max-width: 500px; /* Reduced from 700px */
-    margin: 0 auto 15px; /* Reduced bottom margin from 30px */
-    line-height: 1.4; /* Slightly tighter line height */
-    font-family: 'Inter', sans-serif; /* Or another readable complementary font */
-    font-weight: 400; /* Regular weight for text */
-}
-
-.newsletter-heading {
-    padding-bottom: 5px; /* Reduced from 10px */
-    font-size: 2em; /* Slightly reduced from 2.2em */
-    margin: 0rem;
-    color: white;
-    text-align:center;
-    font-family: 'Lobster', cursive; /* Kept 'Lobster' for the heading */
-}
-
-
-.newsletter-form {
-    display: flex;
-    justify-content: center;
-    max-width: 400px;
-    margin: 0 auto;
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-.section-heading {
-    color: #C2185B; /* Changed to a darker pink for contrast */
-    margin-top: 0;
-    margin-bottom: 20px;
-    font-family: 'Lobster', cursive;
+    font-size: 0.9rem; 
+    max-width: 500px;
+    margin: 0 auto 15px; 
+    line-height: 1.4;
 }
