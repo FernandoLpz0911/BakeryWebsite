@@ -2,7 +2,7 @@
     overflow-x: hidden;
 }
 
-/* Hero Section - Soft & Integrated */
+/* --- Hero Section --- */
 .hero-section {
     display: flex;
     flex-direction: column;
@@ -10,8 +10,8 @@
     justify-content: center;
     min-height: 85vh; 
     padding: 40px 20px;
-    /* Soft Pink Radial Gradient */
-    background: radial-gradient(circle at center, #FFF0F5 0%, #FFD1DC 100%);
+    /* Subtle, elegant gradient */
+    background: radial-gradient(circle at center, #FFF5F8 0%, #F8BBD0 100%);
     position: relative;
 }
 
@@ -23,16 +23,15 @@
     }
 }
 
-/* Image Carousel - Rounded & Shadowed */
 .hero-image-carousel {
     flex: 1;
     width: 100%;
-    height: 500px; /* Fixed height for consistency */
-    border-radius: 30px; /* Smooth corners */
-    box-shadow: 0 20px 40px rgba(233, 30, 99, 0.2); /* Pink glow shadow */
+    height: 500px;
+    border-radius: 40px; /* More rounded */
+    box-shadow: 0 25px 50px rgba(194, 24, 91, 0.25); /* Deep pink shadow */
     position: relative;
     overflow: hidden;
-    border: 5px solid #FFF; /* White photo frame border */
+    border: 8px solid #FFF; /* Thick photo frame */
 }
 
 .hero-image {
@@ -46,18 +45,15 @@
     transition: opacity 0.8s ease-in-out;
 }
 
-.hero-image.active {
-    opacity: 1;
-}
+.hero-image.active { opacity: 1; }
 
-/* Carousel Arrows */
 .carousel-nav-button {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.9);
     color: var(--accent-pink);
-    border: none;
+    border: 2px solid var(--light-pink-bg);
     padding: 15px 20px;
     cursor: pointer;
     z-index: 100;
@@ -70,6 +66,7 @@
 .carousel-nav-button:hover {
     background-color: var(--accent-pink);
     color: white;
+    border-color: var(--accent-pink);
 }
 
 .carousel-nav-button.prev { left: 20px; }
@@ -82,7 +79,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center; /* Center align for sweeter look */
+    align-items: center;
 }
 
 @media (min-width: 768px) {
@@ -93,41 +90,42 @@
 }
 
 .hero-headline {
-    font-size: 4rem;
+    font-size: 4.2rem;
     margin-bottom: 20px;
     color: var(--accent-pink);
     font-family: 'Lobster', cursive;
     line-height: 1.1;
-    text-shadow: 3px 3px 0px #FFF; /* Pop effect */
+    text-shadow: 4px 4px 0px #FFF;
 }
 
 .hero-description {
-    font-size: 1.25rem;
-    line-height: 1.8;
+    font-size: 1.3rem;
+    line-height: 1.7;
     color: var(--text-chocolate);
     margin-bottom: 35px;
     max-width: 600px;
+    font-weight: 500;
 }
 
-/* Section Containers */
-.featured-products-section, .gifts-occasions-section {
+/* --- Product Sections --- */
+.featured-products-section {
     padding: 80px 20px;
 }
 
 .product-grid, .occasion-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Wider cards */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 40px;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* Universal Card Style for Home */
+/* Shared Card Style */
 .product-card, .occasion-card {
-    background-color: #FFFFFF;
-    border-radius: 25px;
-    /* Soft pink border */
-    border: 2px solid #FFE0E9; 
+    /* PINK BACKGROUND behind images */
+    background-color: var(--light-pink-bg); 
+    border-radius: 30px;
+    border: 2px solid #FFF; /* White border for definition */
     box-shadow: var(--card-shadow);
     overflow: hidden;
     text-align: center;
@@ -139,8 +137,9 @@
 }
 
 .product-card:hover, .occasion-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 30px rgba(233, 30, 99, 0.2);
+    transform: translateY(-12px);
+    box-shadow: 0 20px 40px rgba(233, 30, 99, 0.2);
+    background-color: #FFF; /* Light up on hover */
     border-color: var(--primary-pink);
 }
 
@@ -148,8 +147,9 @@
     width: 100%;
     height: 260px;
     object-fit: cover;
-    border-radius: 20px; /* Inner radius */
+    border-radius: 20px;
     margin-bottom: 20px;
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.05);
 }
 
 .product-title, .occasion-title {
@@ -166,13 +166,17 @@
     line-height: 1.5;
 }
 
+.product-cta-button, .occasion-cta-button {
+    margin: auto auto 0 auto;
+}
+
 .about-us-section {
     padding: 80px 40px;
-    /* White wave section */
-    background-color: #FFFFFF; 
+    background-color: #FFFFFF;
     border-radius: 50px;
-    margin: 40px 20px;
+    margin: 60px 20px;
     box-shadow: var(--card-shadow);
+    border: 1px solid #FCE4EC;
 }
 
 .about-content {
@@ -188,9 +192,22 @@
     margin-bottom: 30px;
 }
 
+/* --- Bottom Section (Gifts/Occasions) --- */
+.gifts-occasions-section {
+    /* Distinct background to fix bottom flow */
+    background-color: var(--medium-pink-bg); 
+    padding: 100px 20px;
+    margin-top: 40px;
+    /* Curved top using border-radius if you want, or just a block */
+    border-top-left-radius: 60px;
+    border-top-right-radius: 60px;
+    box-shadow: 0 -10px 30px rgba(0,0,0,0.03);
+}
+
 /* Mobile Overrides */
 @media (max-width: 767px) {
     .hero-headline { font-size: 3rem; }
     .hero-image-carousel { height: 350px; }
     .about-us-section { padding: 40px 20px; }
+    .gifts-occasions-section { padding: 60px 20px; border-radius: 40px 40px 0 0; }
 }

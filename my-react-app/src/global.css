@@ -3,27 +3,29 @@
 
 :root {
   --primary-pink: #F48FB1;
-  --light-pink-bg: #FFF0F5; /* Lavender Blush - much pinker than cream */
+  --light-pink-bg: #FFF0F5; /* Lavender Blush */
+  --medium-pink-bg: #FCE4EC; /* Slightly darker for section contrast */
   --dark-pink: #C2185B;
   --accent-pink: #E91E63;
   --text-chocolate: #4E342E;
   --white: #FFFFFF;
-  --card-shadow: 0 10px 30px -5px rgba(233, 30, 99, 0.15); /* Pinkish shadow */
+  --card-shadow: 0 12px 24px -6px rgba(233, 30, 99, 0.15);
 }
 
 body, #root, .app-container {
     margin: 0;
     padding: 0;
     font-family: 'Open Sans', sans-serif;
-    background: linear-gradient(180deg, #FFF0F5 0%, #FFE4E1 100%); /* Soft Pink Gradient */
+    /* Smoother, richer pink gradient */
+    background: linear-gradient(180deg, #FFF5F8 0%, #F8BBD0 100%);
+    background-attachment: fixed; /* Keeps the nice gradient visible as you scroll */
     color: var(--text-chocolate);
     min-height: 100vh;
     line-height: 1.6;
 }
 
-/* Soften the inputs */
 .newsletter-email-input, .input-field {
-    border: 2px solid #FFC1E3 !important; /* Pink border */
+    border: 2px solid #FFC1E3 !important;
     background-color: #FFF !important;
     border-radius: 15px !important;
 }
@@ -42,18 +44,19 @@ body, #root, .app-container {
 }
 
 .section-heading {
-    font-size: 3rem;
+    font-size: 3.2rem;
     color: var(--dark-pink);
     margin-bottom: 50px;
     font-weight: bold;
     text-align:center;
     font-family: 'Lobster', cursive;
-    text-shadow: 2px 2px 0px rgba(255,255,255,0.5);
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
 }
 
-/* Button Polish - Rounded and Pinker */
+/* --- Global Button Styles --- */
+/* Standard "Action" Buttons (Shop, Submit) - Gradient Pill */
 button, .hero-cta-button, .product-cta-button, .back-button, .submit-inquiry-button, .occasion-cta-button, .about-shop-cta-button, .newsletter-submit-button {
-    background: linear-gradient(135deg, #FF80AB 0%, #EC407A 100%); /* Vibrant Pink Gradient */
+    background: linear-gradient(135deg, #FF80AB 0%, #EC407A 100%);
     color: white;
     border: none;
     border-radius: 50px;
@@ -66,7 +69,7 @@ button, .hero-cta-button, .product-cta-button, .back-button, .submit-inquiry-but
     cursor: pointer;
     text-decoration: none;
     display: inline-block;
-    font-size: 1rem;
+    font-size: 0.95rem;
 }
 
 button:hover, .hero-cta-button:hover, .product-cta-button:hover, .back-button:hover, .submit-inquiry-button:hover, .occasion-cta-button:hover, .about-shop-cta-button:hover, .newsletter-submit-button:hover {
@@ -75,16 +78,41 @@ button:hover, .hero-cta-button:hover, .product-cta-button:hover, .back-button:ho
     background: linear-gradient(135deg, #EC407A 0%, #D81B60 100%);
 }
 
+/* --- "Learn More" Special Button (Ghost Style) --- */
+.learn-more-button {
+    display: inline-block;
+    background-color: #FFFFFF;
+    color: var(--accent-pink);
+    border: 3px solid var(--accent-pink); /* Thick pink border */
+    border-radius: 50px;
+    padding: 12px 40px;
+    font-weight: 800;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(233, 30, 99, 0.1);
+}
+
+.learn-more-button:hover {
+    background-color: var(--accent-pink);
+    color: #FFFFFF;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(233, 30, 99, 0.3);
+}
+
 .testimonial-section {
-    background-color: rgba(255, 255, 255, 0.6); /* Semi-transparent backing */
+    background-color: rgba(255, 255, 255, 0.7);
     padding: 60px 20px;
-    border-radius: 20px;
-    margin: 40px 20px;
+    border-radius: 30px;
+    margin: 60px 20px;
     text-align: center;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
 }
 
 .testimonial-quote {
-    font-size: 2rem;
+    font-size: 2.2rem;
     color: var(--accent-pink);
     max-width: 800px;
     margin: 0 auto 15px;
@@ -96,9 +124,9 @@ button:hover, .hero-cta-button:hover, .product-cta-button:hover, .back-button:ho
     font-size: 1.1rem;
     font-weight: 600;
     color: var(--text-chocolate);
+    font-style: italic;
 }
 
-/* Newsletter specific fix */
 .newsletter-cta-section {
     color: #FFFFFF;
     padding-top: 10px;

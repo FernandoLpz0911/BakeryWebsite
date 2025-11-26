@@ -1,10 +1,8 @@
 .footer {
   background-color: #880E4F; /* Deep Pink/Burgundy for contrast */
-  border-top: 8px solid #F48FB1; /* Lighter pink accent line */
   color: white;
   padding: 60px 0 30px;
   text-align: center;
-  margin-top: 60px;
 }
 
 .footer-container {
