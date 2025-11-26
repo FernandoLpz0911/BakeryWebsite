@@ -1,33 +1,46 @@
-import { useState, useEffect } from "react"
-import client from "../client"
 import { Link } from 'react-router-dom';
-
 import './cssFiles/foodDisplay.css';
 
-
 const FoodDisplay = () => {
-  const [entries, setEntries] = useState([]); // set key-val pair of entries to empty array for now
-
-  // Perform a fetch operation to retrieve the menu entries from Sanity.io
-  useEffect(() => {
-    client.fetch(
-      `*[_type == "item"] {
-        name,
-        description,
-        price,
-        image {
-          asset -> {
-            _id,
-            url
-          }
-        }
-      }`
-    ).then((data) => {
-      console.log("Fetched entries:", data); // Debug logged entries
-      setEntries(data)  // Set data from the fetch
-    })
-    .catch(console.error)
-  }, []);
+  // Hardcoded menu data to replace Sanity API
+  const entries = [
+    {
+      name: "Cozy Conchas",
+      description: "Traditional comfort, fluffy texture, perfect with coffee.",
+      price: "$3.50", /* Adjusted from $5.00 to single item price */
+      image: "/images/Conchas.jpg"
+    },
+    {
+      name: "Heartfelt Cakes",
+      description: "Sweet gestures for every celebration, baked with joy.",
+      price: "$28.00", /* Adjusted to reflect a whole small cake */
+      image: "/images/HeartCakes.jpg"
+    },
+    {
+      name: "Assorted Cookies",
+      description: "A classic collection for everyday indulgence.",
+      price: "$15.00", /* Adjusted to reflect a box/dozen price */
+      image: "/images/GiftedDonuts.jpg"
+    },
+    {
+      name: "Joyful Cupcakes",
+      description: "Little bursts of happiness for every sweet craving.",
+      price: "$4.00", /* Standard artisanal cupcake price */
+      image: "/images/IndividualCupcake.jpg"
+    },
+    {
+      name: "Classic Donuts",
+      description: "Soft, airy, and perfectly glazed for a morning treat.",
+      price: "$3.00", /* Premium donut price */
+      image: "/images/Donuts.jpg"
+    },
+    {
+      name: "Event Catering",
+      description: "Custom cakes and dessert tables for your special moments.",
+      price: "Contact for Quote",
+      image: "/images/EventCakes.jpg"
+    }
+  ];
 
   return (
     <>
@@ -40,11 +53,10 @@ const FoodDisplay = () => {
             
             <div className="product-grid-order-page">
 
-            {/* retrieve all maps from database and display the item and pricing key-value pair */}
             {entries.map((item, index) => (
               <div key={index} className="product-card-order-page">
                 <img
-                  src={item.image?.asset?.url}
+                  src={item.image}
                   alt={item.name}
                   className="product-image-order-page"
                 />
