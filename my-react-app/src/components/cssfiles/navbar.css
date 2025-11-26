@@ -1,15 +1,16 @@
 .navbar {
-    background-color: rgba(255, 255, 255, 0.95); /* White with slight transparency */
-    backdrop-filter: blur(10px); /* Blurry background effect */
-    position: sticky; /* Stays at top */
+    /* Translucent Pink Background */
+    background-color: rgba(255, 240, 245, 0.95); 
+    backdrop-filter: blur(10px);
+    position: sticky;
     top: 0;
-    border-bottom: 1px solid #fce4ec;
-    color: #333;
-    height: 70px; /* Slightly taller for comfort */
+    border-bottom: 2px solid rgba(233, 30, 99, 0.1); /* Subtle pink line */
+    height: 80px; /* Taller */
     display: flex;
     align-items: center;
     padding: 0;
-    z-index: 100;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(233, 30, 99, 0.05);
 }
 
 .navbar-container {
@@ -18,161 +19,113 @@
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 40px; /* Increased padding */
-    height: 100%;
+    padding: 0 40px;
     width: 100%;
 }
 
-.nav-left-group {
+.nav-left-group, .nav-right-group {
     display: flex;
-    gap: 32px;
-    margin-right: auto;
+    gap: 40px;
 }
 
+.nav-left-group { margin-right: auto; }
+.nav-right-group {Pk margin-left: auto; }
+
 .nav-link {
-    color: #555; /* Darker text for white background */
+    color: var(--text-chocolate);
     text-decoration: none;
-    font-weight: 600;
-    padding: 8px 0;
-    transition: color 0.2s ease-in-out;
-    font-size: 0.95rem;
-    letter-spacing: 0.5px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
     text-transform: uppercase;
-    font-family: 'Open Sans', sans-serif;
-    margin: 0 10px;
+    position:yb relative;
+    transition: color 0.3s ease;
 }
 
 .nav-link:hover {
     color: var(--accent-pink);
 }
 
+/* Underline animation */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--accent-pink);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
 .bakery-logo {
-    color: var(--accent-pink);
-    text-decoration: none;
-    font-family: 'Lobster', cursive;
-    font-size: 2rem; /* Larger size */
-    font-weight: normal;
-    position: static;
-    height: auto;
-    width: auto;
-    flex-shrink: 0;
-    margin: 0 40px; /* More breathing room */
-    transition: color 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 40px;
 }
 
 .bakery-image {
-    height: 65px; /* Slightly larger */
+    height: 70px;
     width: auto;
+    border-radius: 50%; /* If logo is circular */
+    transition: transform 0.3s ease;
 }
 
-.bakery-logo:hover {
-    color: var(--dark-pink);
+.bakery-logo:hover .bakery-image {
+    transform: scale(1.1) rotate(5deg); /* Playful hover */
 }
 
-.nav-right-group {
-    display: flex;
-    align-items: center;
-    gap: 32px;
-    margin-left: auto;
-}
-
-/* --- Mobile-Specific Styles (Hamburger Menu) --- */
+/* Mobile Menu */
 @media (max-width: 767px) {
-    .navbar-container {
-        padding: 0 20px;
-    }
+    .navbar-container { padding: 0 20px; }
+    .nav-left-group, .nav-right-group, .nav-links-desktop { display: none; }
     
-    .nav-left-group,
-    .nav-right-group,
-    .nav-links-desktop {
-        display: none;
-    }
+    .bakery-logo { margin: 0 auto 0 0; }
+    .bakery-image { height: 55px; }
     
-    .bakery-logo {
-        margin-right: auto;
-        margin-left: 0;
-        font-size: 1.5rem;
-    }
-
-    .bakery-image {
-        height: 50px;
-    }
-    
-    /* Styles for the hamburger menu button */
     .menu-toggle {
         display: block;
         cursor: pointer;
-        z-index: 101;
     }
 
     .menu-toggle .menu-icon {
-        width: 25px;
+        width: 30px;
         height: 3px;
-        background-color: var(--dark-pink); /* Dark pink for visibility on white */
-        margin: 5px 0;
+        background-color: var(--accent-pink);
+        margin: 6px 0;
+        border-radius: 5px;
         transition: 0.4s;
     }
 
-    /* Styles for the dropdown/full-screen menu on mobile */
     .mobile-nav-links {
         display: none;
         position: absolute;
-        top: 70px;
+        top: 80px;
         left: 0;
         width: 100%;
-        background-color: #FFFFFF; /* White background */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        background-color: #FFF0F5; /* Pink background for menu */
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         flex-direction: column;
         padding: 20px 0;
         text-align: center;
+        border-bottom: 2px solid var(--primary-pink);
     }
 
-    .mobile-nav-links.active {
-        display: flex;
-    }
+    .mobile-nav-links.active { display: flex; }
 
     .mobile-nav-links .nav-link {
         padding: 15px 0;
-        width: 100%;
-        border-bottom: 1px solid #eee;
-        color: #333;
-    }
-
-    .mobile-nav-links .nav-link:last-child {
-        border-bottom: none;
+        font-size: 1.2rem;
+        border-bottom: 1px solid rgba(233, 30, 99, 0.1);
     }
 }
 
-/* --- Desktop-Specific Styles (Centered Logo) --- */
 @media (min-width: 768px) {
-    .navbar-container {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        gap: 0;
-    }
-
-    .nav-links-desktop {
-        display: flex;
-        flex: 1;
-        justify-content: space-between;
-        align-items: center;
-    }
-    
-    .nav-left-group {
-        display: flex;
-        justify-content: flex-start;
-        gap: 32px;
-    }
-    
-    .nav-right-group {
-        display: flex;
-        justify-content: flex-end;
-        gap: 32px;
-    }
-    
-    /* Hide mobile menu on desktop */
-    .menu-toggle, .mobile-nav-links {
-      display: none;
-    }
+    .menu-toggle, .mobile-nav-links { display: none; }
+    .navbar-container { justify-content: center; }
 }
