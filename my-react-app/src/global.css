@@ -18,7 +18,7 @@ body, #root, .app-container {
     color: var(--text-chocolate);
     min-height: 100vh;
     line-height: 1.6;
-    /* A subtle grain texture can look very "bakery" like flour */
+    /* A subtle grain texture */
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTvTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
 }
 
@@ -27,7 +27,7 @@ body, #root, .app-container {
     padding: 12px 18px;
     border: none;
     font-size: 1rem;
-    color: #333; /* Dark text for input */
+    color: #333;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
 }
@@ -46,7 +46,7 @@ body, #root, .app-container {
 
 .testimonial-quote {
     font-size: 1.8rem;
-    color: #C2185B;
+    color: var(--dark-pink);
     max-width: 800px;
     margin: 0 auto 15px;
     line-height: 1.5;
@@ -60,7 +60,7 @@ body, #root, .app-container {
 
 .section-heading {
     font-size: 2.8em;
-    color: #C2185B;
+    color: var(--dark-pink);
     margin-bottom: 40px;
     font-weight: bold;
     text-align:center;
@@ -73,10 +73,8 @@ body, #root, .app-container {
     font-family: 'Lobster', cursive;
 }
 
-
-
 .newsletter-submit-button {
-    background-color: #C2185B;
+    background-color: var(--dark-pink);
     color: #FFFFFF;
     padding: 12px 20px;
     border: none;
@@ -89,8 +87,9 @@ body, #root, .app-container {
     background-color: #AD1457;
 }
 
-button, .hero-cta-button, .product-cta-button, .back-button, .submit-inquiry-button {
-    background: linear-gradient(45deg, #E91E63, #F48FB1);
+/* Global Button Style for Pill Shapes */
+button, .hero-cta-button, .product-cta-button, .back-button, .submit-inquiry-button, .occasion-cta-button {
+    background: linear-gradient(45deg, var(--accent-pink), var(--primary-pink));
     color: white;
     border: none;
     border-radius: 50px; /* Pill shape */
@@ -101,12 +100,12 @@ button, .hero-cta-button, .product-cta-button, .back-button, .submit-inquiry-but
     box-shadow: 0 4px 15px rgba(233, 30, 99, 0.4);
     transition: transform 0.2s, box-shadow 0.2s;
     cursor: pointer;
-    text-decoration: none; /* For Links that look like buttons */
+    text-decoration: none;
     display: inline-block;
 }
 
-button:hover, .hero-cta-button:hover, .product-cta-button:hover {
-    background: linear-gradient(45deg, #C2185B, #E91E63);
+button:hover, .hero-cta-button:hover, .product-cta-button:hover, .back-button:hover, .submit-inquiry-button:hover, .occasion-cta-button:hover {
+    background: linear-gradient(45deg, var(--dark-pink), var(--accent-pink));
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(233, 30, 99, 0.6);
 }

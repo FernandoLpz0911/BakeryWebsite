@@ -4,17 +4,21 @@
     position: sticky; /* Stays at top */
     top: 0;
     border-bottom: 1px solid #fce4ec;
-    /* Override previous pink background */
-    color: #333; 
+    color: #333;
+    height: 70px; /* Slightly taller for comfort */
+    display: flex;
+    align-items: center;
+    padding: 0;
+    z-index: 100;
 }
 
 .navbar-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1280px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 24px;
+    padding: 0 40px; /* Increased padding */
     height: 100%;
     width: 100%;
 }
@@ -27,27 +31,42 @@
 
 .nav-link {
     color: #555; /* Darker text for white background */
+    text-decoration: none;
     font-weight: 600;
-    font-size: 0.9rem;
-    letter-spacing: 1px;
+    padding: 8px 0;
+    transition: color 0.2s ease-in-out;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
     text-transform: uppercase;
+    font-family: 'Open Sans', sans-serif;
+    margin: 0 10px;
 }
 
 .nav-link:hover {
-    color: #E91E63; /* Pink hover */
+    color: var(--accent-pink);
 }
+
 .bakery-logo {
-    color: #E91E63; /* Pink logo text */
-    font-size: 1.8rem;
+    color: var(--accent-pink);
+    text-decoration: none;
+    font-family: 'Lobster', cursive;
+    font-size: 2rem; /* Larger size */
+    font-weight: normal;
+    position: static;
+    height: auto;
+    width: auto;
+    flex-shrink: 0;
+    margin: 0 40px; /* More breathing room */
+    transition: color 0.2s ease;
 }
 
 .bakery-image {
-    height: 55px;
+    height: 65px; /* Slightly larger */
     width: auto;
 }
 
 .bakery-logo:hover {
-    color: #F8F8F8;
+    color: var(--dark-pink);
 }
 
 .nav-right-group {
@@ -60,7 +79,7 @@
 /* --- Mobile-Specific Styles (Hamburger Menu) --- */
 @media (max-width: 767px) {
     .navbar-container {
-        padding: 0;
+        padding: 0 20px;
     }
     
     .nav-left-group,
@@ -71,6 +90,12 @@
     
     .bakery-logo {
         margin-right: auto;
+        margin-left: 0;
+        font-size: 1.5rem;
+    }
+
+    .bakery-image {
+        height: 50px;
     }
     
     /* Styles for the hamburger menu button */
@@ -83,7 +108,7 @@
     .menu-toggle .menu-icon {
         width: 25px;
         height: 3px;
-        background-color: #FFFFFF;
+        background-color: var(--dark-pink); /* Dark pink for visibility on white */
         margin: 5px 0;
         transition: 0.4s;
     }
@@ -92,10 +117,10 @@
     .mobile-nav-links {
         display: none;
         position: absolute;
-        top: 65px;
+        top: 70px;
         left: 0;
         width: 100%;
-        background-color: #F48FB1;
+        background-color: #FFFFFF; /* White background */
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
         flex-direction: column;
         padding: 20px 0;
@@ -109,7 +134,8 @@
     .mobile-nav-links .nav-link {
         padding: 15px 0;
         width: 100%;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        border-bottom: 1px solid #eee;
+        color: #333;
     }
 
     .mobile-nav-links .nav-link:last-child {
@@ -143,11 +169,6 @@
         display: flex;
         justify-content: flex-end;
         gap: 32px;
-    }
-    
-    .bakery-logo {
-        flex-shrink: 0;
-        margin: 0 32px;
     }
     
     /* Hide mobile menu on desktop */

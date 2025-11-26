@@ -1,25 +1,20 @@
-
 .order-page-container {
-    background-color: #FFEBF0;
-    color: #374151;
+    background-color: transparent;
     min-height: 100vh;
 }
 
 .order-main-content {
-    border: #F48FB1 1px solid;
-    border-width: 4px;
+    border: none;
     max-width: 1200px;
-    margin: 32px auto;
-    padding: 50px 30px;
-    background-color: #FFEBF0;
-    border-radius: 12px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    margin: 40px auto;
+    padding: 40px 20px;
+    background-color: transparent;
 }
 
 .order-page-header {
-    font-size: 2.8rem;
+    font-size: 3rem;
     font-weight: bold;
-    color: #C2185B;
+    color: var(--dark-pink);
     text-align: center;
     margin-bottom: 60px;
     font-family: 'Lobster', cursive;
@@ -34,67 +29,67 @@
 
 .product-card-order-page {
     background-color: #FFFFFF;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+    box-shadow: var(--card-shadow);
     overflow: hidden;
     text-align: center;
-    padding: 20px;
+    padding: 0 0 30px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: transform 0.2s ease-in-out;
+    transition: all 0.3s ease;
+    border: none;
+    position: relative;
 }
 
 .product-card-order-page:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
 .product-image-order-page {
     width: 100%;
-    max-width: 300px;
-    height: 180px;
+    max-width: 100%;
+    height: 250px;
     object-fit: cover;
-    border-radius: 8px;
-    margin-top: 15px;
+    border-radius: 0;
+    margin-top: 0;
+    transition: transform 0.5s ease;
+}
+
+.product-card-order-page:hover .product-image-order-page {
+    transform: scale(1.05);
 }
 
 .product-name-order-page {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: bold;
-    color: #E91E63;
-    margin-bottom: 8px;
+    color: var(--dark-pink);
+    margin: 20px 0 10px;
     font-family: 'Lobster', cursive;
+    padding: 0 15px;
 }
 
 .product-description-order-page {
-    font-size: 0.95rem;
-    color: #4B5563;
-    margin-bottom: 15px;
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 20px;
     flex-grow: 1;
+    padding: 0 20px;
+    line-height: 1.5;
 }
 
 .product-price-order-page {
-    font-size: 1.4rem;
-    font-weight: bold;
-    color: #C2185B;
-    margin-bottom: 15px;
-    font-family: 'Lobster', cursive;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--text-chocolate);
+    background: #FFE0E9;
+    padding: 8px 20px;
+    border-radius: 50px;
+    margin-bottom: 10px;
 }
 
 .back-button {
-    display: inline-block;
-    background-color: #F48FB1;
-    color: #FFFFFF;
-    padding: 12px 25px;
-    border-radius: 8px;
-    font-weight: bold;
-    font-size: 1rem;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-top: 40px;
-}
-
-.back-button:hover {
-    background-color: #E91E63;
+    margin-top: 60px;
 }

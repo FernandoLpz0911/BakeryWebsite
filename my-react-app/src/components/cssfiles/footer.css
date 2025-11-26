@@ -1,8 +1,9 @@
 .footer {
-  background-color: #f770a0; 
+  background-color: #C2185B; /* Darker pink for footer */
+  border-top: 5px solid #F48FB1; /* Light pink accent line */
   color: white;
-  padding: 20px 0; 
-  text-align: center; 
+  padding: 40px 0;
+  text-align: center;
 }
 
 .footer-container {
@@ -12,8 +13,8 @@
   align-items: center; 
   max-width: 1200px; 
   margin: 0 auto; 
-  padding: 0 20px 0px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 0 20px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 @media (min-width: 768px) {
@@ -23,60 +24,49 @@
 }
 
 .bakery-logo {
-  font-size: 18px;
+  font-size: 1.5rem;
   color: white;
   text-decoration: none;
-}
-
-@media (min-width: 768px) {
-  .bakery-logo {
-    margin-bottom: 0;
-  }
+  font-family: 'Lobster', cursive;
 }
 
 .footer-links {
   display: flex;
   flex-direction: column; 
-  gap: 10px; 
-  margin-bottom: 15px;
+  gap: 15px; 
+  margin-bottom: 20px;
 }
 
 @media (min-width: 768px) {
   .footer-links {
     flex-direction: row;
-    gap: 20px; 
+    gap: 30px; 
     margin-bottom: 0;
   }
 }
 
 .footer-bottom {
-  margin-top: 5px;
+  margin-top: 20px;
 }
 
 .copyright-text {
-  font-size: 14px;
-  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.9);
   margin: 0;
-}
-
-.newsletter-email-input {
-    flex-grow: 1;
-    padding: 8px 18px;
-    border: none;
-    outline: none;
-    font-size: 1rem;
-    color: #333;
+  font-weight: 300;
 }
 
 .footer-link {
     color: #FFFFFF;
     text-decoration: none;
     font-weight: 500;
-    padding: 8px 0;
+    padding: 5px 0;
     transition: color 0.2s ease-in-out;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .footer-link:hover {
-    color: #F8F8F8;
+    color: #FFC1E3;
 }

@@ -4,22 +4,23 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.6); /* Darker backdrop */
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 999;
+  backdrop-filter: blur(5px);
 }
 
 .modal {
-  background: #ffd6e4;
-  padding: 5rem;
-  border-radius: 1rem;
+  background: #fff0f5;
+  padding: 3rem;
+  border-radius: 20px;
   max-width: 800px;
-  height: 300px;
+  height: auto;
   text-align: center;
   position: relative;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -28,24 +29,32 @@
 
 .close-btn {
   position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 1.5rem;
+  top: 15px;
+  right: 20px;
+  font-size: 2rem;
   background: none;
   border: none;
   cursor: pointer;
+  color: #C2185B;
 }
 
-
-
 .newsletter-cta-section {
-    background-color: #f770a0;
+    /* Modern gradient background */
+    background: linear-gradient(135deg, #F48FB1 0%, #C2185B 100%);
     text-align: center;
     color: #FFFFFF;
+    padding: 60px 20px;
+    margin-bottom: 0;
+}
+
+.newsletter-heading {
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .emailAndButton {
-display:flex;
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
 }
 
 /* --- Mobile-Specific Styles --- */
@@ -57,7 +66,6 @@ display:flex;
     }
 
     .newsletter-description {
-        /* This overrides the inline style of width: 500px on the <p> tag */
         width: auto !important; 
     }
 
@@ -73,5 +81,6 @@ display:flex;
     .newsletter-email-input,
     .newsletter-submit-button {
         width: 100%;
+        border-radius: 50px; /* Pill shape on mobile too */
     }
 }
