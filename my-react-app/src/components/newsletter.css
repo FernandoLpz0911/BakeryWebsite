@@ -39,45 +39,44 @@
   color: #C2185B;
 }
 
-/* Cohesive CTA Section */
+/* Cohesive CTA Section - Compact Version */
 .newsletter-cta-section {
-    /* Matches the footer's tone but slightly lighter */
     background-color: #D81B60; 
     text-align: center;
     color: #FFFFFF;
-    padding: 80px 20px;
+    padding: 40px 20px; /* Reduced from 80px to 40px */
     margin-bottom: 0;
 }
 
 .newsletter-heading {
     text-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    font-size: 2.5rem;
+    font-size: 2.2rem; /* Slightly smaller heading */
     font-family: 'Lobster', cursive;
-    margin-bottom: 10px;
+    margin-bottom: 5px; /* Tighter spacing */
 }
 
 .newsletter-description {
-    font-size: 1.1rem;
-    margin-bottom: 30px;
+    font-size: 1rem;
+    margin-bottom: 20px; /* Reduced margin */
     opacity: 0.95;
 }
 
 .emailAndButton {
     display: flex;
     justify-content: center;
-    gap: 15px; /* Space between input and button */
-    margin-top: 20px;
+    gap: 10px; 
+    margin-top: 10px; /* Reduced margin */
     width: 100%;
     max-width: 500px;
     margin-left: auto;
     margin-right: auto;
 }
 
-/* Specific override for the submit button in this section to stand out against dark pink */
 .newsletter-cta-section .newsletter-submit-button {
-    background: #FFFFFF; /* White button */
-    color: #D81B60; /* Pink text */
+    background: #FFFFFF; 
+    color: #D81B60; 
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    padding: 10px 25px; /* Slightly smaller button padding */
 }
 
 .newsletter-cta-section .newsletter-submit-button:hover {
@@ -98,11 +97,10 @@
 
     .emailAndButton {
         flex-direction: column;
-        gap: 15px;
+        gap: 10px;
         padding: 0 20px;
     }
 
-    /* Full width on mobile */
     .newsletter-email-input,
     .newsletter-submit-button {
         width: 100%;
