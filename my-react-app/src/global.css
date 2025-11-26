@@ -1,18 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
 
+:root {
+  --primary-pink: #F48FB1;
+  --dark-pink: #C2185B;
+  --accent-pink: #E91E63;
+  --bg-cream: #FFF5EE; /* Seashell/Cream */
+  --text-chocolate: #4E342E; /* Dark warm brown instead of gray */
+  --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
 body, #root, .app-container {
     margin: 0;
     padding: 0;
-    font-family: 'Open Sans';
-    background-color: #FFEBF0; 
-    color: #374151; 
+    font-family: 'Open Sans', sans-serif;
+    background-color: var(--bg-cream);
+    color: var(--text-chocolate);
     min-height: 100vh;
-    font-size: 1rem; 
-    line-height: 1.5; 
-    background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.4) 1px, transparent 0);
-    background-size: 10px 10px; 
-    background-blend-mode: multiply; 
+    line-height: 1.6;
+    /* A subtle grain texture can look very "bakery" like flour */
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTvTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
 }
 
 .newsletter-email-input {
@@ -80,4 +87,26 @@ body, #root, .app-container {
 
 .newsletter-submit-button:hover {
     background-color: #AD1457;
+}
+
+button, .hero-cta-button, .product-cta-button, .back-button, .submit-inquiry-button {
+    background: linear-gradient(45deg, #E91E63, #F48FB1);
+    color: white;
+    border: none;
+    border-radius: 50px; /* Pill shape */
+    padding: 12px 30px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 15px rgba(233, 30, 99, 0.4);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+    text-decoration: none; /* For Links that look like buttons */
+    display: inline-block;
+}
+
+button:hover, .hero-cta-button:hover, .product-cta-button:hover {
+    background: linear-gradient(45deg, #C2185B, #E91E63);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(233, 30, 99, 0.6);
 }

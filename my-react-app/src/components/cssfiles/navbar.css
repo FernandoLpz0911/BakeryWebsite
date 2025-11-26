@@ -1,13 +1,11 @@
 .navbar {
-    background-color: #F48FB1;
-    color: #FFFFFF;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-    height: 65px;
-    display: flex;
-    align-items: center;
-    padding: 0;
-    position: relative;
-    z-index: 100;
+    background-color: rgba(255, 255, 255, 0.95); /* White with slight transparency */
+    backdrop-filter: blur(10px); /* Blurry background effect */
+    position: sticky; /* Stays at top */
+    top: 0;
+    border-bottom: 1px solid #fce4ec;
+    /* Override previous pink background */
+    color: #333; 
 }
 
 .navbar-container {
@@ -28,52 +26,25 @@
 }
 
 .nav-link {
-    color: #FFFFFF;
-    text-decoration: none;
-    font-weight: 500; /* Reverted to 500 for better legibility */
-    padding: 8px 0;
-    transition: color 0.2s ease-in-out;
-    font-size: 0.95rem; /* Reverted to 0.95rem or slightly larger like 1rem */
-    /*
-      Choose one of these font-family options:
-      Option 1: A simple, clean sans-serif (e.g., 'Roboto', 'Open Sans', 'Lato')
-      font-family: 'Open Sans', sans-serif;
-      
-      Option 2: A slightly more rounded/friendly sans-serif (e.g., 'Quicksand', 'Nunito')
-      font-family: 'Quicksand', sans-serif;
-
-      Option 3: A classic, elegant serif that can feel "sweet" (e.g., 'Lora', 'Playfair Display' - might be less common for nav)
-      font-family: 'Lora', serif;
-
-      For now, I'll put a common, readable font:
-    */
-    font-family: 'Inter', sans-serif; /* A modern, highly readable sans-serif */
+    color: #555; /* Darker text for white background */
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 .nav-link:hover {
-    color: #F8F8F8;
+    color: #E91E63; /* Pink hover */
 }
-
 .bakery-logo {
-    color: #FFFFFF;
-    text-decoration: none;
-    font-family: 'Lobster', cursive; /* Keep 'Lobster' for the logo */
-    font-size: 1rem;
-    font-weight: normal;
-    position: static;
-    height:auto;
-    width: auto;
-    flex-shrink: 0;
-    margin-right: 30px;
-    transition: color 0.2s ease;
+    color: #E91E63; /* Pink logo text */
+    font-size: 1.8rem;
 }
 
 .bakery-image {
-    height: 55px; /* Adjusted for better visibility */
-    width: auto; /* Maintain aspect ratio */
+    height: 55px;
+    width: auto;
 }
-
-
 
 .bakery-logo:hover {
     color: #F8F8F8;
@@ -84,4 +55,103 @@
     align-items: center;
     gap: 32px;
     margin-left: auto;
+}
+
+/* --- Mobile-Specific Styles (Hamburger Menu) --- */
+@media (max-width: 767px) {
+    .navbar-container {
+        padding: 0;
+    }
+    
+    .nav-left-group,
+    .nav-right-group,
+    .nav-links-desktop {
+        display: none;
+    }
+    
+    .bakery-logo {
+        margin-right: auto;
+    }
+    
+    /* Styles for the hamburger menu button */
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+        z-index: 101;
+    }
+
+    .menu-toggle .menu-icon {
+        width: 25px;
+        height: 3px;
+        background-color: #FFFFFF;
+        margin: 5px 0;
+        transition: 0.4s;
+    }
+
+    /* Styles for the dropdown/full-screen menu on mobile */
+    .mobile-nav-links {
+        display: none;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        width: 100%;
+        background-color: #F48FB1;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        flex-direction: column;
+        padding: 20px 0;
+        text-align: center;
+    }
+
+    .mobile-nav-links.active {
+        display: flex;
+    }
+
+    .mobile-nav-links .nav-link {
+        padding: 15px 0;
+        width: 100%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .mobile-nav-links .nav-link:last-child {
+        border-bottom: none;
+    }
+}
+
+/* --- Desktop-Specific Styles (Centered Logo) --- */
+@media (min-width: 768px) {
+    .navbar-container {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 0;
+    }
+
+    .nav-links-desktop {
+        display: flex;
+        flex: 1;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .nav-left-group {
+        display: flex;
+        justify-content: flex-start;
+        gap: 32px;
+    }
+    
+    .nav-right-group {
+        display: flex;
+        justify-content: flex-end;
+        gap: 32px;
+    }
+    
+    .bakery-logo {
+        flex-shrink: 0;
+        margin: 0 32px;
+    }
+    
+    /* Hide mobile menu on desktop */
+    .menu-toggle, .mobile-nav-links {
+      display: none;
+    }
 }

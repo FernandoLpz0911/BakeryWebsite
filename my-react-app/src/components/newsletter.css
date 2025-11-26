@@ -1,4 +1,3 @@
-
 .modal-backdrop {
   position: fixed;
   top: 0;
@@ -49,3 +48,30 @@
 display:flex;
 }
 
+/* --- Mobile-Specific Styles --- */
+@media (max-width: 767px) {
+    .modal {
+        max-width: 90%;
+        height: auto;
+        padding: 2rem 1.5rem;
+    }
+
+    .newsletter-description {
+        /* This overrides the inline style of width: 500px on the <p> tag */
+        width: auto !important; 
+    }
+
+    .section-heading {
+        font-size: 1.8em;
+    }
+    
+    .emailAndButton {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .newsletter-email-input,
+    .newsletter-submit-button {
+        width: 100%;
+    }
+}
