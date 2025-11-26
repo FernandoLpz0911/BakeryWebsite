@@ -13,7 +13,7 @@
 }
 
 .modal {
-  background: #fff0f5;
+  background: #FFF0F5;
   padding: 3rem;
   border-radius: 30px;
   max-width: 800px;
@@ -39,32 +39,56 @@
   color: #C2185B;
 }
 
+/* Cohesive CTA Section */
 .newsletter-cta-section {
-    /* Matches the footer flow better */
-    background: linear-gradient(180deg, #F06292 0%, #C2185B 100%);
+    /* Matches the footer's tone but slightly lighter */
+    background-color: #D81B60; 
     text-align: center;
     color: #FFFFFF;
     padding: 80px 20px;
     margin-bottom: 0;
-    /* Remove margin so it touches footer */
 }
 
 .newsletter-heading {
-    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
     font-size: 2.5rem;
+    font-family: 'Lobster', cursive;
+    margin-bottom: 10px;
+}
+
+.newsletter-description {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    opacity: 0.95;
 }
 
 .emailAndButton {
     display: flex;
-    gap: 10px;
-    margin-top: 30px;
+    justify-content: center;
+    gap: 15px; /* Space between input and button */
+    margin-top: 20px;
+    width: 100%;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Specific override for the submit button in this section to stand out against dark pink */
+.newsletter-cta-section .newsletter-submit-button {
+    background: #FFFFFF; /* White button */
+    color: #D81B60; /* Pink text */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.newsletter-cta-section .newsletter-submit-button:hover {
+    background: #FCE4EC;
+    transform: translateY(-2px);
 }
 
 /* --- Mobile-Specific Styles --- */
 @media (max-width: 767px) {
     .modal {
         max-width: 90%;
-        height: auto;
         padding: 2rem 1.5rem;
     }
 
@@ -72,18 +96,15 @@
         width: auto !important; 
     }
 
-    .section-heading {
-        font-size: 1.8em;
-    }
-    
     .emailAndButton {
         flex-direction: column;
         gap: 15px;
+        padding: 0 20px;
     }
 
+    /* Full width on mobile */
     .newsletter-email-input,
     .newsletter-submit-button {
         width: 100%;
-        border-radius: 50px; 
     }
 }

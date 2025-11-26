@@ -10,8 +10,8 @@
     justify-content: center;
     min-height: 85vh; 
     padding: 40px 20px;
-    /* Subtle, elegant gradient */
-    background: radial-gradient(circle at center, #FFF5F8 0%, #F8BBD0 100%);
+    /* Soft radial gradient to center focus */
+    background: radial-gradient(circle at center, #FFF 0%, #FFE4E1 100%);
     position: relative;
 }
 
@@ -27,11 +27,11 @@
     flex: 1;
     width: 100%;
     height: 500px;
-    border-radius: 40px; /* More rounded */
-    box-shadow: 0 25px 50px rgba(194, 24, 91, 0.25); /* Deep pink shadow */
+    border-radius: 40px;
+    box-shadow: 0 20px 40px rgba(233, 30, 99, 0.15);
     position: relative;
     overflow: hidden;
-    border: 8px solid #FFF; /* Thick photo frame */
+    border: 8px solid #FFF; /* Photo frame effect */
 }
 
 .hero-image {
@@ -47,26 +47,31 @@
 
 .hero-image.active { opacity: 1; }
 
+/* Carousel Nav Buttons */
 .carousel-nav-button {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     background-color: rgba(255, 255, 255, 0.9);
     color: var(--accent-pink);
-    border: 2px solid var(--light-pink-bg);
-    padding: 15px 20px;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
     cursor: pointer;
     z-index: 100;
     font-size: 1.5rem;
-    border-radius: 50%;
     transition: all 0.3s ease;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .carousel-nav-button:hover {
     background-color: var(--accent-pink);
     color: white;
-    border-color: var(--accent-pink);
+    transform: translateY(-50%) scale(1.1);
 }
 
 .carousel-nav-button.prev { left: 20px; }
@@ -90,17 +95,17 @@
 }
 
 .hero-headline {
-    font-size: 4.2rem;
+    font-size: 4rem;
     margin-bottom: 20px;
     color: var(--accent-pink);
     font-family: 'Lobster', cursive;
     line-height: 1.1;
-    text-shadow: 4px 4px 0px #FFF;
+    text-shadow: 3px 3px 0px #FFF;
 }
 
 .hero-description {
-    font-size: 1.3rem;
-    line-height: 1.7;
+    font-size: 1.25rem;
+    line-height: 1.8;
     color: var(--text-chocolate);
     margin-bottom: 35px;
     max-width: 600px;
@@ -122,25 +127,24 @@
 
 /* Shared Card Style */
 .product-card, .occasion-card {
-    /* PINK BACKGROUND behind images */
+    /* PINK BACKGROUND behind images requested */
     background-color: var(--light-pink-bg); 
     border-radius: 30px;
-    border: 2px solid #FFF; /* White border for definition */
     box-shadow: var(--card-shadow);
     overflow: hidden;
     text-align: center;
-    padding: 20px;
+    padding: 15px 15px 30px 15px; /* Padding around image */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    border: 1px solid rgba(255,255,255,0.5);
 }
 
 .product-card:hover, .occasion-card:hover {
-    transform: translateY(-12px);
+    transform: translateY(-10px);
     box-shadow: 0 20px 40px rgba(233, 30, 99, 0.2);
-    background-color: #FFF; /* Light up on hover */
-    border-color: var(--primary-pink);
+    background-color: #FFF; /* Highlight effect on hover */
 }
 
 .product-image, .occasion-image {
@@ -164,6 +168,7 @@
     color: #666;
     margin-bottom: 25px;
     line-height: 1.5;
+    padding: 0 10px;
 }
 
 .product-cta-button, .occasion-cta-button {
@@ -172,11 +177,10 @@
 
 .about-us-section {
     padding: 80px 40px;
-    background-color: #FFFFFF;
+    background-color: #FFFFFF; /* White section to break up the pink */
     border-radius: 50px;
     margin: 60px 20px;
-    box-shadow: var(--card-shadow);
-    border: 1px solid #FCE4EC;
+    box-shadow: 0 10px 30px rgba(233, 30, 99, 0.05);
 }
 
 .about-content {
@@ -192,22 +196,19 @@
     margin-bottom: 30px;
 }
 
-/* --- Bottom Section (Gifts/Occasions) --- */
+/* --- Bottom Section Flow --- */
 .gifts-occasions-section {
-    /* Distinct background to fix bottom flow */
-    background-color: var(--medium-pink-bg); 
+    /* A transition color to bridge the body and the footer */
+    background-color: #FCE4EC; 
     padding: 100px 20px;
     margin-top: 40px;
-    /* Curved top using border-radius if you want, or just a block */
-    border-top-left-radius: 60px;
-    border-top-right-radius: 60px;
-    box-shadow: 0 -10px 30px rgba(0,0,0,0.03);
+    border-radius: 50px 50px 0 0; /* Rounded top only */
 }
 
 /* Mobile Overrides */
 @media (max-width: 767px) {
     .hero-headline { font-size: 3rem; }
     .hero-image-carousel { height: 350px; }
-    .about-us-section { padding: 40px 20px; }
-    .gifts-occasions-section { padding: 60px 20px; border-radius: 40px 40px 0 0; }
+    .about-us-section { padding: 40px 20px; margin: 30px 10px; border-radius: 30px; }
+    .gifts-occasions-section { padding: 60px 20px; border-radius: 30px 30px 0 0; }
 }
