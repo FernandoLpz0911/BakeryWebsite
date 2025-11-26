@@ -8,35 +8,35 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /* Z-Index increased to 2001 to sit ABOVE the Navbar (which is 1000) */
+  /* Z-Index above Navbar */
   z-index: 2001; 
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(8px);
 }
 
 .modal {
-  /* Match the Home Page CTA color (Deep Pink) */
-  background-color: #D81B60; 
-  color: #FFFFFF;
+  /* Cohesive "Card" Style: White background, pink accents */
+  background-color: #FFFFFF; 
+  color: #4E342E; /* Chocolate text */
   padding: 3rem;
   border-radius: 30px;
-  max-width: 800px;
+  max-width: 700px;
   height: auto;
   text-align: center;
   position: relative;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* Border changed to light pink to frame the dark box */
-  border: 4px solid #F8BBD0; 
+  /* Sweet pink border */
 }
 
-/* Override the global dark-pink heading color to White for the dark modal */
+/* Override the global heading color for the modal context */
 .modal .section-heading {
-    color: #FFFFFF;
+    color: #C2185B; /* Dark Pink */
     font-size: 2.5rem;
     margin-bottom: 15px;
+    text-shadow: none;
 }
 
 .close-btn {
@@ -47,9 +47,8 @@
   background: none;
   border: none;
   cursor: pointer;
-  /* White X to contrast with deep pink background */
-  color: #FFFFFF; 
-  opacity: 0.8;
+  color: #C2185B; /* Dark Pink X */
+  opacity: 0.7;
   transition: opacity 0.2s;
 }
 
@@ -57,27 +56,12 @@
   opacity: 1;
 }
 
-/* --- Static Home Page Section Styles --- */
-.newsletter-cta-section {
-    background-color: #D81B60; 
-    text-align: center;
-    color: #FFFFFF;
-    padding: 40px 20px; 
-    margin-bottom: 0;
-}
-
-.newsletter-heading {
-    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    font-size: 2.2rem; 
-    font-family: 'Lobster', cursive;
-    margin-bottom: 5px; 
-}
-
 .newsletter-description {
-    font-size: 1rem;
-    margin-bottom: 20px; 
-    opacity: 0.95;
-    line-height: 1.5;
+    font-size: 1.05rem;
+    margin-bottom: 25px; 
+    opacity: 0.9;
+    line-height: 1.6;
+    color: #666;
 }
 
 .emailAndButton {
@@ -91,15 +75,29 @@
     margin-right: auto;
 }
 
-/* Apply the "White Button" style to BOTH the Modal 
-   and the Static Section so they look identical 
-*/
-.newsletter-cta-section .newsletter-submit-button,
-.modal .newsletter-submit-button {
-    background: #FFFFFF; 
-    color: #D81B60; 
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    padding: 10px 25px; 
+/* Ensure the input looks like a pill inside the modal */
+.newsletter-email-input {
+    background-color: #FCE4EC; /* Very light pink input background */
+    border: 2px solid #F48FB1;
+    border-radius: 50px;
+    padding: 12px 20px;
+    width: 100%;
+    font-size: 1rem;
+    outline: none;
+    color: #333;
+}
+
+.newsletter-email-input:focus {
+    border-color: #E91E63;
+    background-color: #FFF;
+}
+
+.newsletter-submit-button {
+    /* Pink Gradient Button */
+    background: linear-gradient(45deg, #EC407A, #D81B60);
+    color: white;
+    box-shadow: 0 4px 10px rgba(233, 30, 99, 0.3);
+    padding: 12px 25px; 
     border: none;
     font-weight: bold;
     font-size: 1.2rem;
@@ -108,10 +106,9 @@
     transition: transform 0.2s ease;
 }
 
-.newsletter-cta-section .newsletter-submit-button:hover,
-.modal .newsletter-submit-button:hover {
-    background: #FCE4EC;
+.newsletter-submit-button:hover {
     transform: translateY(-2px);
+    background: linear-gradient(45deg, #D81B60, #C2185B);
 }
 
 /* --- Mobile-Specific Styles --- */
@@ -127,8 +124,8 @@
 
     .emailAndButton {
         flex-direction: column;
-        gap: 10px;
-        padding: 0 20px;
+        gap: 15px;
+        padding: 0;
     }
 
     .newsletter-email-input,
