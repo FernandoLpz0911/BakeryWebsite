@@ -1,5 +1,6 @@
 .home-page-container {
     overflow-x: hidden;
+    width: 100%;
 }
 
 /* --- Hero Section --- */
@@ -8,36 +9,60 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 85vh; 
+    min-height: auto; 
     padding: 40px 20px;
-    /* Soft radial gradient to center focus */
-    background: radial-gradient(circle at center, #FFF 0%, #FFE4E1 100%);
+    background: radial-gradient(circle at center, var(--white) 20%, var(--light-pink-bg) 100%);
     position: relative;
+    gap: 40px;
 }
 
-@media (min-width: 768px) {
+/* Desktop: Side-by-side */
+@media (min-width: 1025px) {
     .hero-section {
         flex-direction: row;
+        min-height: 80vh;
         gap: 60px;
-        padding: 40px 60px;
+        padding: 60px 80px;
+    }
+    
+    .hero-text {
+        align-items: flex-start;
+        text-align: left;
     }
 }
 
 .hero-image-carousel {
     flex: 1;
     width: 100%;
-    height: 500px;
-    border-radius: 40px;
-    box-shadow: 0 20px 40px rgba(233, 30, 99, 0.15);
+    /* UPDATED: Reduced mobile height to prevent excessive zooming/cropping */
+    height: 280px; 
+    border-radius: 30px;
+    box-shadow: 0 25px 50px rgba(233, 30, 99, 0.2); 
     position: relative;
     overflow: hidden;
-    border: 8px solid #FFF; /* Photo frame effect */
+    border: 8px solid var(--white);
+}
+
+/* Tablet: Slightly taller */
+@media (min-width: 600px) {
+    .hero-image-carousel {
+        height: 380px; 
+    }
+}
+
+/* Desktop: Full height */
+@media (min-width: 1025px) {
+    .hero-image-carousel {
+        height: 500px; 
+    }
 }
 
 .hero-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    /* UPDATED: Centers the image so the main subject isn't cut off */
+    object-position: center center; 
     position: absolute;
     top: 0;
     left: 0;
@@ -47,35 +72,44 @@
 
 .hero-image.active { opacity: 1; }
 
-/* Carousel Nav Buttons */
+/* Carousel Buttons */
 .carousel-nav-button {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(255, 255, 255, 0.9);
-    color: var(--accent-pink);
-    border: none;
-    width: 50px;
-    height: 50px;
+    background-color: var(--primary-pink); 
+    color: #FFFFFF; 
+    border: 2px solid #FFFFFF;
+    width: 45px; /* Slightly smaller on mobile */
+    height: 45px;
     border-radius: 50%;
     cursor: pointer;
     z-index: 100;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     display: flex;
     align-items: center;
     justify-content: center;
+    opacity: 0.9;
 }
 
 .carousel-nav-button:hover {
     background-color: var(--accent-pink);
-    color: white;
     transform: translateY(-50%) scale(1.1);
+    opacity: 1;
 }
 
-.carousel-nav-button.prev { left: 20px; }
-.carousel-nav-button.next { right: 20px; }
+.carousel-nav-button.prev { left: 15px; }
+.carousel-nav-button.next { right: 15px; }
+
+@media (min-width: 768px) {
+    .carousel-nav-button {
+        width: 50px; 
+        height: 50px; 
+        font-size: 1.5rem;
+    }
+}
 
 .hero-text {
     flex: 1;
@@ -85,71 +119,71 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-@media (min-width: 768px) {
-    .hero-text {
-        align-items: flex-start;
-        text-align: left;
-    }
+    width: 100%;
 }
 
 .hero-headline {
-    font-size: 4rem;
+    font-size: 2.5rem; 
     margin-bottom: 20px;
-    color: var(--accent-pink);
+    color: var(--dark-pink);
     font-family: 'Lobster', cursive;
     line-height: 1.1;
-    text-shadow: 3px 3px 0px #FFF;
+    text-shadow: 3px 3px 0px var(--white);
+}
+
+@media (min-width: 768px) {
+    .hero-headline {
+        font-size: 4rem; 
+    }
 }
 
 .hero-description {
-    font-size: 1.25rem;
-    line-height: 1.8;
+    font-size: 1.1rem;
+    line-height: 1.6;
     color: var(--text-chocolate);
-    margin-bottom: 35px;
+    margin-bottom: 30px;
     max-width: 600px;
     font-weight: 500;
 }
 
 /* --- Product Sections --- */
 .featured-products-section {
-    padding: 80px 20px;
+    padding: 60px 20px;
 }
 
 .product-grid, .occasion-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
+    /* Keeps grid flexible */
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* Shared Card Style */
 .product-card, .occasion-card {
-    /* PINK BACKGROUND behind images requested */
-    background-color: var(--light-pink-bg); 
+    background-color: var(--white);
     border-radius: 30px;
     box-shadow: var(--card-shadow);
     overflow: hidden;
     text-align: center;
-    padding: 15px 15px 30px 15px; /* Padding around image */
+    padding: 20px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border: 1px solid rgba(255,255,255,0.5);
+    border: 2px solid var(--medium-pink-bg);
+    height: auto; 
 }
 
 .product-card:hover, .occasion-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(233, 30, 99, 0.2);
-    background-color: #FFF; /* Highlight effect on hover */
+    box-shadow: 0 20px 40px rgba(233, 30, 99, 0.15);
+    border-color: var(--primary-pink);
 }
 
 .product-image, .occasion-image {
     width: 100%;
-    height: 260px;
+    height: 250px;
     object-fit: cover;
     border-radius: 20px;
     margin-bottom: 20px;
@@ -158,14 +192,15 @@
 
 .product-title, .occasion-title {
     font-size: 1.8rem;
-    color: var(--dark-pink);
+    color: var(--accent-pink);
     margin: 10px 0;
     font-family: 'Lobster', cursive;
 }
 
 .product-description, .occasion-description {
     font-size: 1rem;
-    color: #666;
+    color: var(--text-chocolate);
+    opacity: 0.8;
     margin-bottom: 25px;
     line-height: 1.5;
     padding: 0 10px;
@@ -176,11 +211,12 @@
 }
 
 .about-us-section {
-    padding: 80px 40px;
-    background-color: #FFFFFF; /* White section to break up the pink */
-    border-radius: 50px;
+    padding: 60px 30px;
+    background-color: var(--white);
+    border-radius: 40px;
     margin: 60px 20px;
-    box-shadow: 0 10px 30px rgba(233, 30, 99, 0.05);
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--medium-pink-bg);
 }
 
 .about-content {
@@ -190,25 +226,15 @@
 }
 
 .about-description {
-    font-size: 1.2rem;
-    line-height: 1.9;
+    font-size: 1.1rem;
+    line-height: 1.8;
     color: var(--text-chocolate);
     margin-bottom: 30px;
 }
 
 /* --- Bottom Section Flow --- */
 .gifts-occasions-section {
-    /* A transition color to bridge the body and the footer */
-    background-color: #FCE4EC; 
-    padding: 100px 20px;
-    margin-top: 40px;
-    border-radius: 50px 50px 0 0; /* Rounded top only */
-}
-
-/* Mobile Overrides */
-@media (max-width: 767px) {
-    .hero-headline { font-size: 3rem; }
-    .hero-image-carousel { height: 350px; }
-    .about-us-section { padding: 40px 20px; margin: 30px 10px; border-radius: 30px; }
-    .gifts-occasions-section { padding: 60px 20px; border-radius: 30px 30px 0 0; }
+    background-color: transparent; 
+    padding: 80px 20px;
+    margin-top: 0;
 }

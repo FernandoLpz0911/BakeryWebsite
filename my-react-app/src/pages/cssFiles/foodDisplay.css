@@ -10,33 +10,40 @@
 }
 
 .order-page-header {
-    font-size: 3.5rem;
+    font-size: 2.5rem; /* Better scaling */
     color: var(--accent-pink);
     text-align: center;
-    margin: 40px 0 60px;
+    margin: 30px 0 50px;
     font-family: 'Lobster', cursive;
-    text-shadow: 2px 2px 0px #FFF;
+    text-shadow: 2px 2px 0px var(--white);
+}
+
+@media (min-width: 768px) {
+    .order-page-header {
+        font-size: 3.5rem;
+    }
 }
 
 .product-grid-order-page {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 40px;
+    /* FIX: Flexible grid for mobile */
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
     justify-content: center;
 }
 
 .product-card-order-page {
-    background-color: #FFFFFF;
+    background-color: var(--white);
     border-radius: 25px;
-    /* Sweet pink border */
-    border: 2px solid #FFE0E9;
+    border: 2px solid var(--medium-pink-bg);
     box-shadow: var(--card-shadow);
     padding: 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy transition */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     position: relative;
+    height: 100%; /* Fill grid cell */
 }
 
 .product-card-order-page:hover {
@@ -77,7 +84,7 @@
     font-weight: 800;
     font-size: 1.1rem;
     color: #FFF;
-    background: var(--accent-pink); /* Solid pink bubble */
+    background: var(--accent-pink);
     padding: 8px 25px;
     border-radius: 50px;
     margin-bottom: 10px;
@@ -86,7 +93,7 @@
 
 .back-button {
     margin-top: 60px;
-    background: #FFF;
+    background: var(--white);
     color: var(--accent-pink);
     border: 2px solid var(--accent-pink);
 }
